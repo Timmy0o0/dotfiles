@@ -1,6 +1,7 @@
 return {
     {
         'akinsho/bufferline.nvim',
+        event = "VeryLazy",
         config = true
         -- config = function()
         --    require("bufferline").setup()
@@ -9,10 +10,12 @@ return {
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
+        event = "VeryLazy",
         config = true
     },
     {
         "lewis6991/gitsigns.nvim",
+        event = "VeryLazy",
         config = function()
             require('gitsigns').setup {
                 on_attach = function(bufnr)
@@ -70,6 +73,7 @@ return {
     },
     {
         "RRethy/vim-illuminate",
+        event = "VeryLazy",
         config = function()
             require('illuminate').configure()
         end
@@ -119,14 +123,17 @@ return {
     },
     {
         "echasnovski/mini.ai",
+        event = "VeryLazy",
         config = true,
     },
     {
         "echasnovski/mini.comment",
+        event = "VeryLazy",
         config = true,
     },
     {
         "echasnovski/mini.animate",
+        event = "VeryLazy",
         config = true,
     }
 }
