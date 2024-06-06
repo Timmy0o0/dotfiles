@@ -43,4 +43,6 @@ sudo pacman -S python-virtualenv
 sudo pacman -S python-virtualenvwrapper
 
 mkvirtualenv base
+
+pip install debugpy
 ```
