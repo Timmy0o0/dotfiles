@@ -4,7 +4,7 @@
 
 ```bash
 # instal dependency package
-sudo pacman -S neovim ranger lazygit git openssh fzf ripgrep cmake make gcc npm xclip
+sudo pacman -S neovim ranger lazygit git openssh fzf ripgrep cmake make gcc npm xclip unzip
 
 # instal zsh
 sudo pacman -S zsh
