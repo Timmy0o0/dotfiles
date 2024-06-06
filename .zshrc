@@ -115,5 +115,7 @@ alias lg='lazygit'
 
 # python env
 export WORKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 source /usr/bin/virtualenvwrapper.sh
 workon base
