@@ -105,4 +105,4 @@ vim.keymap.set({ "n" }, "<C-Down>", "<C-w>+")
 
 vim.keymap.set("n", "<leader>j", "<cmd>bNext<CR>")
 vim.keymap.set("n", "<leader>k", "<cmd>bprevious<CR>")
-vim.keymap.set("n", "<leader>bc", "<cmd>bd<CR>")
+vim.keymap.set("n", "<leader>n", "<cmd>bd<CR>")
