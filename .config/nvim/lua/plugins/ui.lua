@@ -25,17 +25,17 @@ return {
                     end
 
                     -- Navigation
-                    map('n', ']c', function()
+                    map('n', '<leader>hj', function()
                         if vim.wo.diff then
-                            vim.cmd.normal({ ']c', bang = true })
+                            vim.cmd.normal({ '<leader>hj', bang = true })
                         else
                             gitsigns.nav_hunk('next')
                         end
                     end)
 
-                    map('n', '[c', function()
+                    map('n', '<leader>hk', function()
                         if vim.wo.diff then
-                            vim.cmd.normal({ '[c', bang = true })
+                            vim.cmd.normal({ '<leader>hk', bang = true })
                         else
                             gitsigns.nav_hunk('prev')
                         end
@@ -84,7 +84,22 @@ return {
             -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         },
         config = function()
-            require("neo-tree").setup()
+            require("neo-tree").setup({
+                window = {
+                    mappings = {
+                        ["l"] = "open",
+                    },
+                },
+                filesystem = {
+                    window = {
+                        mappings = {
+                            ["gk"] = "prev_git_modified",
+                            ["gj"] = "next_git_modified",
+                        }
+                    }
+
+                }
+            })
             vim.keymap.set({ "n", "v" }, "<leader>e", [[<cmd>Neotree toggle<CR>]])
         end
 
