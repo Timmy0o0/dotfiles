@@ -112,3 +112,8 @@ fi
 # alias grep='grep --color=auto'
 alias ra='ranger'
 alias lg='lazygit'
+
+# python env
+export WORKON_HOME=~/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
+workon base

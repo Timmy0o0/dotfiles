@@ -34,3 +34,13 @@ curl -sLo ~/win32yank.zip https://github.com/equalsraf/win32yank/releases/downlo
 sudo unzip ~/win32yank.zip -d /usr/local/bin
 sudo chmod +x /usr/local/bin/win32yank.exe
 ```
+
+## Python env
+
+```base
+sudo pacman -S python
+sudo pacman -S python-virtualenv
+sudo pacman -S python-virtualenvwrapper
+
+mkvirtualenv base
+```
