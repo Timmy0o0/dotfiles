@@ -79,6 +79,8 @@ vim.keymap.set({ "v" }, "<", "<gv")
 -- movement
 vim.keymap.set({ "n", "v" }, "H", "0")
 vim.keymap.set({ "n", "v" }, "L", "$")
+vim.keymap.set({ "n", "v" }, "dH", "d0")
+vim.keymap.set({ "n", "v" }, "dL", "d$")
 
 vim.keymap.set({ "n", "v" }, "J", "5j")
 vim.keymap.set({ "n", "v" }, "K", "5k")
