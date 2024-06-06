@@ -34,6 +34,7 @@ option.wrap = false
 option.splitright = true
 option.list = true
 option.listchars:append("space:·")
+option.scrolloff = 15
 
 -- Buffer Settings --
 buffer.fileenconding = "utf-8"
@@ -41,11 +42,26 @@ buffer.fileenconding = "utf-8"
 -- Global Settings --
 global.mapleader = " "
 
+if vim.fn.has('wsl') == 1 then
+    vim.g.clipboard = {
+        name = 'win32yank',
+        copy = {
+            ['+'] = 'win32yank.exe -i --crlf',
+            ['*'] = 'win32yank.exe -i --crlf',
+        },
+        paste = {
+            ['+'] = 'win32yank.exe -o --lf',
+            ['*'] = 'win32yank.exe -o --lf',
+        },
+        cache_enabled = 0,
+    }
+end
+
 -- Key mappings --
--- vim.keymap.set({ "n", "i", "v" }, "<Left>", "<Nop>")
--- vim.keymap.set({ "n", "i", "v" }, "<Right>", "<Nop>")
--- vim.keymap.set({ "n", "i", "v" }, "<Up>", "<Nop>")
--- vim.keymap.set({ "n", "i", "v" }, "<Down>", "<Nop>")
+vim.keymap.set({ "n", "i", "v" }, "<Left>", "<Nop>")
+vim.keymap.set({ "n", "i", "v" }, "<Right>", "<Nop>")
+vim.keymap.set({ "n", "i", "v" }, "<Up>", "<Nop>")
+vim.keymap.set({ "n", "i", "v" }, "<Down>", "<Nop>")
 
 vim.keymap.set({ "n" }, "<C-r>", ":source<cr>")
 

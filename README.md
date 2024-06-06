@@ -1,6 +1,6 @@
 # Dotfiles
 
-## Create link
+## Init Conf
 
 ```bash
 # instal dependency package
@@ -24,4 +24,13 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 git clone https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/devicons2
 
 source .zshrc
+```
+
+## Add WSL Clip
+
+```bash
+# use latest win32yank
+curl -sLo ~/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
+sudo unzip ~/win32yank.zip -d /usr/local/bin
+sudo chmod +x /usr/local/bin/win32yank.exe
 ```

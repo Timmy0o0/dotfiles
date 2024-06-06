@@ -1,4 +1,4 @@
--- 高亮复制的内容
+-- YankHighlight
 vim.cmd [[
   augroup YankHighlight
     autocmd!
