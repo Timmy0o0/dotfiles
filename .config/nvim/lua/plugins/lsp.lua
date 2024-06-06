@@ -22,7 +22,7 @@ return {
             },
             jsonls = {},
             bashls = {},
-            -- pyright = {}
+            pyright = {},
         }
 
         local on_attach = function(_, bufnr)
