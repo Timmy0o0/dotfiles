@@ -96,6 +96,9 @@ return {
                 -- Path where project.nvim will store the project history for use in
                 -- telescope
                 datapath = vim.fn.stdpath("data"),
+
+                vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Telescope projects<cr>", {})
+
             }
         end
     },

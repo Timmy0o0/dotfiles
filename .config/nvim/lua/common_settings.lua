@@ -89,8 +89,8 @@ vim.keymap.set({ "n" }, "Q", ":q<cr>")
 vim.keymap.set({ "n" }, "W", ":w<cr>")
 vim.keymap.set('i', 'jj', "<Esc>", { noremap = true, silent = true })
 
-vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y")
-vim.keymap.set({ "n", "v" }, "<leader>p", "\"+p")
+vim.keymap.set({ "n", "v" }, "<C-y>", "\"+y")
+vim.keymap.set({ "n", "v" }, "<C-p>", "\"+p")
 
 
 vim.keymap.set({ "n" }, ">", ">>")
