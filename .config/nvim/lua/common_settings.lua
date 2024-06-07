@@ -41,6 +41,10 @@ option.foldenable = false
 -- keymap zc zo zm zr zM zR
 -- option.nofoldenable = true
 
+-- conf for neovide
+option.guifont = "SauceCodePro Nerd Font:h13"
+
+
 -- Buffer Settings --
 buffer.fileenconding = "utf-8"
 
