@@ -18,6 +18,10 @@ return {
         playground = {
             enable = true,
         },
+        fold = {
+            enable = true,
+            disable = {}, -- language do not fold
+        },
         textobjects = {
             select = {
                 enable = true,

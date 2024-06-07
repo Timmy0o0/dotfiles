@@ -35,6 +35,11 @@ option.splitright = true
 option.list = true
 option.listchars:append("space:·")
 option.scrolloff = 15
+option.foldmethod = 'expr'
+option.foldexpr = 'nvim_treesitter#foldexpr()'
+option.foldenable = false
+-- keymap zc zo zm zr zM zR
+-- option.nofoldenable = true
 
 -- Buffer Settings --
 buffer.fileenconding = "utf-8"
