@@ -135,5 +135,14 @@ return {
         "echasnovski/mini.animate",
         -- event = "VeryLazy",
         config = false,
-    }
+    },
+    {
+        "echasnovski/mini.files",
+        event = "VeryLazy",
+        config = function ()
+            require('mini.files').setup()
+            vim.keymap.set({ "n" }, "<leader>o", ':lua MiniFiles.open()<CR>')
+        end,
+    },
+
 }
