@@ -41,8 +41,12 @@ option.foldenable = false
 -- keymap zc zo zm zr zM zR
 -- option.nofoldenable = true
 
--- conf for neovide
+-- conf for neovideo
 option.guifont = "SauceCodePro Nerd Font:h13"
+-- only useful for linux
+if vim.g.neovideo then
+    option.guifont = "SauceCodePro Nerd Font:h13"
+end
 
 
 -- Buffer Settings --
@@ -79,6 +83,8 @@ vim.keymap.set({ "n" }, "W", ":w<cr>")
 vim.keymap.set('i', 'jj', "<Esc>", { noremap = true, silent = true })
 
 vim.keymap.set({ "n", "v" }, "<leader>y", "\"+y")
+vim.keymap.set({ "n", "v" }, "<leader>p", "\"+p")
+
 
 vim.keymap.set({ "n" }, ">", ">>")
 vim.keymap.set({ "n" }, "<", "<<")
