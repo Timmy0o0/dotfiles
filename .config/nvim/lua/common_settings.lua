@@ -42,10 +42,17 @@ option.foldenable = false
 -- option.nofoldenable = true
 
 -- conf for neovideo
-option.guifont = "SauceCodePro Nerd Font:h13"
--- only useful for linux
-if vim.g.neovideo then
+if vim.g.neovide then
     option.guifont = "SauceCodePro Nerd Font:h13"
+
+    vim.api.nvim_set_keymap('n', '<M-CR>', ':lua ToggleFullscreen()<CR>', { noremap = true, silent = false })
+    function ToggleFullscreen()
+        if vim.g.neovide_fullscreen == true then
+            vim.g.neovide_fullscreen = false
+        else
+            vim.g.neovide_fullscreen = true
+        end
+    end
 end
 
 
