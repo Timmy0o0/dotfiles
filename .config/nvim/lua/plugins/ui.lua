@@ -133,7 +133,7 @@ return {
     },
     {
         "echasnovski/mini.animate",
-        event = "VeryLazy",
-        config = true,
+        -- event = "VeryLazy",
+        config = false,
     }
 }
