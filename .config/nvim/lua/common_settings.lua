@@ -2,7 +2,7 @@ local option = vim.opt
 local buffer = vim.b
 local global = vim.g
 
--- Globol Settings --
+-- Global Settings --
 option.showmode = false
 option.backspace = { "indent", "eol", "start" }
 option.tabstop = 4
@@ -41,7 +41,7 @@ option.foldenable = false
 -- keymap zc zo zm zr zM zR
 -- option.nofoldenable = true
 
--- conf for neovideo
+-- conf for neovide
 if vim.g.neovide then
     option.guifont = "SauceCodePro Nerd Font:h13"
 
@@ -91,7 +91,9 @@ vim.keymap.set('i', 'jj', "<Esc>", { noremap = true, silent = true })
 
 vim.keymap.set({ "n", "v" }, "<C-y>", "\"+y")
 vim.keymap.set({ "n", "v" }, "<C-p>", "\"+p")
-
+vim.keymap.set("c", "<C-v>", "<C-R>+")
+-- maybe paste use ctrl shift v in insert mode
+-- vim.keymap.set("i", "<C-v>", "<C-R>+")
 
 vim.keymap.set({ "n" }, ">", ">>")
 vim.keymap.set({ "n" }, "<", "<<")
@@ -110,7 +112,7 @@ vim.keymap.set({ "n", "v" }, "K", "5k")
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 
--- splict
+-- split
 vim.keymap.set({ "n" }, "sj", ":split<cr>")
 vim.keymap.set({ "n" }, "sl", ":vsplit<cr>")
 
