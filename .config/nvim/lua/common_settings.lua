@@ -112,9 +112,11 @@ vim.keymap.set({ "n", "v" }, "K", "5k")
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 
--- split
+-- split and rotate
 vim.keymap.set({ "n" }, "sj", ":split<cr>")
 vim.keymap.set({ "n" }, "sl", ":vsplit<cr>")
+vim.keymap.set({ "n" }, "<M-Left>", "<C-w>b<C-w>K")
+vim.keymap.set({ "n" }, "<M-Right>", "<C-w>b<C-w>H")
 
 vim.keymap.set({ "n" }, "<C-j>", "<C-w>j")
 vim.keymap.set({ "n" }, "<C-k>", "<C-w>k")
@@ -127,6 +129,9 @@ vim.keymap.set({ "n" }, "<C-Up>", "<C-w>-")
 vim.keymap.set({ "n" }, "<C-Down>", "<C-w>+")
 
 
+-- close other window and buffer
 vim.keymap.set("n", "<leader>j", "<cmd>bNext<CR>")
 vim.keymap.set("n", "<leader>k", "<cmd>bprevious<CR>")
-vim.keymap.set("n", "<leader>n", "<cmd>bd<CR>")
+vim.keymap.set("n", "<leader>nn", "<cmd>bd<CR>")
+vim.keymap.set("n", "<leader>nc", "<cmd>only<CR>")
+vim.keymap.set("n", "<leader>nC", "<cmd>%bd|e#<CR>")
