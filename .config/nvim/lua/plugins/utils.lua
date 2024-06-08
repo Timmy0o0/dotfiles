@@ -33,6 +33,13 @@ return {
         },
     },
     {
+        "kevinhwang91/nvim-hlslens",
+        event = "VeryLazy",
+        config = function()
+            require("hlslens").setup()
+        end
+    },
+    {
         "kamykn/spelunker.vim",
         event = "VeryLazy",
         config = function()

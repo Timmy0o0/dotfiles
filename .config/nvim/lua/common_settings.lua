@@ -35,11 +35,14 @@ option.splitright = true
 option.list = true
 option.listchars:append("space:·")
 option.scrolloff = 15
+-- keymap zc zo zm zr zM zR
+-- option.nofoldenable = true
 option.foldmethod = 'expr'
 option.foldexpr = 'nvim_treesitter#foldexpr()'
 option.foldenable = false
--- keymap zc zo zm zr zM zR
--- option.nofoldenable = true
+-- highlight search
+vim.o.hlsearch = true
+vim.keymap.set("n", "<C-n>", "<cmd>nohlsearch<CR>")
 
 -- conf for neovide
 if vim.g.neovide then
