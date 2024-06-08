@@ -11,7 +11,9 @@ return {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         event = "VeryLazy",
-        config = true
+        opts = {
+            indent = { char = "╏" },
+        }
     },
     {
         "lewis6991/gitsigns.nvim",
@@ -139,7 +141,7 @@ return {
     {
         "echasnovski/mini.files",
         event = "VeryLazy",
-        config = function ()
+        config = function()
             require('mini.files').setup()
             vim.keymap.set({ "n" }, "<leader>o", ':lua MiniFiles.open()<CR>')
         end,
