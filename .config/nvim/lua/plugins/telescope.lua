@@ -33,7 +33,14 @@ return {
 
             pickers = {
                 find_files = {
-                    find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/' },
+                    -- find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/', '!.cache/', '!.local/'},
+                    find_command = { 'rg', '--files', '--hidden',
+                        '--glob', '!.git/',
+                        '--glob', '!.local/',
+                        '--glob', '!.npm/',
+                        '--glob', '!.virtualenvs/',
+                        '--glob', '!.oh-my-zsh/',
+                        '--glob', '!.cache/' },
                 }
             },
 

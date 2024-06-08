@@ -89,14 +89,14 @@ vim.keymap.set({ "n", "i", "v" }, "<Down>", "<Nop>")
 vim.keymap.set({ "n" }, "<C-r>", ":source<cr>")
 
 vim.keymap.set({ "n" }, "Q", ":q<cr>")
-vim.keymap.set({ "n" }, "W", ":w<cr>")
+vim.keymap.set({ "n" }, "W", ":w<cr>", { noremap = true, silent = true })
 vim.keymap.set('i', 'jj', "<Esc>", { noremap = true, silent = true })
 
 vim.keymap.set({ "n", "v" }, "<C-y>", "\"+y")
 vim.keymap.set({ "n", "v" }, "<C-p>", "\"+p")
 vim.keymap.set("c", "<C-v>", "<C-R>+")
 -- maybe paste use ctrl shift v in insert mode
--- vim.keymap.set("i", "<C-v>", "<C-R>+")
+vim.keymap.set("i", "<C-v>", "<C-R>+")
 
 vim.keymap.set({ "n" }, ">", ">>")
 vim.keymap.set({ "n" }, "<", "<<")
