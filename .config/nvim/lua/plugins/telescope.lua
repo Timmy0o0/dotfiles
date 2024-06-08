@@ -14,8 +14,31 @@ return {
                     case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
                     -- the default case_mode is "smart_case"
                 }
-            }
+            },
+
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<C-j>"] = require('telescope.actions').move_selection_next,
+                        ["<C-k>"] = require('telescope.actions').move_selection_previous,
+                        ["<C-l>"] = require('telescope.actions').select_default,
+                    },
+                    n = {
+                        ["<C-j>"] = require('telescope.actions').move_selection_next,
+                        ["<C-k>"] = require('telescope.actions').move_selection_previous,
+                        ["<C-l>"] = require('telescope.actions').select_default,
+                    },
+                },
+            },
+
+            pickers = {
+                find_files = {
+                    find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/' },
+                }
+            },
+
         }
+
         require('telescope').load_extension('fzf')
 
         local builtin = require('telescope.builtin')
