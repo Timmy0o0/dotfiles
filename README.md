@@ -26,7 +26,7 @@ git clone https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/dev
 source .zshrc
 ```
 
-~~## Add WSL Clip~~
+## ~~Add WSL Clip~~
 
 ```bash
 # use latest win32yank
