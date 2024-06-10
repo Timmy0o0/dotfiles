@@ -4,7 +4,7 @@
 
 ```bash
 # instal dependency package
-sudo pacman -S neovim ranger lazygit git openssh fzf ripgrep cmake make gcc npm xclip unzip
+sudo pacman -S neovim ranger lazygit git openssh fzf ripgrep cmake make gcc npm xclip unzip neofetch unzip
 
 # instal zsh
 sudo pacman -S zsh
@@ -26,13 +26,13 @@ git clone https://github.com/cdump/ranger-devicons2 ~/.config/ranger/plugins/dev
 source .zshrc
 ```
 
-## Add WSL Clip
+~~## Add WSL Clip~~
 
 ```bash
 # use latest win32yank
 curl -sLo ~/win32yank.zip https://github.com/equalsraf/win32yank/releases/download/v0.1.1/win32yank-x64.zip
-sudo unzip ~/win32yank.zip -d /usr/local/bin
-sudo chmod +x /usr/local/bin/win32yank.exe
+sudo unzip ~/win32yank.zip -d /.local/bin
+sudo chmod +x /.local/bin/win32yank.exe
 ```
 
 ## Python env
@@ -45,4 +45,16 @@ sudo pacman -S python-virtualenvwrapper
 mkvirtualenv base
 
 pip install debugpy
+```
+
+## Neovide
+
+```bash
+mkdir ~/Downloads
+cd ~/Downloads
+# use latest version
+wget https://github.com/neovide/neovide/releases/download/0.13.1/neovide.exe.zip
+unzip neovide.exe.zip -d /.local/bin
+# copy to bin
+chmod +x ~/.local/bin/neovide.exe
 ```

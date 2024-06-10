@@ -112,10 +112,14 @@ fi
 # alias grep='grep --color=auto'
 alias ra='ranger'
 alias lg='lazygit'
+alias nvide='neovide.exe --wsl'
 
 # python env
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 source /usr/bin/virtualenvwrapper.sh
-workon base
+# workon base
+
+# binary
+export PATH=$HOME/.local/bin:$PATH

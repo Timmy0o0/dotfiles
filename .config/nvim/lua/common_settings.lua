@@ -67,17 +67,17 @@ global.mapleader = " "
 
 if vim.fn.has('wsl') == 1 then
     vim.g.clipboard = {
-        name = 'win32yank',
-        copy = {
-            ['+'] = 'win32yank.exe -i --crlf',
-            ['*'] = 'win32yank.exe -i --crlf',
-        },
-        paste = {
-            ['+'] = 'win32yank.exe -o --lf',
-            ['*'] = 'win32yank.exe -o --lf',
-        },
-        cache_enabled = 0,
-    }
+    name = 'win32yank-wsl',
+    copy = {
+        ['+'] = 'clip.exe',
+        ['*'] = 'clip.exe',
+    },
+    paste = {
+        ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+        ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+    cache_enabled = 0,
+}
 end
 
 -- Key mappings --
@@ -92,8 +92,8 @@ vim.keymap.set({ "n" }, "Q", ":q<cr>")
 vim.keymap.set({ "n" }, "W", ":w<cr>", { noremap = true, silent = true })
 vim.keymap.set('i', 'jj', "<Esc>", { noremap = true, silent = true })
 
-vim.keymap.set({ "n", "v" }, "<C-y>", "\"+y")
-vim.keymap.set({ "n", "v" }, "<C-p>", "\"+p")
+vim.keymap.set({ "n", "v" }, "<C-y>", "\"+y", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<C-p>", "\"+p", { noremap = true, silent = true })
 vim.keymap.set("c", "<C-v>", "<C-R>+")
 -- maybe paste use ctrl shift v in insert mode
 vim.keymap.set("i", "<C-v>", "<C-R>+")
