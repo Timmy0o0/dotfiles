@@ -49,7 +49,20 @@ pip install debugpy
 
 ## Neovide
 
+For windows
+
 ```bash
 # windows
 scoop install neovide
+```
+
+## Komorebic
+
+For windows
+
+```bash
+scoop bucket add extras
+scoop install komorebi whkd
+komorebic quickstart
+komorebic start --whkd
 ```
