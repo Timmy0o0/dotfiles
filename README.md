@@ -50,11 +50,6 @@ pip install debugpy
 ## Neovide
 
 ```bash
-mkdir ~/Downloads
-cd ~/Downloads
-# use latest version
-wget https://github.com/neovide/neovide/releases/download/0.13.1/neovide.exe.zip
-unzip neovide.exe.zip -d /.local/bin
-# copy to bin
-chmod +x ~/.local/bin/neovide.exe
+# windows
+scoop install neovide
 ```
