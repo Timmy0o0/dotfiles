@@ -46,7 +46,7 @@ vim.keymap.set("n", "<C-n>", "<cmd>nohlsearch<CR>")
 
 -- conf for neovide
 if vim.g.neovide then
-    option.guifont = "SauceCodePro Nerd Font:h13"
+    option.guifont = "SauceCodePro Nerd Font"
 
     vim.api.nvim_set_keymap('n', '<M-CR>', ':lua ToggleFullscreen()<CR>', { noremap = true, silent = false })
     function ToggleFullscreen()
