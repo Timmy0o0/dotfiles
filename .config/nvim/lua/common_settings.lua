@@ -118,18 +118,18 @@ vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
 -- split and rotate
 vim.keymap.set({ "n" }, "sj", ":split<cr>")
 vim.keymap.set({ "n" }, "sl", ":vsplit<cr>")
-vim.keymap.set({ "n" }, "<M-Left>", "<C-w>b<C-w>K")
-vim.keymap.set({ "n" }, "<M-Right>", "<C-w>b<C-w>H")
+vim.keymap.set({ "n" }, "<C-Left>", "<C-w>b<C-w>K")
+vim.keymap.set({ "n" }, "<C-Right>", "<C-w>b<C-w>H")
 
 vim.keymap.set({ "n" }, "<C-j>", "<C-w>j")
 vim.keymap.set({ "n" }, "<C-k>", "<C-w>k")
 vim.keymap.set({ "n" }, "<C-h>", "<C-w>h")
 vim.keymap.set({ "n" }, "<C-l>", "<C-w>l")
 
-vim.keymap.set({ "n" }, "<C-Left>", "<C-w>>")
-vim.keymap.set({ "n" }, "<C-Right>", "<C-w><")
-vim.keymap.set({ "n" }, "<C-Up>", "<C-w>-")
-vim.keymap.set({ "n" }, "<C-Down>", "<C-w>+")
+vim.keymap.set({ "n" }, "<Left>", "<C-w>>")
+vim.keymap.set({ "n" }, "<Right>", "<C-w><")
+vim.keymap.set({ "n" }, "<Up>", "<C-w>-")
+vim.keymap.set({ "n" }, "<Down>", "<C-w>+")
 
 
 -- close other window and buffer
