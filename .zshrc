@@ -132,11 +132,17 @@ alias ra='ranger'
 alias lg='lazygit'
 
 # python env
-export WORKON_HOME=~/.virtualenvs
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
-source /usr/bin/virtualenvwrapper.sh
-# workon base
+if [ -d "~/.virtualenvs" ]; then
+  # Perform actions if directory exists
+  export WORKON_HOME=~/.virtualenvs
+  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+  export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+  source /usr/bin/virtualenvwrapper.sh
+  # workon base
+
+else
+  # Perform actions if directory does not exist
+fi
 
 # binary
 export PATH=$HOME/.local/bin:$PATH
