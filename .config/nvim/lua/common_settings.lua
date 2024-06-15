@@ -1,6 +1,7 @@
 local option = vim.opt
 local buffer = vim.b
 local global = vim.g
+local is_mac = vim.fn.has("macunix") == 1
 
 -- Global Settings --
 option.showmode = false
@@ -46,7 +47,11 @@ vim.keymap.set("n", "<C-n>", "<cmd>nohlsearch<CR>")
 
 -- conf for neovide
 if vim.g.neovide then
-    option.guifont = "SauceCodePro Nerd Font"
+    if is_mac then
+        option.guifont = "SauceCodePro Nerd Font:h18"
+    else
+        option.guifont = "SauceCodePro Nerd Font"
+    end
 
     vim.api.nvim_set_keymap('n', '<M-CR>', ':lua ToggleFullscreen()<CR>', { noremap = true, silent = false })
     function ToggleFullscreen()
