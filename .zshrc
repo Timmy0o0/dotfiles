@@ -76,10 +76,24 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+if grep -q "Arch" /etc/os-release; then
+  # Arch Linux
+  # export MY_VARIABLE="value_for_arch"
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+fi
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  # macOS
+  # export MY_VARIABLE="value_for_mac"
+  source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+  source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+elif [[ "$OSTYPE" == "msys" ]]; then
+  # Windows (using MSYS2 or similar environment)
+  # export MY_VARIABLE="value_for_windows"
+fi
 
 # User configuration
 
