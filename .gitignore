@@ -1,2 +1,5 @@
 .config/ranger/plugins
 .config/nvim/spell
+clash
+iterm2
+.DS_Store
