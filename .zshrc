@@ -82,6 +82,7 @@ if grep -q "Arch" /etc/os-release; then
   # export MY_VARIABLE="value_for_arch"
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
   source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  alias nvide='neovide.exe --wsl'
 
 fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
@@ -89,6 +90,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
   # export MY_VARIABLE="value_for_mac"
   source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
   source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  alias nvide='neovide'
 
 elif [[ "$OSTYPE" == "msys" ]]; then
   # Windows (using MSYS2 or similar environment)
@@ -128,7 +130,6 @@ fi
 # alias grep='grep --color=auto'
 alias ra='ranger'
 alias lg='lazygit'
-alias nvide='neovide.exe --wsl'
 
 # python env
 export WORKON_HOME=~/.virtualenvs
