@@ -50,7 +50,7 @@ if vim.g.neovide then
     if is_mac then
         option.guifont = "SauceCodePro Nerd Font:h18"
     else
-        option.guifont = "SauceCodePro Nerd Font"
+        option.guifont = "SauceCodePro Nerd Font:h13"
     end
 
     vim.api.nvim_set_keymap('n', '<M-CR>', ':lua ToggleFullscreen()<CR>', { noremap = true, silent = false })
