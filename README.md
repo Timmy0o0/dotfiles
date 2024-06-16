@@ -28,8 +28,8 @@ source .zshrc
 
 ## For windows
 
-- install vpn font
-- setting windows terminal & font
+- install vpn
+- setting windows terminal & nerd font
 - install wsl and arch
 - install scoop
 
@@ -38,18 +38,16 @@ source .zshrc
 # neovide
 scoop install neovide
 
-# Komorebic
-scoop bucket add extras
-scoop install komorebi whkd
-komorebic quickstart
-komorebic start --whkd
-
+# glazewm
+# auto create config file in .glaze-wm when first open
+# change windows terminal keymap
+scoop install glazewm
 ```
 
 ## For Mac
 
 - install vpn
-- install iTerms2 & font
+- install iTerms2 & nerd font
 - install homebrew
 
 ```bash
