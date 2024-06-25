@@ -25,6 +25,10 @@ return {
             bashls = {},
             -- pyright = {},
             pylsp = {},
+            -- javascript
+            tsserver = {},
+            -- tailwindcss
+            tailwindcss = {},
         }
 
         local on_attach = function(_, bufnr)
