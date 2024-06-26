@@ -23,12 +23,14 @@ return {
             },
             jsonls = {},
             bashls = {},
+            -- python
             -- pyright = {},
             pylsp = {},
             -- javascript
             tsserver = {},
-            -- tailwindcss
+            -- css
             tailwindcss = {},
+            html = {},
         }
 
         local on_attach = function(_, bufnr)
