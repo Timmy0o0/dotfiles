@@ -30,6 +30,9 @@ return {
         local lspkind = require("lspkind")
         require("luasnip.loaders.from_vscode").lazy_load()
         local luasnip = require("luasnip")
+        -- enable html snippets on jsx/tsx filetype
+        luasnip.filetype_extend("javascriptreact", {"html"})
+        luasnip.filetype_extend("typescriptreact", {"html"})
         local cmp = require 'cmp'
         cmp.setup {
 
