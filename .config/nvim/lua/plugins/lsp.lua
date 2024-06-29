@@ -31,6 +31,7 @@ return {
             -- css
             tailwindcss = {},
             html = {},
+            eslint = {},
         }
 
         local on_attach = function(_, bufnr)

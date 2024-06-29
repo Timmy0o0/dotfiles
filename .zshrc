@@ -146,3 +146,10 @@ fi
 
 # binary
 export PATH=$HOME/.local/bin:$PATH
+
+# fnm
+FNM_PATH="$HOME/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$HOME/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
