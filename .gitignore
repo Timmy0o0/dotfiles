@@ -3,3 +3,5 @@
 clash
 iterm2
 .DS_Store
+.config/create-next-app-nodejs
+.config/nextjs-nodejs
