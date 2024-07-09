@@ -49,10 +49,10 @@ return {
         require('telescope').load_extension('fzf')
 
         local builtin = require('telescope.builtin')
-        vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-        vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-        vim.keymap.set('n', '<leader><space>', builtin.buffers, {})
-        vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+        vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[F] Find files' })
+        vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[G] Find live grep' })
+        vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = '[B] Find opened buffers' })
+        vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = '[H] Find help files' })
         vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
         vim.keymap.set('n', '<leader>/', function()
             -- You can pass additional configuration to telescope to change theme, layout, etc.
