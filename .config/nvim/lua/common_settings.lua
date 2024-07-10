@@ -48,9 +48,13 @@ vim.keymap.set("n", "<C-n>", "<cmd>nohlsearch<CR>")
 -- conf for neovide
 if vim.g.neovide then
     if is_mac then
-        option.guifont = "SauceCodePro Nerd Font:h18"
+        -- option.guifont = "SauceCodePro Nerd Font:h18"
+        -- option.guifont = "FiraCode Nerd Font:h18"
+        option.guifont = "JetBrainsMono Nerd Font:h18"
     else
-        option.guifont = "SauceCodePro Nerd Font:h13"
+        -- option.guifont = "SauceCodePro Nerd Font:h13"
+        -- option.guifont = "FiraCode Nerd Font:h13"
+        option.guifont = "JetBrainsMono Nerd Font:h13"
     end
 
     vim.api.nvim_set_keymap('n', '<M-CR>', ':lua ToggleFullscreen()<CR>', { noremap = true, silent = false })
