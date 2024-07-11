@@ -55,7 +55,7 @@ if vim.g.neovide then
     else
         -- option.guifont = "SauceCodePro Nerd Font:h13"
         -- option.guifont = "FiraCode Nerd Font:h13"
-        option.guifont = "JetBrainsMono Nerd Font,Segoe UI Emoji:h13"
+        option.guifont = "JetBrainsMono Nerd Font,Segoe UI Emoji:h14"
     end
 
     vim.api.nvim_set_keymap('n', '<M-CR>', ':lua ToggleFullscreen()<CR>', { noremap = true, silent = false })
