@@ -2,10 +2,44 @@ return {
     {
         'akinsho/bufferline.nvim',
         event = "VeryLazy",
-        config = true
+        config = false
         -- config = function()
         --    require("bufferline").setup()
         -- end
+    },
+    {
+        'b0o/incline.nvim',
+        event = 'VeryLazy',
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+        },
+        config = function()
+            local helpers = require 'incline.helpers'
+            local devicons = require 'nvim-web-devicons'
+            require('incline').setup({
+                window = {
+                    padding = 0,
+                    margin = { horizontal = 0 },
+                },
+                render = function(props)
+                    local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
+                    if filename == '' then
+                        filename = '[No Name]'
+                    end
+                    local ft_icon, ft_color = devicons.get_icon_color(filename)
+                    local modified = vim.bo[props.buf].modified
+                    return {
+                        ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or
+                        '',
+                        ' ',
+                        { filename, gui = modified and 'bold,italic' or 'bold' },
+                        ' ',
+                        guibg = '#44406e',
+                    }
+                end,
+
+            })
+        end,
     },
     {
         "lukas-reineke/indent-blankline.nvim",
@@ -49,17 +83,21 @@ return {
                     -- Actions
                     map('n', '<leader>hs', gitsigns.stage_hunk, { desc = "[G][S][H] Stage Hunk" })
                     map('n', '<leader>hr', gitsigns.reset_hunk, { desc = "[G][R][H] Reset Hunk" })
-                    map('v', '<leader>hs', function() gitsigns.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "[G][S][H] Stage Hunk" })
-                    map('v', '<leader>hr', function() gitsigns.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end, { desc = "[G][R][H] Reset Hunk" })
+                    map('v', '<leader>hs', function() gitsigns.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end,
+                        { desc = "[G][S][H] Stage Hunk" })
+                    map('v', '<leader>hr', function() gitsigns.reset_hunk { vim.fn.line('.'), vim.fn.line('v') } end,
+                        { desc = "[G][R][H] Reset Hunk" })
                     map('n', '<leader>hS', gitsigns.stage_buffer, { desc = "[G][S][B] State Buffer" })
                     map('n', '<leader>hu', gitsigns.undo_stage_hunk, { desc = "[G][U][S][H] Undo Stage Hunk" })
                     map('n', '<leader>hR', gitsigns.reset_buffer, { desc = "[G][R][B] Reset Buffer" })
                     map('n', '<leader>hp', gitsigns.preview_hunk, { desc = "[G][P][H] Preview Hunk" })
-                    map('n', '<leader>hb', function() gitsigns.blame_line { full = true } end, { desc = "[G][B][L] Blame Line"})
-                    map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = "[G][T][B][L] Toggle Current Line Blame"})
-                    map('n', '<leader>hd', gitsigns.diffthis, { desc = "[G][D] Diff This"})
-                    map('n', '<leader>hD', function() gitsigns.diffthis('~') end, { desc = "[G][D][~] Diff This ~"})
-                    map('n', '<leader>td', gitsigns.toggle_deleted, { desc = "[G][T][D] Toggle Deleted"})
+                    map('n', '<leader>hb', function() gitsigns.blame_line { full = true } end,
+                        { desc = "[G][B][L] Blame Line" })
+                    map('n', '<leader>tb', gitsigns.toggle_current_line_blame,
+                        { desc = "[G][T][B][L] Toggle Current Line Blame" })
+                    map('n', '<leader>hd', gitsigns.diffthis, { desc = "[G][D] Diff This" })
+                    map('n', '<leader>hD', function() gitsigns.diffthis('~') end, { desc = "[G][D][~] Diff This ~" })
+                    map('n', '<leader>td', gitsigns.toggle_deleted, { desc = "[G][T][D] Toggle Deleted" })
 
                     -- Text object
                     map({ 'o', 'x' }, 'ih', ':<C-U>[G][S][H] Gitsigns select_hunk<CR>')
@@ -126,7 +164,7 @@ return {
     {
         "echasnovski/mini.ai",
         event = "VeryLazy",
-        config = true,
+        config = false,
     },
     {
         "echasnovski/mini.comment",
@@ -135,7 +173,7 @@ return {
     },
     {
         "echasnovski/mini.animate",
-        -- event = "VeryLazy",
+        event = "VeryLazy",
         config = false,
     },
     {
@@ -177,5 +215,12 @@ return {
         "NvChad/nvim-colorizer.lua",
         event = "VeryLazy",
         config = true
+    },
+    {
+        "kevinhwang91/nvim-hlslens",
+        event = "VeryLazy",
+        config = function()
+            require("hlslens").setup()
+        end
     },
 }
