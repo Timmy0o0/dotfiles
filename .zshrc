@@ -130,6 +130,7 @@ fi
 # alias grep='grep --color=auto'
 alias ra='ranger'
 alias lg='lazygit'
+alias c='clear'
 
 # python env
 if [ -d "~/.virtualenvs" ]; then
