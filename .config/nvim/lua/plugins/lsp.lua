@@ -57,7 +57,10 @@ return {
             nmap('<leader>rn', "<cmd>Lspsaga rename ++project<cr>", '[L][R][N] Rename')
             nmap('<leader>ca', "<cmd>Lspsaga code_action<CR>", '[L][C][A] Code Action')
             nmap('<leader>da', require "telescope.builtin".diagnostics, '[L][D][A] Diagnostics')
+            nmap('[d', "<cmd>Lspsaga diagnostic_jump_next<cr>", '[L][D][J][N] Jump Next Diagnostics')
+            nmap('d]', "<cmd>Lspsaga diagnostic_jump_prev<cr>", '[L][D][J][P] Jump Prev Diagnostics')
             nmap('gr', require('telescope.builtin').lsp_references, '[L][G][R] Goto References')
+            nmap('<space>o', "<cmd>Lspsaga outline<cr>", '[L][O] Outline keymap: e o')
             -- nmap('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
             nmap("<space>f", function()
                 vim.lsp.buf.format { async = true }
