@@ -120,4 +120,17 @@ return {
             require("nvim-ts-autotag").setup()
         end,
     },
+    {
+        'rmagatti/alternate-toggler',
+        event = { "BufReadPost" }, -- lazy load after reading a buffer
+        config = function()
+            require("alternate-toggler").setup {
+                alternates = {
+                    ["=="] = "!="
+                }
+            }
+
+            vim.keymap.set("n", "<leader>i", "<cmd>lua require('alternate-toggler').toggleAlternate()<CR>", { desc = "Toggle Bool" })
+        end,
+    }
 }
