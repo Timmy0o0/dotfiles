@@ -1,4 +1,4 @@
 vim.loader.enable()
-require("common_settings")
+require("base")
 require("autocmd")
 require("lazy_nvim")
