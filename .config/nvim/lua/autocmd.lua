@@ -23,26 +23,24 @@ vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI", "BufEnter" }, {
 
 
 -- Auto Load proj conf
-function ReloadProjectConfig()
-    local cwd = vim.fn.getcwd()
-    -- local config_files = { ".nvim.lua", ".nvimrc.lua", ".vim.lua", ".neoconf.json" }
-    local config_files = { ".nvim.lua", ".nvimrc.lua", ".vim.lua" }
-    for _, config_file in ipairs(config_files) do
-        local full_path = cwd .. "/" .. config_file
-        if vim.fn.filereadable(full_path) == 1 then
-            vim.cmd('luafile ' .. full_path)
-            print("Loaded project config: " .. full_path)
-            return
-        end
-    end
-    print("No project-specific config found, using default")
-end
-
-vim.api.nvim_create_autocmd("DirChanged", {
-    pattern = "*",
-    callback = function()
-        ReloadProjectConfig()
-    end,
-})
-
--- ReloadProjectConfig()
+-- function ReloadProjectConfig()
+--     local cwd = vim.fn.getcwd()
+--     -- local config_files = { ".nvim.lua", ".nvimrc.lua", ".vim.lua", ".neoconf.json" }
+--     local config_files = { ".nvim.lua", ".nvimrc", ".exrc" }
+--     for _, config_file in ipairs(config_files) do
+--         local full_path = cwd .. "/" .. config_file
+--         if vim.fn.filereadable(full_path) == 1 then
+--             vim.cmd('luafile ' .. full_path)
+--             print("Loaded project config: " .. full_path)
+--             return
+--         end
+--     end
+--     print("No project-specific config found, using default")
+-- end
+--
+-- vim.api.nvim_create_autocmd("DirChanged", {
+--     pattern = "*",
+--     callback = function()
+--         ReloadProjectConfig()
+--     end,
+-- })
