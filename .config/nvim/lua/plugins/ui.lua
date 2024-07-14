@@ -144,7 +144,7 @@ return {
 
                 }
             })
-            vim.keymap.set({ "n", "v" }, "<leader>e", [[<cmd>Neotree toggle<CR>]])
+            vim.keymap.set({ "n", "v" }, "<leader>e", [[<cmd>Neotree toggle<cr>]])
         end
 
     },
@@ -181,7 +181,7 @@ return {
         event = "VeryLazy",
         config = function()
             require('mini.files').setup()
-            vim.keymap.set({ "n" }, "<C-e>", ':lua MiniFiles.open()<CR>')
+            vim.keymap.set({ "n" }, "<C-e>", '<cmd>lua MiniFiles.open()<cr>')
         end,
     },
     {

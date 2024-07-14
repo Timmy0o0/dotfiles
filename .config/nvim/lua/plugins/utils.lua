@@ -38,7 +38,7 @@ return {
         config = function()
             vim.g.spelunker_check_type = 2
 
-            vim.api.nvim_set_keymap('n', '<leader>sa', '<cmd>SpelunkerAddAll<CR>', { noremap = true, silent = true })
+            vim.api.nvim_set_keymap('n', '<leader>sa', '<cmd>SpelunkerAddAll<cr>', { noremap = true })
         end
     },
     {
@@ -130,7 +130,8 @@ return {
                 }
             }
 
-            vim.keymap.set("n", "<leader>i", "<cmd>lua require('alternate-toggler').toggleAlternate()<CR>", { desc = "Toggle Bool" })
+            vim.keymap.set("n", "<leader>i", "<cmd>lua require('alternate-toggler').toggleAlternate()<cr>",
+                { desc = "Toggle Bool" })
         end,
     }
 }

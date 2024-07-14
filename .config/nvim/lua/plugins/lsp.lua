@@ -45,7 +45,7 @@ return {
 
             nmap('gD', vim.lsp.buf.declaration, '[L][G][D] Goto Declaration')
             nmap('gd', require "telescope.builtin".lsp_definitions, '[L][G][D] Goto Definition')
-            nmap('gk', "<cmd>Lspsaga hover_doc<CR>", '[L][H][D] Hover Documentation')
+            nmap('gk', "<cmd>Lspsaga hover_doc<cr>", '[L][H][D] Hover Documentation')
             nmap('gi', require "telescope.builtin".lsp_implementations, '[L][G][I] Goto Implementation')
             -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
             nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[L][W][A] Workspace Add Folder')
@@ -55,7 +55,7 @@ return {
             end, '[L][W][L] Workspace List Folders')
             nmap('<leader>D', vim.lsp.buf.type_definition, '[L][T][D] Type Definition')
             nmap('<leader>rn', "<cmd>Lspsaga rename ++project<cr>", '[L][R][N] Rename')
-            nmap('<leader>ca', "<cmd>Lspsaga code_action<CR>", '[L][C][A] Code Action')
+            nmap('<leader>ca', "<cmd>Lspsaga code_action<cr>", '[L][C][A] Code Action')
             nmap('<leader>da', require "telescope.builtin".diagnostics, '[L][D][A] Diagnostics')
             nmap('[d', "<cmd>Lspsaga diagnostic_jump_next<cr>", '[L][D][J][N] Jump Next Diagnostics')
             nmap('d]', "<cmd>Lspsaga diagnostic_jump_prev<cr>", '[L][D][J][P] Jump Prev Diagnostics')

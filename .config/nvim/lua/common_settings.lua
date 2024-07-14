@@ -43,7 +43,7 @@ option.foldexpr = 'nvim_treesitter#foldexpr()'
 option.foldenable = false
 -- highlight search
 vim.o.hlsearch = true
-vim.keymap.set("n", "<C-n>", "<cmd>nohlsearch<CR>")
+vim.keymap.set("n", "<C-n>", "<cmd>nohlsearch<cr>")
 
 -- conf for neovide
 if vim.g.neovide then
@@ -58,7 +58,7 @@ if vim.g.neovide then
         option.guifont = "JetBrainsMono Nerd Font,Segoe UI Emoji:h14"
     end
 
-    vim.api.nvim_set_keymap('n', '<M-CR>', ':lua ToggleFullscreen()<CR>', { noremap = true, silent = false })
+    vim.api.nvim_set_keymap('n', '<M-CR>', '<cmd>lua ToggleFullscreen()<cr>', { noremap = true })
     function ToggleFullscreen()
         if vim.g.neovide_fullscreen == true then
             vim.g.neovide_fullscreen = false
@@ -96,14 +96,14 @@ vim.keymap.set({ "n", "i", "v" }, "<Right>", "<Nop>")
 vim.keymap.set({ "n", "i", "v" }, "<Up>", "<Nop>")
 vim.keymap.set({ "n", "i", "v" }, "<Down>", "<Nop>")
 
-vim.keymap.set({ "n" }, "<C-r>", ":source<cr>")
+vim.keymap.set({ "n" }, "<C-r>", "<cmd>source<cr>")
 
-vim.keymap.set({ "n" }, "Q", ":q<cr>")
-vim.keymap.set({ "n" }, "W", ":w<cr>", { noremap = true, silent = true })
-vim.keymap.set('i', 'jj', "<Esc>", { noremap = true, silent = true })
+vim.keymap.set({ "n" }, "Q", "<cmd>q<cr>")
+vim.keymap.set({ "n" }, "W", "<cmd>w<cr>", { noremap = true })
+vim.keymap.set('i', 'jj', "<Esc>", { noremap = true })
 
-vim.keymap.set({ "n", "v" }, "<C-y>", "\"+y", { noremap = true, silent = true })
-vim.keymap.set({ "n", "v" }, "<C-p>", "\"+p", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<C-y>", "\"+y", { noremap = true })
+vim.keymap.set({ "n", "v" }, "<C-p>", "\"+p", { noremap = true })
 vim.keymap.set("c", "<C-v>", "<C-R>+")
 -- maybe paste use ctrl shift v in insert mode
 vim.keymap.set("i", "<C-v>", "<C-R>+")
@@ -122,12 +122,12 @@ vim.keymap.set({ "n", "v" }, "dL", "d$")
 vim.keymap.set({ "n", "v" }, "J", "5j")
 vim.keymap.set({ "n", "v" }, "K", "5k")
 
-vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv")
-vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { silent = true })
+vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { silent = true })
 
 -- split and rotate
-vim.keymap.set({ "n" }, "sj", ":split<cr>")
-vim.keymap.set({ "n" }, "sl", ":vsplit<cr>")
+vim.keymap.set({ "n" }, "sj", "<cmd>split<cr>")
+vim.keymap.set({ "n" }, "sl", "<cmd>vsplit<cr>")
 vim.keymap.set({ "n" }, "<C-Left>", "<C-w>b<C-w>K")
 vim.keymap.set({ "n" }, "<C-Right>", "<C-w>b<C-w>H")
 
@@ -145,6 +145,6 @@ vim.keymap.set({ "n" }, "<Down>", "<C-w>+")
 -- close other window and buffer
 -- vim.keymap.set("n", "<leader>j", "<cmd>bNext<CR>")
 -- vim.keymap.set("n", "<leader>k", "<cmd>bprevious<CR>")
-vim.keymap.set("n", "<leader>nn", "<cmd>bd<CR>")
-vim.keymap.set("n", "<leader>nc", "<cmd>only<CR>")
+vim.keymap.set("n", "<leader>nn", "<cmd>bd<cr>")
+vim.keymap.set("n", "<leader>nc", "<cmd>only<cr>")
 -- vim.keymap.set("n", "<leader>nC", "<cmd>%bd|e#<CR>")
