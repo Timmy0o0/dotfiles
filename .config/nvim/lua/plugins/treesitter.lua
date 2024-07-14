@@ -2,7 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = "VeryLazy",
     dependencies = {
-        "nvim-treesitter/playground",
+        -- "nvim-treesitter/playground", the function is included in neovim Use: InspectTree
         "nvim-treesitter/nvim-treesitter-textobjects",
         "nvim-treesitter/nvim-treesitter-context",
     },
@@ -16,9 +16,9 @@ return {
         indent = {
             enable = true,
         },
-        playground = {
-            enable = true,
-        },
+        -- playground = {
+        --     enable = true,
+        -- },
         fold = {
             enable = true,
             disable = {}, -- language do not fold
