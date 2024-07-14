@@ -58,6 +58,7 @@ if vim.g.neovide then
         option.guifont = "JetBrainsMono Nerd Font,Segoe UI Emoji:h14"
     end
 
+    vim.g.neovide_transparency = 0.9
     vim.api.nvim_set_keymap('n', '<M-CR>', '<cmd>lua ToggleFullscreen()<cr>', { noremap = true })
     function ToggleFullscreen()
         if vim.g.neovide_fullscreen == true then
