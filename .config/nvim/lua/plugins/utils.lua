@@ -99,7 +99,7 @@ return {
                 -- telescope
                 datapath = vim.fn.stdpath("data"),
 
-                vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Telescope projects<cr>", { desc = "[T][P] Find projects" })
+                vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Telescope projects<cr>", { desc = "Telescope: Find projects" })
 
             }
         end

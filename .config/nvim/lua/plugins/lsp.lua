@@ -37,34 +37,34 @@ return {
         local on_attach = function(_, bufnr)
             -- Enable completion triggered by <c-x><c-o>
             local nmap = function(keys, func, desc)
-                -- if desc then
-                --     desc = 'LSP: ' .. desc
-                -- end
+                if desc then
+                    desc = 'LSP: ' .. desc
+                end
                 vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
             end
 
-            nmap('gD', vim.lsp.buf.declaration, '[L][G][D] Goto Declaration')
-            nmap('gd', require "telescope.builtin".lsp_definitions, '[L][G][D] Goto Definition')
-            nmap('gk', "<cmd>Lspsaga hover_doc<cr>", '[L][H][D] Hover Documentation')
-            nmap('gi', require "telescope.builtin".lsp_implementations, '[L][G][I] Goto Implementation')
+            nmap('gD', vim.lsp.buf.declaration, 'Goto Declaration')
+            nmap('gd', require "telescope.builtin".lsp_definitions, 'Goto Definition')
+            nmap('gk', "<cmd>Lspsaga hover_doc<cr>", 'Hover Documentation')
+            nmap('gi', require "telescope.builtin".lsp_implementations, 'Goto Implementation')
             -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
-            nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, '[L][W][A] Workspace Add Folder')
-            nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, '[L][W][R] Workspace Remove Folder')
+            nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Workspace Add Folder')
+            nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Workspace Remove Folder')
             nmap('<leader>wl', function()
                 print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-            end, '[L][W][L] Workspace List Folders')
-            nmap('<leader>D', vim.lsp.buf.type_definition, '[L][T][D] Type Definition')
-            nmap('<leader>rn', "<cmd>Lspsaga rename ++project<cr>", '[L][R][N] Rename')
-            nmap('<leader>ca', "<cmd>Lspsaga code_action<cr>", '[L][C][A] Code Action')
-            nmap('<leader>da', require "telescope.builtin".diagnostics, '[L][D][A] Diagnostics')
-            nmap('[d', "<cmd>Lspsaga diagnostic_jump_next<cr>", '[L][D][J][N] Jump Next Diagnostics')
-            nmap('d]', "<cmd>Lspsaga diagnostic_jump_prev<cr>", '[L][D][J][P] Jump Prev Diagnostics')
-            nmap('gr', require('telescope.builtin').lsp_references, '[L][G][R] Goto References')
-            nmap('<space>o', "<cmd>Lspsaga outline<cr>", '[L][O] Outline keymap: e o')
+            end, 'Workspace List Folders')
+            nmap('<leader>D', vim.lsp.buf.type_definition, 'Type Definition')
+            nmap('<leader>rn', "<cmd>Lspsaga rename ++project<cr>", 'Rename')
+            nmap('<leader>ca', "<cmd>Lspsaga code_action<cr>", 'Code Action')
+            nmap('<leader>da', require "telescope.builtin".diagnostics, 'Diagnostics')
+            nmap('[d', "<cmd>Lspsaga diagnostic_jump_next<cr>", 'Jump Next Diagnostics')
+            nmap('d]', "<cmd>Lspsaga diagnostic_jump_prev<cr>", 'Jump Prev Diagnostics')
+            nmap('gr', require('telescope.builtin').lsp_references, 'Goto References')
+            nmap('<space>o', "<cmd>Lspsaga outline<cr>", 'Outline | keymap: e o')
             -- nmap('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
             nmap("<space>f", function()
                 vim.lsp.buf.format { async = true }
-            end, "[L][F][C] Format code")
+            end, "Format Code")
         end
 
         require("neodev").setup()
