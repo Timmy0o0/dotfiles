@@ -14,13 +14,12 @@ return {
     -- },
     {
         'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        config = true
+        event = 'InsertEnter',
+        config = true,
     },
     {
-        "folke/flash.nvim",
-        event = "VeryLazy",
-        ---@type Flash.Config
+        'folke/flash.nvim',
+        event = 'VeryLazy',
         opts = {},
         -- stylua: ignore
         keys = {
@@ -29,34 +28,41 @@ return {
             { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
             { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
             { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
-            -- key  f zz
+            -- key  f
         },
     },
     {
-        "kamykn/spelunker.vim",
-        event = "VeryLazy",
+        'kamykn/spelunker.vim',
+        event = 'VeryLazy',
         config = function()
             vim.g.spelunker_check_type = 2
 
-            vim.api.nvim_set_keymap('n', '<leader>sa', '<cmd>SpelunkerAddAll<cr>', { noremap = true })
-        end
+            vim.api.nvim_set_keymap(
+                'n',
+                '<leader>sa',
+                '<cmd>SpelunkerAddAll<cr>',
+                { noremap = true }
+            )
+        end,
     },
     {
-        "ellisonleao/glow.nvim",
-        event = "VeryLazy",
-        config = false
+        'ellisonleao/glow.nvim',
+        event = 'VeryLazy',
+        config = false,
     },
     {
-        "iamcco/markdown-preview.nvim",
-        event = "VeryLazy",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        ft = { "markdown" },
-        build = function() vim.fn["mkdp#util#install"]() end,
+        'iamcco/markdown-preview.nvim',
+        event = 'VeryLazy',
+        cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+        ft = { 'markdown' },
+        build = function()
+            vim.fn['mkdp#util#install']()
+        end,
     },
     {
-        "ahmedkhalf/project.nvim",
+        'ahmedkhalf/project.nvim',
         config = function()
-            require("project_nvim").setup {
+            require('project_nvim').setup({
                 -- your configuration comes here
                 -- or leave it empty to use the default settings
                 -- refer to the configuration section below
@@ -68,11 +74,21 @@ return {
                 -- lsp, while **"pattern"** uses vim-rooter like glob pattern matching. Here
                 -- order matters: if one is not detected, the other is used as fallback. You
                 -- can also delete or rearangne the detection methods.
-                detection_methods = { "lsp", "pattern" },
+                detection_methods = { 'lsp', 'pattern' },
 
                 -- All the patterns used to detect root dir, when **"pattern"** is in
                 -- detection_methods
-                patterns = { ".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", ".nvim.lua", ".neoconf.json" },
+                patterns = {
+                    '.git',
+                    '_darcs',
+                    '.hg',
+                    '.bzr',
+                    '.svn',
+                    'Makefile',
+                    'package.json',
+                    '.nvim.lua',
+                    '.neoconf.json',
+                },
 
                 -- Table of lsp clients to ignore by name
                 -- eg: { "efm", ... }
@@ -97,41 +113,62 @@ return {
 
                 -- Path where project.nvim will store the project history for use in
                 -- telescope
-                datapath = vim.fn.stdpath("data"),
+                datapath = vim.fn.stdpath('data'),
 
-                vim.api.nvim_set_keymap("n", "<leader>p", "<cmd>Telescope projects<cr>", { desc = "Telescope: Find projects" })
-
-            }
-        end
+                vim.api.nvim_set_keymap(
+                    'n',
+                    '<leader>p',
+                    '<cmd>Telescope projects<cr>',
+                    { desc = 'Telescope: Find projects' }
+                ),
+            })
+        end,
     },
     {
-        "sustech-data/wildfire.nvim",
-        event = "VeryLazy",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        'sustech-data/wildfire.nvim',
+        event = 'VeryLazy',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' },
         config = function()
-            require("wildfire").setup()
+            require('wildfire').setup()
         end,
     },
     {
         -- dependencies treesitter
-        "windwp/nvim-ts-autotag",
-        event = "VeryLazy",
+        'windwp/nvim-ts-autotag',
+        event = 'VeryLazy',
         config = function()
-            require("nvim-ts-autotag").setup()
+            require('nvim-ts-autotag').setup()
         end,
     },
     {
         'rmagatti/alternate-toggler',
-        event = { "BufReadPost" }, -- lazy load after reading a buffer
+        event = { 'BufReadPost' }, -- lazy load after reading a buffer
         config = function()
-            require("alternate-toggler").setup {
+            require('alternate-toggler').setup({
                 alternates = {
-                    ["=="] = "!="
-                }
-            }
+                    ['=='] = '!=',
+                },
+            })
 
-            vim.keymap.set("n", "<leader>i", "<cmd>lua require('alternate-toggler').toggleAlternate()<cr>",
-                { desc = "Toggle Bool" })
+            vim.keymap.set(
+                'n',
+                '<leader>i',
+                "<cmd>lua require('alternate-toggler').toggleAlternate()<cr>",
+                { desc = 'Toggle Bool' }
+            )
         end,
-    }
+    },
+    {
+        'smoka7/multicursors.nvim',
+        event = 'VeryLazy',
+        dependencies = {
+            'nvimtools/hydra.nvim',
+        },
+        cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+        config = function()
+            require('multicursors').setup({
+                vim.keymap.set({ 'n', 'v' }, '<leader>m', '<cmd>MCstart<cr>', { desc = 'MCstart' }),
+            })
+        end,
+    },
 }

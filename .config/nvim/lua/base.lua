@@ -1,11 +1,11 @@
 local option = vim.opt
 local buffer = vim.b
 local global = vim.g
-local is_mac = vim.fn.has("macunix") == 1
+local is_mac = vim.fn.has('macunix') == 1
 
 -- Global Settings --
 option.showmode = false
-option.backspace = { "indent", "eol", "start" }
+option.backspace = { 'indent', 'eol', 'start' }
 option.tabstop = 4
 option.shiftwidth = 4
 option.expandtab = true
@@ -18,23 +18,23 @@ option.wildmenu = true
 option.hlsearch = false
 option.ignorecase = true
 option.smartcase = true
-option.completeopt = { "menu", "menuone" }
+option.completeopt = { 'menu', 'menuone' }
 option.cursorline = true
 option.termguicolors = true
-option.signcolumn = "yes"
+option.signcolumn = 'yes'
 option.autoread = true
 option.title = true
 option.swapfile = false
 option.backup = false
 option.updatetime = 50
-option.mouse = "a"
+option.mouse = 'a'
 option.undofile = true
 option.undodir = vim.fn.expand('$HOME/.local/share/nvim/undo')
 option.exrc = true
 option.wrap = false
 option.splitright = true
 option.list = true
-option.listchars:append("space:·")
+option.listchars:append('space:·')
 option.scrolloff = 15
 -- keymap zc zo zm zr zM zR
 -- option.nofoldenable = true
@@ -43,7 +43,7 @@ option.foldexpr = 'nvim_treesitter#foldexpr()'
 option.foldenable = false
 -- highlight search
 vim.o.hlsearch = true
-vim.keymap.set("n", "<C-n>", "<cmd>nohlsearch<cr>")
+vim.keymap.set('n', '<C-n>', '<cmd>nohlsearch<cr>')
 
 -- conf for neovide
 if vim.g.neovide then
@@ -51,11 +51,11 @@ if vim.g.neovide then
         -- option.guifont = "SauceCodePro Nerd Font:h18"
         -- option.guifont = "FiraCode Nerd Font:h18"
         -- option.guifont = "JetBrainsMono Nerd Font,Noto Color Emoji:h18"
-        option.guifont = "JetBrainsMono Nerd Font:h18"
+        option.guifont = 'JetBrainsMono Nerd Font:h18'
     else
         -- option.guifont = "SauceCodePro Nerd Font:h13"
         -- option.guifont = "FiraCode Nerd Font:h13"
-        option.guifont = "JetBrainsMono Nerd Font,Segoe UI Emoji:h14"
+        option.guifont = 'JetBrainsMono Nerd Font,Segoe UI Emoji:h14'
     end
 
     vim.g.neovide_transparency = 0.9
@@ -69,12 +69,11 @@ if vim.g.neovide then
     end
 end
 
-
 -- Buffer Settings --
-buffer.fileenconding = "utf-8"
+buffer.fileenconding = 'utf-8'
 
 -- Global Settings --
-global.mapleader = " "
+global.mapleader = ' '
 
 if vim.fn.has('wsl') == 1 then
     vim.g.clipboard = {
@@ -92,60 +91,59 @@ if vim.fn.has('wsl') == 1 then
 end
 
 -- Key mappings --
-vim.keymap.set({ "n", "i", "v" }, "<Left>", "<Nop>")
-vim.keymap.set({ "n", "i", "v" }, "<Right>", "<Nop>")
-vim.keymap.set({ "n", "i", "v" }, "<Up>", "<Nop>")
-vim.keymap.set({ "n", "i", "v" }, "<Down>", "<Nop>")
+vim.keymap.set({ 'n', 'i', 'v' }, '<Left>', '<Nop>')
+vim.keymap.set({ 'n', 'i', 'v' }, '<Right>', '<Nop>')
+vim.keymap.set({ 'n', 'i', 'v' }, '<Up>', '<Nop>')
+vim.keymap.set({ 'n', 'i', 'v' }, '<Down>', '<Nop>')
 
-vim.keymap.set({ "n" }, "<C-r>", "<cmd>source<cr>")
+vim.keymap.set({ 'n' }, '<C-r>', '<cmd>source<cr>')
 
-vim.keymap.set({ "n" }, "Q", "<cmd>q<cr>")
-vim.keymap.set({ "n" }, "W", "<cmd>w<cr>", { noremap = true })
-vim.keymap.set('i', 'jj', "<Esc>", { noremap = true })
+vim.keymap.set({ 'n' }, 'Q', '<cmd>q<cr>')
+vim.keymap.set({ 'n' }, 'W', '<cmd>w<cr>', { noremap = true })
+-- vim.keymap.set('i', 'jj', "<Esc>", { noremap = true })
 
-vim.keymap.set({ "n", "v" }, "<C-y>", "\"+y", { noremap = true })
-vim.keymap.set({ "n", "v" }, "<C-p>", "\"+p", { noremap = true })
-vim.keymap.set("c", "<C-v>", "<C-R>+")
+vim.keymap.set({ 'n', 'v' }, '<C-y>', '"+y', { noremap = true })
+vim.keymap.set({ 'n', 'v' }, '<C-p>', '"+p', { noremap = true })
+vim.keymap.set('c', '<C-v>', '<C-R>+')
 -- maybe paste use ctrl shift v in insert mode
-vim.keymap.set("i", "<C-v>", "<C-R>+")
+vim.keymap.set('i', '<C-v>', '<C-R>+')
 
-vim.keymap.set({ "n" }, ">", ">>")
-vim.keymap.set({ "n" }, "<", "<<")
-vim.keymap.set({ "v" }, ">", ">gv")
-vim.keymap.set({ "v" }, "<", "<gv")
+vim.keymap.set({ 'n' }, '>', '>>')
+vim.keymap.set({ 'n' }, '<', '<<')
+vim.keymap.set({ 'v' }, '>', '>gv')
+vim.keymap.set({ 'v' }, '<', '<gv')
 
 -- movement
-vim.keymap.set({ "n", "v" }, "H", "0")
-vim.keymap.set({ "n", "v" }, "L", "$")
-vim.keymap.set({ "n", "v" }, "dH", "d0")
-vim.keymap.set({ "n", "v" }, "dL", "d$")
+vim.keymap.set({ 'n', 'v' }, 'H', '0')
+vim.keymap.set({ 'n', 'v' }, 'L', '$')
+vim.keymap.set({ 'n', 'v' }, 'dH', 'd0')
+vim.keymap.set({ 'n', 'v' }, 'dL', 'd$')
 
-vim.keymap.set({ "n", "v" }, "J", "5j")
-vim.keymap.set({ "n", "v" }, "K", "5k")
+vim.keymap.set({ 'n', 'v' }, 'J', '5j')
+vim.keymap.set({ 'n', 'v' }, 'K', '5k')
 
-vim.keymap.set("v", "<C-k>", ":m '<-2<cr>gv=gv", { silent = true })
-vim.keymap.set("v", "<C-j>", ":m '>+1<cr>gv=gv", { silent = true })
+vim.keymap.set('v', '<C-k>', ":m '<-2<cr>gv=gv", { silent = true })
+vim.keymap.set('v', '<C-j>', ":m '>+1<cr>gv=gv", { silent = true })
 
 -- split and rotate
-vim.keymap.set({ "n" }, "sj", "<cmd>split<cr>")
-vim.keymap.set({ "n" }, "sl", "<cmd>vsplit<cr>")
-vim.keymap.set({ "n" }, "<C-Left>", "<C-w>b<C-w>K")
-vim.keymap.set({ "n" }, "<C-Right>", "<C-w>b<C-w>H")
+vim.keymap.set({ 'n' }, 'sj', '<cmd>split<cr>')
+vim.keymap.set({ 'n' }, 'sl', '<cmd>vsplit<cr>')
+vim.keymap.set({ 'n' }, '<C-Left>', '<C-w>b<C-w>K')
+vim.keymap.set({ 'n' }, '<C-Right>', '<C-w>b<C-w>H')
 
-vim.keymap.set({ "n" }, "<C-j>", "<C-w>j")
-vim.keymap.set({ "n" }, "<C-k>", "<C-w>k")
-vim.keymap.set({ "n" }, "<C-h>", "<C-w>h")
-vim.keymap.set({ "n" }, "<C-l>", "<C-w>l")
+vim.keymap.set({ 'n' }, '<C-j>', '<C-w>j')
+vim.keymap.set({ 'n' }, '<C-k>', '<C-w>k')
+vim.keymap.set({ 'n' }, '<C-h>', '<C-w>h')
+vim.keymap.set({ 'n' }, '<C-l>', '<C-w>l')
 
-vim.keymap.set({ "n" }, "<Left>", "<C-w>>")
-vim.keymap.set({ "n" }, "<Right>", "<C-w><")
-vim.keymap.set({ "n" }, "<Up>", "<C-w>-")
-vim.keymap.set({ "n" }, "<Down>", "<C-w>+")
-
+vim.keymap.set({ 'n' }, '<Left>', '<C-w>>')
+vim.keymap.set({ 'n' }, '<Right>', '<C-w><')
+vim.keymap.set({ 'n' }, '<Up>', '<C-w>-')
+vim.keymap.set({ 'n' }, '<Down>', '<C-w>+')
 
 -- close other window and buffer
 -- vim.keymap.set("n", "<leader>j", "<cmd>bNext<CR>")
 -- vim.keymap.set("n", "<leader>k", "<cmd>bprevious<CR>")
-vim.keymap.set("n", "<leader>nn", "<cmd>bd<cr>")
-vim.keymap.set("n", "<leader>nc", "<cmd>only<cr>")
+vim.keymap.set('n', '<leader>nn', '<cmd>bd<cr>')
+vim.keymap.set('n', '<leader>nc', '<cmd>only<cr>')
 -- vim.keymap.set("n", "<leader>nC", "<cmd>%bd|e#<CR>")
