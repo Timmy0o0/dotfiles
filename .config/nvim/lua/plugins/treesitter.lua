@@ -1,15 +1,16 @@
 return {
-    "nvim-treesitter/nvim-treesitter",
-    event = "VeryLazy",
+    'nvim-treesitter/nvim-treesitter',
+    event = 'VeryLazy',
     dependencies = {
         -- "nvim-treesitter/playground", the function is included in neovim Use: InspectTree
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        "nvim-treesitter/nvim-treesitter-context",
+        'nvim-treesitter/nvim-treesitter-textobjects',
+        'nvim-treesitter/nvim-treesitter-context',
     },
-    main = "nvim-treesitter.configs",
-    build = ":TSUpdate",
+    main = 'nvim-treesitter.configs',
+    build = ':TSUpdate',
     opts = {
-        ensure_installed = "all",
+        ensure_installed = 'all',
+        ignore_install = { 'erlang' },
         highlight = {
             enable = true,
         },
@@ -32,14 +33,21 @@ return {
 
                 keymaps = {
                     -- You can use the capture groups defined in textobjects.scm
-                    ["af"] = "@function.outer",
-                    ["if"] = "@function.inner",
-                    ["ac"] = "@class.outer",
+                    ['af'] = '@function.outer',
+                    ['if'] = '@function.inner',
+                    ['ac'] = '@class.outer',
                     -- You can optionally set descriptions to the mappings (used in the desc parameter of
                     -- nvim_buf_set_keymap) which plugins like which-key display
-                    ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
+                    ['ic'] = {
+                        query = '@class.inner',
+                        desc = 'Select inner part of a class region',
+                    },
                     -- You can also use captures from other query groups like `locals.scm`
-                    ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
+                    ['as'] = {
+                        query = '@scope',
+                        query_group = 'locals',
+                        desc = 'Select language scope',
+                    },
                 },
                 -- You can choose the select mode (default is charwise 'v')
                 --
@@ -50,7 +58,7 @@ return {
                 -- mapping query_strings to modes.
                 selection_modes = {
                     ['@parameter.outer'] = 'v', -- charwise
-                    ['@function.outer'] = 'V',  -- linewise
+                    ['@function.outer'] = 'V', -- linewise
                     ['@class.outer'] = '<c-v>', -- blockwise
                 },
                 -- If you set this to `true` (default is `false`) then any textobject is
