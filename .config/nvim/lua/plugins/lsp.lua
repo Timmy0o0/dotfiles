@@ -4,15 +4,22 @@ return {
     dependencies = {
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
+        'WhoIsSethDaniel/mason-tool-installer.nvim',
+        'pmizio/typescript-tools.nvim',
         'folke/neodev.nvim',
         'folke/neoconf.nvim',
         'j-hui/fidget.nvim',
         'nvimdev/lspsaga.nvim',
         'stevearc/conform.nvim',
+        'mfussenegger/nvim-lint',
+        dependencies = {
+            'nvim-lua/plenary.nvim',
+            -- 'neovim/nvim-lspconfig',
+        },
     },
 
     config = function()
-        local servers = {
+        local lsp_servers = {
             lua_ls = {
                 settings = {
                     Lua = {
@@ -24,23 +31,39 @@ return {
             },
             jsonls = {},
             bashls = {},
-            -- python
             pyright = {},
             -- pylsp = {},
-            -- javascript
-            tsserver = {},
-            -- css
+            -- tsserver = {},
             tailwindcss = {},
             html = {},
-            eslint = {},
-            -- format install manually
-            -- stylua = {},
+            -- eslint = {},
         }
+        local other_servers = {
+            -- format
+            stylua = {},
+            prettierd = {},
+            autopep8 = {},
+            -- lint
+            eslint_d = {},
+            pylint = {},
+        }
+        local servers = vim.tbl_extend('keep', lsp_servers, other_servers)
 
         -- format
         require('conform').setup({
             formatters_by_ft = {
                 lua = { 'stylua' },
+                javascript = { 'prettierd' },
+                typescript = { 'prettierd' },
+                javascriptreact = { 'prettierd' },
+                typescriptreact = { 'prettierd' },
+                css = { 'prettierd' },
+                html = { 'prettierd' },
+                json = { 'prettierd' },
+                yaml = { 'prettierd' },
+                markdown = { 'prettierd' },
+                graphql = { 'prettierd' },
+                python = { 'autopep8' },
             },
             format_on_save = {
                 -- These options will be passed to conform.format()
@@ -49,8 +72,22 @@ return {
             },
         })
 
+        -- lint
+        require('lint').linters_by_ft = {
+            javascript = { 'eslint_d' },
+            typescript = { 'eslint_d' },
+            javascriptreact = { 'eslint_d' },
+            typescriptreact = { 'eslint_d' },
+            python = { 'pylint' },
+        }
+        vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWritePost', 'InsertLeave' }, {
+            callback = function()
+                require('lint').try_lint()
+            end,
+        })
+
+        -- lsp keymap
         local on_attach = function(_, bufnr)
-            -- Enable completion triggered by <c-x><c-o>
             local nmap = function(keys, func, desc)
                 if desc then
                     desc = 'LSP: ' .. desc
@@ -62,7 +99,6 @@ return {
             nmap('gd', require('telescope.builtin').lsp_definitions, 'Goto Definition')
             nmap('gk', '<cmd>Lspsaga hover_doc<cr>', 'Hover Documentation')
             nmap('gi', require('telescope.builtin').lsp_implementations, 'Goto Implementation')
-            -- nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
             nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Workspace Add Folder')
             nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Workspace Remove Folder')
             nmap('<leader>wl', function()
@@ -75,11 +111,35 @@ return {
             nmap('d]', '<cmd>Lspsaga diagnostic_jump_next<cr>', 'Jump Next Diagnostics')
             nmap('[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>', 'Jump Prev Diagnostics')
             nmap('gr', require('telescope.builtin').lsp_references, 'Goto References')
-            nmap('<space>o', '<cmd>Lspsaga outline<cr>', 'Outline | keymap: e o')
-            -- nmap('gr', vim.lsp.buf.references, '[G]oto [R]eferences')
-            -- nmap('<space>f', function()
-            --     vim.lsp.buf.format({ async = true })
-            -- end, 'Format Code')
+            nmap('<leader>o', '<cmd>Lspsaga outline<cr>', 'Outline | keymap: e o')
+            -- keymap for ts_tool
+            nmap(
+                '<leader>to',
+                '<cmd>TSToolsOrganizeImports<cr>',
+                'ts_tool: sorts and removes unused imports'
+            )
+            nmap('<leader>ts', '<cmd>TSToolsSortImports<cr>', 'ts_tool: sorts imports')
+            nmap(
+                '<leader>tr',
+                '<cmd>TSToolsRemoveUnusedImports<cr>',
+                'ts_tool: removes unused imports'
+            )
+            nmap(
+                '<leader>tR',
+                '<cmd>TSToolsRemoveUnused<cr>',
+                'ts_tool: removes all unused statements'
+            )
+            nmap('<leader>ta', '<cmd>TSToolsAddMissingImports<cr>', 'ts_tool: adds missing imports')
+            nmap(
+                '<leader>tr',
+                '<cmd>TSToolsRenameFile<cr>',
+                'ts_tool: rename current file and apply changes to connected'
+            )
+            nmap(
+                '<leader>tf',
+                '<cmd>TSToolsFileReferences<cr>',
+                'ts_tool: find files that reference the current'
+            )
         end
 
         require('neodev').setup()
@@ -87,22 +147,22 @@ return {
         require('fidget').setup()
         require('lspsaga').setup()
         require('mason').setup()
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        require('mason-lspconfig').setup({
+        require('mason-tool-installer').setup({
             ensure_installed = vim.tbl_keys(servers),
-
-            -- handlers = {
-            --     function(server_name)
-            --         require("lspconfig")[server_name].setup {
-            --             settings = servers[server_name],
-            --             on_attach = on_attach,
-            --             capabilities = capabilities
-            --         }
-            --     end
-            -- }
         })
 
-        for server, config in pairs(servers) do
+        -- lsp setup
+        -- local api = require('typescript-tools.api')
+        require('typescript-tools').setup({
+            -- handlers = {
+            --     ['textDocument/publishDiagnostics'] = api.filter_diagnostics(
+            --         -- Ignore 'This may be converted to an async function' diagnostics.
+            --         { 6133 }
+            --     ),
+            -- },
+        })
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        for server, config in pairs(lsp_servers) do
             require('lspconfig')[server].setup(
                 vim.tbl_deep_extend(
                     'keep',
