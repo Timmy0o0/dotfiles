@@ -1,28 +1,28 @@
 return {
     {
-        "kdheepak/lazygit.nvim",
+        'kdheepak/lazygit.nvim',
         cmd = {
-            "LazyGit",
-            "LazyGitConfig",
-            "LazyGitCurrentFile",
-            "LazyGitFilter",
-            "LazyGitFilterCurrentFile",
+            'LazyGit',
+            'LazyGitConfig',
+            'LazyGitCurrentFile',
+            'LazyGitFilter',
+            'LazyGitFilterCurrentFile',
         },
         -- optional for floating window border decoration
         dependencies = {
-            "nvim-lua/plenary.nvim",
+            'nvim-lua/plenary.nvim',
         },
         -- setting the keybinding for LazyGit with 'keys' is recommended in
         -- order to load the plugin when the command is run for the first time
         keys = {
-            { "<leader>lg", "<cmd>LazyGit<cr>", desc = "Git: LazyGit" }
-        }
+            { '<leader>lg', '<cmd>LazyGit<cr>', desc = 'Git: LazyGit' },
+        },
     },
     {
-        "lewis6991/gitsigns.nvim",
-        event = "VeryLazy",
+        'lewis6991/gitsigns.nvim',
+        event = 'VeryLazy',
         config = function()
-            require('gitsigns').setup {
+            require('gitsigns').setup({
                 on_attach = function(bufnr)
                     local gitsigns = require('gitsigns')
 
@@ -33,23 +33,24 @@ return {
                     end
 
                     -- Navigation
-                    map('n', '<leader>hj', function()
+                    map('n', 'g]', function()
                         if vim.wo.diff then
                             vim.cmd.normal({ '<leader>hj', bang = true })
                         else
                             gitsigns.nav_hunk('next')
                         end
-                    end, { desc = "Git: Next Hunk" })
+                    end, { desc = 'Git: Next Hunk' })
 
-                    map('n', '<leader>hk', function()
+                    map('n', '[g', function()
                         if vim.wo.diff then
                             vim.cmd.normal({ '<leader>hk', bang = true })
                         else
                             gitsigns.nav_hunk('prev')
                         end
-                    end, { desc = "Git: Pre Hunk" })
+                    end, { desc = 'Git: Pre Hunk' })
 
                     -- Actions
+                    -- stylua: ignore start
                     map('n', '<leader>hs', gitsigns.stage_hunk, { desc = "Git: Stage Hunk" })
                     map('n', '<leader>hr', gitsigns.reset_hunk, { desc = "Git: Reset Hunk" })
                     map('v', '<leader>hs', function() gitsigns.stage_hunk { vim.fn.line('.'), vim.fn.line('v') } end,
@@ -67,13 +68,17 @@ return {
                     map('n', '<leader>hd', gitsigns.diffthis, { desc = "Git: Diff This" })
                     map('n', '<leader>hD', function() gitsigns.diffthis('~') end, { desc = "Git: Diff This ~" })
                     map('n', '<leader>td', gitsigns.toggle_deleted, { desc = "Git: Toggle Deleted" })
+                    -- stylua: ignore end
 
                     -- Text object
-                    map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<cr>',
-                        { silent = true, desc = "Git: Select Hunk" })
-                end }
-        end
-
+                    map(
+                        { 'o', 'x' },
+                        'ih',
+                        ':<C-U>Gitsigns select_hunk<cr>',
+                        { silent = true, desc = 'Git: Select Hunk' }
+                    )
+                end,
+            })
+        end,
     },
-
 }
