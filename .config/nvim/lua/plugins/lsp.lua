@@ -95,15 +95,14 @@ return {
                 vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
             end
 
+            -- stylua: ignore start
             nmap('gD', vim.lsp.buf.declaration, 'Goto Declaration')
             nmap('gd', require('telescope.builtin').lsp_definitions, 'Goto Definition')
             nmap('gk', '<cmd>Lspsaga hover_doc<cr>', 'Hover Documentation')
             nmap('gi', require('telescope.builtin').lsp_implementations, 'Goto Implementation')
             nmap('<leader>wa', vim.lsp.buf.add_workspace_folder, 'Workspace Add Folder')
             nmap('<leader>wr', vim.lsp.buf.remove_workspace_folder, 'Workspace Remove Folder')
-            nmap('<leader>wl', function()
-                print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-            end, 'Workspace List Folders')
+            nmap('<leader>wl', function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, 'Workspace List Folders')
             nmap('<leader>D', vim.lsp.buf.type_definition, 'Type Definition')
             nmap('<leader>rn', '<cmd>Lspsaga rename ++project<cr>', 'Rename')
             nmap('<leader>ca', '<cmd>Lspsaga code_action<cr>', 'Code Action')
@@ -113,49 +112,18 @@ return {
             nmap('gr', require('telescope.builtin').lsp_references, 'Goto References')
             nmap('<leader>o', '<cmd>Lspsaga outline<cr>', 'Outline | keymap: e o')
             -- keymap for ts_tool
-            nmap(
-                '<leader>tR',
-                '<cmd>TSToolsRemoveUnused<cr>',
-                'ts_tool: removes all unused statements'
-            )
-            nmap(
-                '<leader>tr',
-                '<cmd>TSToolsRenameFile<cr>',
-                'ts_tool: rename current file and apply changes to connected'
-            )
-            nmap(
-                '<leader>tf',
-                '<cmd>TSToolsFileReferences<cr>',
-                'ts_tool: find files that reference the current'
-            )
+            nmap('<leader>tR', '<cmd>TSToolsRemoveUnused<cr>', 'ts_tool: removes all unused statements')
+            nmap('<leader>tr', '<cmd>TSToolsRenameFile<cr>', 'ts_tool: rename current file and apply changes to connected')
+            nmap('<leader>tf', '<cmd>TSToolsFileReferences<cr>', 'ts_tool: find files that reference the current')
+            -- stylua: ignore end
         end
 
         -- lsp icon
         vim.fn.sign_define({
-            {
-                name = 'DiagnosticSignError',
-                text = '',
-                texthl = 'DiagnosticSignError',
-                linehl = 'ErrorLine',
-            },
-            {
-                name = 'DiagnosticSignWarn',
-                text = '',
-                texthl = 'DiagnosticSignWarn',
-                linehl = 'WarningLine',
-            },
-            {
-                name = 'DiagnosticSignInfo',
-                text = '',
-                texthl = 'DiagnosticSignInfo',
-                linehl = 'InfoLine',
-            },
-            {
-                name = 'DiagnosticSignHint',
-                text = '',
-                texthl = 'DiagnosticSignHint',
-                linehl = 'HintLine',
-            },
+            { name = 'DiagnosticSignError', text = '', texthl = 'DiagnosticSignError', linehl = 'ErrorLine' },
+            { name = 'DiagnosticSignWarn', text = '', texthl = 'DiagnosticSignWarn', linehl = 'WarningLine' },
+            { name = 'DiagnosticSignInfo', text = '', texthl = 'DiagnosticSignInfo', linehl = 'InfoLine' },
+            { name = 'DiagnosticSignHint', text = '', texthl = 'DiagnosticSignHint', linehl = 'HintLine' },
         })
 
         -- dependencies setup
@@ -169,15 +137,7 @@ return {
         })
 
         -- lsp setup
-        -- local api = require('typescript-tools.api')
-        require('typescript-tools').setup({
-            -- handlers = {
-            --     ['textDocument/publishDiagnostics'] = api.filter_diagnostics(
-            --         -- Ignore 'This may be converted to an async function' diagnostics.
-            --         { 6133 }
-            --     ),
-            -- },
-        })
+        require('typescript-tools').setup({})
         vim.api.nvim_create_autocmd('BufWritePre', {
             pattern = '*.ts,*.tsx,*.jsx,*.js',
             callback = function(args)
@@ -188,13 +148,7 @@ return {
         })
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
         for server, config in pairs(lsp_servers) do
-            require('lspconfig')[server].setup(
-                vim.tbl_deep_extend(
-                    'keep',
-                    { on_attach = on_attach, capabilities = capabilities },
-                    config
-                )
-            )
+            require('lspconfig')[server].setup(vim.tbl_deep_extend('keep', { on_attach = on_attach, capabilities = capabilities }, config))
         end
     end,
 }

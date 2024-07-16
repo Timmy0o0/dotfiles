@@ -1,17 +1,4 @@
 return {
-    -- {
-    --     "folke/persistence.nvim",
-    --     event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    --     config = function()
-    --         require("persistence").setup()
-    --         -- restore the session for the current directory
-    --         vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]], {})
-    --         -- restore the last session
-    --         vim.api.nvim_set_keymap("n", "<leader>ql", [[<cmd>lua require("persistence").load({ last = true })<cr>]], {})
-    --         -- stop Persistence => session won't be saved on exit
-    --         vim.api.nvim_set_keymap("n", "<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]], {})
-    --     end
-    -- },
     {
         'windwp/nvim-autopairs',
         event = 'InsertEnter',
@@ -37,18 +24,8 @@ return {
         config = function()
             vim.g.spelunker_check_type = 2
 
-            vim.api.nvim_set_keymap(
-                'n',
-                '<leader>sa',
-                '<cmd>SpelunkerAddAll<cr>',
-                { noremap = true }
-            )
+            vim.api.nvim_set_keymap('n', '<leader>sa', '<cmd>SpelunkerAddAll<cr>', { noremap = true })
         end,
-    },
-    {
-        'ellisonleao/glow.nvim',
-        event = 'VeryLazy',
-        config = false,
     },
     {
         'iamcco/markdown-preview.nvim',
@@ -85,12 +62,7 @@ return {
                 },
             })
 
-            vim.keymap.set(
-                'n',
-                '<leader>i',
-                "<cmd>lua require('alternate-toggler').toggleAlternate()<cr>",
-                { desc = 'Toggle Bool' }
-            )
+            vim.keymap.set('n', '<leader>i', "<cmd>lua require('alternate-toggler').toggleAlternate()<cr>", { desc = 'Toggle Bool' })
         end,
     },
     {

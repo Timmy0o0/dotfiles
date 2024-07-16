@@ -1,13 +1,5 @@
 return {
     {
-        'akinsho/bufferline.nvim',
-        event = 'VeryLazy',
-        config = false,
-        -- config = function()
-        --    require("bufferline").setup()
-        -- end
-    },
-    {
         'b0o/incline.nvim',
         event = 'VeryLazy',
         dependencies = {
@@ -29,13 +21,7 @@ return {
                     local ft_icon, ft_color = devicons.get_icon_color(filename)
                     local modified = vim.bo[props.buf].modified
                     return {
-                        ft_icon and {
-                            ' ',
-                            ft_icon,
-                            ' ',
-                            guibg = ft_color,
-                            guifg = helpers.contrast_color(ft_color),
-                        } or '',
+                        ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or '',
                         ' ',
                         { filename, gui = modified and 'bold,italic' or 'bold' },
                         ' ',
@@ -44,22 +30,6 @@ return {
                 end,
             })
         end,
-    },
-    {
-        'lukas-reineke/indent-blankline.nvim',
-        main = 'ibl',
-        event = 'VeryLazy',
-        config = false,
-        -- opts = {
-        --     indent = { char = '╏' },
-        -- },
-    },
-    {
-        'goolord/alpha-nvim',
-        config = false,
-        -- config = function()
-        --     require('alpha').setup(require('alpha.themes.dashboard').config)
-        -- end,
     },
     {
         'RRethy/vim-illuminate',
@@ -143,19 +113,9 @@ return {
         },
     },
     {
-        'echasnovski/mini.ai',
-        event = 'VeryLazy',
-        config = false,
-    },
-    {
         'echasnovski/mini.comment',
         event = 'VeryLazy',
         config = true,
-    },
-    {
-        'echasnovski/mini.animate',
-        event = 'VeryLazy',
-        config = false,
     },
     {
         'echasnovski/mini.files',
