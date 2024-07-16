@@ -11,11 +11,10 @@ return {
         require('telescope').setup({
             extensions = {
                 fzf = {
-                    fuzzy = true, -- false will only do exact matching
-                    override_generic_sorter = true, -- override the generic sorter
-                    override_file_sorter = true, -- override the file sorter
-                    case_mode = 'smart_case', -- or "ignore_case" or "respect_case"
-                    -- the default case_mode is "smart_case"
+                    fuzzy = true,
+                    override_generic_sorter = true,
+                    override_file_sorter = true,
+                    case_mode = 'smart_case',
                 },
             },
 
@@ -37,7 +36,6 @@ return {
             -- stylua: ignore
             pickers = {
                 find_files = {
-                    -- find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/', '!.cache/', '!.local/'},
                     find_command = { 'rg', '--files', '--hidden',
                         '--glob', '!.git/',
                         '--glob', '!.local/',
@@ -60,7 +58,6 @@ return {
         vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = 'Telescope: Find recently opened files' })
         -- stylua: ignore end
         vim.keymap.set('n', '<leader>/', function()
-            -- You can pass additional configuration to telescope to change theme, layout, etc.
             require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
                 winblend = 10,
                 previewer = false,

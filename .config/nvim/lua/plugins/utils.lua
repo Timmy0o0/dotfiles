@@ -45,7 +45,6 @@ return {
         end,
     },
     {
-        -- dependencies treesitter
         'windwp/nvim-ts-autotag',
         event = 'VeryLazy',
         config = function()
@@ -54,7 +53,7 @@ return {
     },
     {
         'rmagatti/alternate-toggler',
-        event = { 'BufReadPost' }, -- lazy load after reading a buffer
+        event = { 'BufReadPost' },
         config = function()
             require('alternate-toggler').setup({
                 alternates = {

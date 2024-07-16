@@ -1,5 +1,4 @@
 return {
-    --'ahmedkhalf/project.nvim',
     'coffebar/neovim-project',
     dependencies = {
         { 'nvim-lua/plenary.nvim' },

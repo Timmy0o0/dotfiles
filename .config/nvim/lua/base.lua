@@ -95,8 +95,6 @@ vim.keymap.set({ 'n' }, '<Up>', '<C-w>-')
 vim.keymap.set({ 'n' }, '<Down>', '<C-w>+')
 
 -- close other window and buffer
--- vim.keymap.set("n", "<leader>j", "<cmd>bNext<CR>")
--- vim.keymap.set("n", "<leader>k", "<cmd>bprevious<CR>")
 vim.keymap.set('n', '<leader>nn', '<cmd>bd<cr>')
 vim.keymap.set('n', '<leader>nc', '<cmd>only<cr>')
--- vim.keymap.set("n", "<leader>nC", "<cmd>%bd|e#<CR>")
+vim.keymap.set('n', '<leader>nC', '<cmd>%bd|e#<CR>')

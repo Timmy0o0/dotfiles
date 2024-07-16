@@ -60,9 +60,8 @@ return {
         branch = 'v3.x',
         dependencies = {
             'nvim-lua/plenary.nvim',
-            'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+            'nvim-tree/nvim-web-devicons',
             'MunifTanjim/nui.nvim',
-            -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         },
         config = function()
             require('neo-tree').setup({
@@ -106,11 +105,7 @@ return {
             vim.o.timeout = true
             vim.o.timeoutlen = 300
         end,
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        },
+        opts = {},
     },
     {
         'echasnovski/mini.comment',
@@ -142,8 +137,6 @@ return {
             function _G.set_terminal_keymaps()
                 local opts = { buffer = 0 }
                 vim.keymap.set('t', '<C-n>', [[<C-\><C-n>]], opts)
-                -- vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], opts)
-                -- vim.keymap.set('t', 'jj', [[<C-\><C-n>]], opts) conflicts with lazygit
                 vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
                 vim.keymap.set('t', '<C-j>', [[<Cmd>wincmd j<CR>]], opts)
                 vim.keymap.set('t', '<C-k>', [[<Cmd>wincmd k<CR>]], opts)
@@ -151,7 +144,6 @@ return {
                 vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
             end
 
-            -- if you only want these mappings for toggle term use term://*toggleterm#* instead
             vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
         end,
     },

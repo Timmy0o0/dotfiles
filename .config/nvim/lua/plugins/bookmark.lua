@@ -7,7 +7,7 @@ return {
 
         require('bookmarks').setup({
             sign_priority = 8,
-            save_file = vim.fn.expand('$HOME/.bookmarks'), -- bookmarks save file path
+            save_file = vim.fn.expand('$HOME/.bookmarks'),
             keywords = {
                 ['@t'] = ' ', -- mark annotation startswith @t ,signs this icon as `Todo`
                 ['@w'] = ' ', -- mark annotation startswith @w ,signs this icon as `Warn`

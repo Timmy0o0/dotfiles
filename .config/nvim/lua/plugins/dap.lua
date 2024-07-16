@@ -11,8 +11,6 @@ return {
         },
     },
     config = function()
-        -- dapterminate stop
-        -- vim.keymap.set('n', '<F5>', function() require('dap').continue() end)
         -- stylua: ignore start
         vim.keymap.set('n', '<F5>', function() require 'telescope'.extensions.dap.configurations {} end)
         vim.keymap.set('n', '<F10>', function() require('dap').step_over() end)
