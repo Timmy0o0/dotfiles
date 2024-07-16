@@ -1,8 +1,8 @@
 return {
     {
         'akinsho/bufferline.nvim',
-        event = "VeryLazy",
-        config = false
+        event = 'VeryLazy',
+        config = false,
         -- config = function()
         --    require("bufferline").setup()
         -- end
@@ -14,8 +14,8 @@ return {
             'nvim-tree/nvim-web-devicons',
         },
         config = function()
-            local helpers = require 'incline.helpers'
-            local devicons = require 'nvim-web-devicons'
+            local helpers = require('incline.helpers')
+            local devicons = require('nvim-web-devicons')
             require('incline').setup({
                 window = {
                     padding = 0,
@@ -29,72 +29,75 @@ return {
                     local ft_icon, ft_color = devicons.get_icon_color(filename)
                     local modified = vim.bo[props.buf].modified
                     return {
-                        ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or
-                        '',
+                        ft_icon and {
+                            ' ',
+                            ft_icon,
+                            ' ',
+                            guibg = ft_color,
+                            guifg = helpers.contrast_color(ft_color),
+                        } or '',
                         ' ',
                         { filename, gui = modified and 'bold,italic' or 'bold' },
                         ' ',
                         guibg = '#44406e',
                     }
                 end,
-
             })
         end,
     },
     {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        event = "VeryLazy",
-        opts = {
-            indent = { char = "╏" },
-        }
+        'lukas-reineke/indent-blankline.nvim',
+        main = 'ibl',
+        event = 'VeryLazy',
+        config = false,
+        -- opts = {
+        --     indent = { char = '╏' },
+        -- },
     },
     {
-        "goolord/alpha-nvim",
+        'goolord/alpha-nvim',
         config = function()
-            require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
-        end
+            require('alpha').setup(require('alpha.themes.dashboard').config)
+        end,
     },
     {
-        "RRethy/vim-illuminate",
-        event = "VeryLazy",
+        'RRethy/vim-illuminate',
+        event = 'VeryLazy',
         config = function()
             require('illuminate').configure()
-        end
+        end,
     },
     {
-        "nvim-neo-tree/neo-tree.nvim",
-        branch = "v3.x",
+        'nvim-neo-tree/neo-tree.nvim',
+        branch = 'v3.x',
         dependencies = {
-            "nvim-lua/plenary.nvim",
-            "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-            "MunifTanjim/nui.nvim",
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+            'MunifTanjim/nui.nvim',
             -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         },
         config = function()
-            require("neo-tree").setup({
+            require('neo-tree').setup({
                 window = {
                     mappings = {
-                        ["l"] = "open",
+                        ['l'] = 'open',
                     },
                 },
                 filesystem = {
                     window = {
                         mappings = {
-                            ["gk"] = "prev_git_modified",
-                            ["gj"] = "next_git_modified",
-                        }
-                    }
-
-                }
+                            ['gk'] = 'prev_git_modified',
+                            ['gj'] = 'next_git_modified',
+                        },
+                    },
+                },
             })
-            vim.keymap.set({ "n", "v" }, "<leader>e", [[<cmd>Neotree toggle<cr>]])
-        end
-
+            vim.keymap.set({ 'n', 'v' }, '<leader>e', [[<cmd>Neotree toggle<cr>]])
+        end,
     },
     {
-        "folke/which-key.nvim",
-        event = "VeryLazy",
+        'folke/which-key.nvim',
+        event = 'VeryLazy',
         init = function()
             vim.o.timeout = true
             vim.o.timeoutlen = 300
@@ -103,39 +106,44 @@ return {
             -- your configuration comes here
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
-        }
+        },
     },
     {
-        "echasnovski/mini.ai",
-        event = "VeryLazy",
+        'echasnovski/mini.ai',
+        event = 'VeryLazy',
         config = false,
     },
     {
-        "echasnovski/mini.comment",
-        event = "VeryLazy",
+        'echasnovski/mini.comment',
+        event = 'VeryLazy',
         config = true,
     },
     {
-        "echasnovski/mini.animate",
-        event = "VeryLazy",
+        'echasnovski/mini.animate',
+        event = 'VeryLazy',
         config = false,
     },
     {
-        "echasnovski/mini.files",
-        event = "VeryLazy",
+        'echasnovski/mini.files',
+        event = 'VeryLazy',
         config = function()
             require('mini.files').setup()
-            vim.keymap.set({ "n" }, "<C-e>", '<cmd>lua MiniFiles.open()<cr>')
+            vim.keymap.set({ 'n' }, '<C-e>', '<cmd>lua MiniFiles.open()<cr>')
         end,
     },
     {
+        'echasnovski/mini.indentscope',
+        event = 'VeryLazy',
+        config = true,
+    },
+    {
         'akinsho/toggleterm.nvim',
-        event = "VeryLazy",
-        version = "*",
+        event = 'VeryLazy',
+        version = '*',
         config = function()
-            require("toggleterm").setup {
+            require('toggleterm').setup({
                 open_mapping = [[<c-\>]],
-            }
+            })
 
             function _G.set_terminal_keymaps()
                 local opts = { buffer = 0 }
@@ -151,20 +159,18 @@ return {
 
             -- if you only want these mappings for toggle term use term://*toggleterm#* instead
             vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-        end
-
-
+        end,
     },
     {
-        "NvChad/nvim-colorizer.lua",
-        event = "VeryLazy",
-        config = true
+        'NvChad/nvim-colorizer.lua',
+        event = 'VeryLazy',
+        config = true,
     },
     {
-        "kevinhwang91/nvim-hlslens",
-        event = "VeryLazy",
+        'kevinhwang91/nvim-hlslens',
+        event = 'VeryLazy',
         config = function()
-            require("hlslens").setup()
-        end
+            require('hlslens').setup()
+        end,
     },
 }
