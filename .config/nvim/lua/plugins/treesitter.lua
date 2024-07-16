@@ -21,7 +21,7 @@ return {
         --     enable = true,
         -- },
         fold = {
-            enable = true,
+            enable = false,
             disable = {}, -- language do not fold
         },
         textobjects = {
