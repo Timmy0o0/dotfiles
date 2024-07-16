@@ -108,8 +108,8 @@ return {
             nmap('<leader>rn', '<cmd>Lspsaga rename ++project<cr>', 'Rename')
             nmap('<leader>ca', '<cmd>Lspsaga code_action<cr>', 'Code Action')
             nmap('<leader>da', require('telescope.builtin').diagnostics, 'Diagnostics')
-            nmap('d]', '<cmd>Lspsaga diagnostic_jump_next<cr>', 'Jump Next Diagnostics')
-            nmap('[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>', 'Jump Prev Diagnostics')
+            nmap(']d', '<cmd>Lspsaga diagnostic_jump_next<cr>', 'Next Diagnostics')
+            nmap('[d', '<cmd>Lspsaga diagnostic_jump_prev<cr>', 'Prev Diagnostics')
             nmap('gr', require('telescope.builtin').lsp_references, 'Goto References')
             nmap('<leader>o', '<cmd>Lspsaga outline<cr>', 'Outline | keymap: e o')
             -- keymap for ts_tool
