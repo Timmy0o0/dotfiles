@@ -171,4 +171,8 @@ return {
             })
         end,
     },
+    {
+        'axelvc/template-string.nvim',
+        config = true,
+    },
 }
