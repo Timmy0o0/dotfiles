@@ -2,35 +2,39 @@ return {
     'nvim-telescope/telescope.nvim',
     dependencies = {
         'nvim-lua/plenary.nvim',
-        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+        {
+            'nvim-telescope/telescope-fzf-native.nvim',
+            build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
+        },
     },
     config = function()
-        require('telescope').setup {
+        require('telescope').setup({
             extensions = {
                 fzf = {
-                    fuzzy = true,                   -- false will only do exact matching
+                    fuzzy = true, -- false will only do exact matching
                     override_generic_sorter = true, -- override the generic sorter
-                    override_file_sorter = true,    -- override the file sorter
-                    case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+                    override_file_sorter = true, -- override the file sorter
+                    case_mode = 'smart_case', -- or "ignore_case" or "respect_case"
                     -- the default case_mode is "smart_case"
-                }
+                },
             },
 
             defaults = {
                 mappings = {
                     i = {
-                        ["<C-j>"] = require('telescope.actions').move_selection_next,
-                        ["<C-k>"] = require('telescope.actions').move_selection_previous,
-                        ["<C-l>"] = require('telescope.actions').select_default,
+                        ['<C-j>'] = require('telescope.actions').move_selection_next,
+                        ['<C-k>'] = require('telescope.actions').move_selection_previous,
+                        ['<C-l>'] = require('telescope.actions').select_default,
                     },
                     n = {
-                        ["<C-j>"] = require('telescope.actions').move_selection_next,
-                        ["<C-k>"] = require('telescope.actions').move_selection_previous,
-                        ["<C-l>"] = require('telescope.actions').select_default,
+                        ['<C-j>'] = require('telescope.actions').move_selection_next,
+                        ['<C-k>'] = require('telescope.actions').move_selection_previous,
+                        ['<C-l>'] = require('telescope.actions').select_default,
                     },
                 },
             },
 
+            -- stylua: ignore
             pickers = {
                 find_files = {
                     -- find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/', '!.cache/', '!.local/'},
@@ -43,11 +47,10 @@ return {
                         '--glob', '!.cache/' },
                 }
             },
+        })
 
-        }
-
+        -- stylua: ignore start
         require('telescope').load_extension('fzf')
-
         local builtin = require('telescope.builtin')
         vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope: Find files' })
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope: Find live grep' })
@@ -55,12 +58,15 @@ return {
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope: Find help files' })
         vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Telescope: Find diagnostics' })
         vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = 'Telescope: Find recently opened files' })
+        -- stylua: ignore end
         vim.keymap.set('n', '<leader>/', function()
             -- You can pass additional configuration to telescope to change theme, layout, etc.
-            require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-                winblend = 10,
-                previewer = false,
-            })
+            require('telescope.builtin').current_buffer_fuzzy_find(
+                require('telescope.themes').get_dropdown({
+                    winblend = 10,
+                    previewer = false,
+                })
+            )
         end, { desc = 'Telescope: Fuzzily search in current buffer' })
-    end
+    end,
 }
