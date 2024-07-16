@@ -35,8 +35,6 @@ return {
     -- [count]mkk | Move up bookmark at current line
     -- [count]mjj | Move down bookmark at current line
     -- [count]mg | Move bookmark at current line to another line
-    --
-    -- sign_priority = 8,
     'tomasky/bookmarks.nvim',
     event = 'VimEnter',
     config = function()
@@ -52,6 +50,21 @@ return {
                 ['@f'] = ' ', -- mark annotation startswith @f ,signs this icon as `Fix`
                 ['@n'] = ' ', -- mark annotation startswith @n ,signs this icon as `Note`
             },
+            signs = {
+                add = {
+                    hl = 'BookMarksAdd',
+                    text = '',
+                    numhl = 'BookMarksAddNr',
+                    linehl = 'BookMarksAddLn',
+                },
+                ann = {
+                    hl = 'BookMarksAnn',
+                    text = '♥',
+                    numhl = 'BookMarksAnnNr',
+                    linehl = 'BookMarksAnnLn',
+                },
+            },
+
             ---@diagnostic disable-next-line: unused-local
             on_attach = function(bufnr)
                 local bm = require('bookmarks')
