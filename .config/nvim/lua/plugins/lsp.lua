@@ -114,22 +114,10 @@ return {
             nmap('<leader>o', '<cmd>Lspsaga outline<cr>', 'Outline | keymap: e o')
             -- keymap for ts_tool
             nmap(
-                '<leader>to',
-                '<cmd>TSToolsOrganizeImports<cr>',
-                'ts_tool: sorts and removes unused imports'
-            )
-            nmap('<leader>ts', '<cmd>TSToolsSortImports<cr>', 'ts_tool: sorts imports')
-            nmap(
-                '<leader>tr',
-                '<cmd>TSToolsRemoveUnusedImports<cr>',
-                'ts_tool: removes unused imports'
-            )
-            nmap(
                 '<leader>tR',
                 '<cmd>TSToolsRemoveUnused<cr>',
                 'ts_tool: removes all unused statements'
             )
-            nmap('<leader>ta', '<cmd>TSToolsAddMissingImports<cr>', 'ts_tool: adds missing imports')
             nmap(
                 '<leader>tr',
                 '<cmd>TSToolsRenameFile<cr>',
@@ -160,6 +148,14 @@ return {
             --         { 6133 }
             --     ),
             -- },
+        })
+        vim.api.nvim_create_autocmd('BufWritePre', {
+            pattern = '*.ts,*.tsx,*.jsx,*.js',
+            callback = function(args)
+                vim.cmd('TSToolsAddMissingImports sync')
+                vim.cmd('TSToolsOrganizeImports sync')
+                require('conform').format({ bufnr = args.buf })
+            end,
         })
         local capabilities = require('cmp_nvim_lsp').default_capabilities()
         for server, config in pairs(lsp_servers) do
