@@ -49,7 +49,7 @@ return {
         }
         local servers = vim.tbl_extend('keep', lsp_servers, other_servers)
 
-        -- format
+        -- format setup
         require('conform').setup({
             formatters_by_ft = {
                 lua = { 'stylua' },
@@ -72,7 +72,7 @@ return {
             },
         })
 
-        -- lint
+        -- lint setup
         require('lint').linters_by_ft = {
             javascript = { 'eslint_d' },
             typescript = { 'eslint_d' },
@@ -130,6 +130,7 @@ return {
             )
         end
 
+        -- dependencies setup
         require('neodev').setup()
         require('neoconf').setup()
         require('fidget').setup()
