@@ -56,9 +56,10 @@ return {
     },
     {
         'goolord/alpha-nvim',
-        config = function()
-            require('alpha').setup(require('alpha.themes.dashboard').config)
-        end,
+        config = false,
+        -- config = function()
+        --     require('alpha').setup(require('alpha.themes.dashboard').config)
+        -- end,
     },
     {
         'RRethy/vim-illuminate',
