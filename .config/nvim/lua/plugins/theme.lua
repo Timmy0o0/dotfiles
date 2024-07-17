@@ -25,9 +25,28 @@ return {
             if not vim.g.neovide then
                 vim.g.everforest_transparent_background = 2
             end
-            vim.g.everforest_diagnostic_line_highlight = 1
+            vim.g.everforest_diagnostic_line_highlight = 0
             vim.g.everforest_enable_italic = true
             vim.cmd.colorscheme('everforest')
+        end,
+    },
+    {
+        'Mofiqul/vscode.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            local c = require('vscode.colors').get_colors()
+            -- vim.o.background = 'light'
+            require('vscode').setup({
+                transparent = false,
+                italic_comments = true,
+                disable_nvimtree_bg = true,
+                underline_links = true,
+                group_overrides = {
+                    Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+                },
+            })
+            -- vim.cmd.colorscheme('vscode')
         end,
     },
     {
@@ -41,7 +60,6 @@ return {
             -- theme.normal.c.bg = nil
             require('lualine').setup({
                 options = {
-                    -- theme = 'tokyonight',
                     theme = 'auto',
                     -- theme = theme,
                 },

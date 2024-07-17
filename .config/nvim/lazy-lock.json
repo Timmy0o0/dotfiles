@@ -69,6 +69,7 @@
   "treesj": { "branch": "main", "commit": "275f83c81a5a1f5ae23c1eac30c4ac28beebbca2" },
   "typescript-tools.nvim": { "branch": "master", "commit": "3ecf6b29435dc7979eb5cdf1a9ff11bd65f5ea90" },
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
+  "vscode.nvim": { "branch": "main", "commit": "3ba16d763097cecc75eb93761f4a981467acfc23" },
   "which-key.nvim": { "branch": "main", "commit": "21f3465ecd68b4e7cf84bb0b88c72cc23ff7838b" },
   "wildfire.nvim": { "branch": "master", "commit": "1729faca1c6ae34520a6e531983a3737d3654ee1" }
 }
