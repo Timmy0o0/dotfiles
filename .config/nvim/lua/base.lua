@@ -31,7 +31,7 @@ option.undofile = true
 option.undodir = vim.fn.expand('$HOME/.local/share/nvim/undo')
 option.exrc = true
 option.wrap = false
-option.splitright = true
+option.splitbelow = true
 option.list = true
 option.listchars:append('space:·')
 option.scrolloff = 15
@@ -53,7 +53,7 @@ vim.keymap.set({ 'n', 'i', 'v' }, '<Down>', '<Nop>')
 
 vim.keymap.set({ 'n' }, '<C-r>', '<cmd>source<cr>')
 
-vim.keymap.set({ 'n' }, 'Q', '<cmd>q<cr>')
+vim.keymap.set({ 'n' }, '<C-q>', '<cmd>quitall<cr>')
 vim.keymap.set({ 'n' }, 'W', '<cmd>w<cr>', { noremap = true })
 -- vim.keymap.set('i', 'jj', "<Esc>", { noremap = true })
 
