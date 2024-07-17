@@ -24,13 +24,13 @@ return {
             on_attach = function(bufnr)
                 local bm = require('bookmarks')
                 local map = vim.keymap.set
-                map('n', 'mm', bm.bookmark_toggle) -- add or remove bookmark at current line
-                map('n', 'mi', bm.bookmark_ann) -- add or edit mark annotation at current line
-                map('n', 'mc', bm.bookmark_clean) -- clean all marks in local buffer
-                map('n', ']b', bm.bookmark_next, { desc = 'Next bookmark' })
-                map('n', '[b', bm.bookmark_prev, { desc = 'Prev bookmark' })
-                map('n', 'ml', bm.bookmark_list) -- show marked file list in quickfix window
-                map('n', 'mx', bm.bookmark_clear_all) -- removes all bookmarks
+                map('n', 'mm', bm.bookmark_toggle, { desc = 'Bookmark: add or remove bookmark' })
+                map('n', 'mi', bm.bookmark_ann, { desc = 'Bookmark: add or edit anno mark' })
+                map('n', 'mc', bm.bookmark_clean, { desc = 'Bookmark: clean all marks in local buffer' })
+                map('n', ']b', bm.bookmark_next, { desc = 'Bookmark: Next bookmark' })
+                map('n', '[b', bm.bookmark_prev, { desc = 'Bookmark: Prev bookmark' })
+                map('n', 'ml', bm.bookmark_list, { desc = 'Bookmark: show marked file list' })
+                map('n', 'mx', bm.bookmark_clear_all, { desc = 'bookmark: remove all bookmarks' })
             end,
         })
     end,
