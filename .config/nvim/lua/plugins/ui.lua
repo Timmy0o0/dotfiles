@@ -150,7 +150,11 @@ return {
     {
         'NvChad/nvim-colorizer.lua',
         event = 'VeryLazy',
-        config = true,
+        opts = {
+            user_default_options = {
+                names = false,
+            },
+        },
     },
     {
         'kevinhwang91/nvim-hlslens',
