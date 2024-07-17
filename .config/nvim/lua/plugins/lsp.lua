@@ -129,7 +129,7 @@ return {
         -- dependencies setup
         require('neodev').setup()
         require('neoconf').setup()
-        require('fidget').setup()
+        require('fidget').setup({ notification = { window = { winblend = 0 } } })
         require('lspsaga').setup()
         require('mason').setup()
         require('mason-tool-installer').setup({
