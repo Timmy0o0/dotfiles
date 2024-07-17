@@ -79,8 +79,9 @@ vim.keymap.set('v', '<C-k>', ":m '<-2<cr>gv=gv", { silent = true })
 vim.keymap.set('v', '<C-j>', ":m '>+1<cr>gv=gv", { silent = true })
 
 -- split and rotate
-vim.keymap.set({ 'n' }, 'sj', '<cmd>split<cr>')
-vim.keymap.set({ 'n' }, 'sl', '<cmd>vsplit<cr>')
+vim.keymap.set({ 'n' }, '<leader>sj', '<cmd>split<cr>')
+vim.keymap.set({ 'n' }, '<leader>sl', '<cmd>vsplit<cr>')
+
 vim.keymap.set({ 'n' }, '<C-Left>', '<C-w>b<C-w>K')
 vim.keymap.set({ 'n' }, '<C-Right>', '<C-w>b<C-w>H')
 
