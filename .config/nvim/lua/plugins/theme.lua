@@ -22,11 +22,14 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
+            vim.opt.background = 'dark'
             if not vim.g.neovide then
                 vim.g.everforest_transparent_background = 2
             end
-            vim.g.everforest_diagnostic_line_highlight = 0
+            vim.g.everforest_background = 'soft' -- medium | hard | soft
+            vim.g.everforest_foreground = 'material'
             vim.g.everforest_enable_italic = true
+            vim.g.everforest_enable_bold = 1
             vim.cmd.colorscheme('everforest')
         end,
     },
@@ -35,12 +38,14 @@ return {
         lazy = false,
         priority = 1000,
         config = function()
-            vim.opt.background = 'light'
+            -- vim.opt.background = 'light'
+            if not vim.g.neovide then
+                vim.g.gruvbox_material_transparent_background = 0
+            end
             vim.g.gruvbox_material_background = 'soft' -- medium | hard | soft
             vim.g.gruvbox_material_foreground = 'material'
             vim.g.gruvbox_material_enable_italic = true
             vim.g.gruvbox_material_enable_bold = 1
-            vim.g.gruvbox_material_transparent_background = 0
             -- vim.cmd.colorscheme('gruvbox-material')
         end,
     },
