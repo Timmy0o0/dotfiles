@@ -95,6 +95,7 @@ vim.keymap.set({ 'n' }, '<Up>', '<C-w>-')
 vim.keymap.set({ 'n' }, '<Down>', '<C-w>+')
 
 -- close other window and buffer numToStr/BufOnly.nvim
-vim.keymap.set('n', '<leader>nn', '<cmd>bd<cr>', { desc = 'Delete Current Buffer' })
-vim.keymap.set('n', '<leader>nc', '<cmd>only<cr>', { desc = 'Close Other Windows' })
-vim.keymap.set('n', '<leader>nC', '<cmd>lua require("custom.functions").BufOnly("", "")<cr>', { desc = 'Delete Other Buffers' })
+vim.keymap.set('n', '<leader>nc', '<cmd>q<cr>', { desc = 'Close Current Window' })
+vim.keymap.set('n', '<leader>no', '<cmd>only<cr>', { desc = 'Close Other Windows' })
+vim.keymap.set('n', '<leader>nC', '<cmd>bd<cr>', { desc = 'Delete Current Buffer' })
+vim.keymap.set('n', '<leader>nO', '<cmd>lua require("custom.functions").BufOnly("", "")<cr>', { desc = 'Delete Other Buffers' })
