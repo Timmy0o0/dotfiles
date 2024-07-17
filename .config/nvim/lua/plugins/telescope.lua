@@ -1,6 +1,7 @@
 return {
     'nvim-telescope/telescope.nvim',
     dependencies = {
+        'radyz/telescope-gitsigns',
         'nvim-lua/plenary.nvim',
         {
             'nvim-telescope/telescope-fzf-native.nvim',
@@ -47,19 +48,21 @@ return {
             },
         })
 
-        -- stylua: ignore start
+        require('telescope').load_extension('git_signs')
         require('telescope').load_extension('fzf')
         local builtin = require('telescope.builtin')
+        -- stylua: ignore start
         vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope: Find files' })
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope: Find live grep' })
         vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = 'Telescope: Find opened buffers' })
-        vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope: Find help files' })
-        vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Telescope: Find diagnostics' })
-        vim.keymap.set('n', '<leader>?', builtin.oldfiles, { desc = 'Telescope: Find recently opened files' })
+        vim.keymap.set('n', '<leader>?', builtin.help_tags, { desc = 'Telescope: Find help files' })
+        vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Telescope: Find lsp diagnostics' })
+        -- vim.keymap.set('n', '<leader>fh', builtin.git_status, { desc = 'Telescope: Find recently opened files' })
+        vim.keymap.set('n', '<leader>fh', "<cmd>Telescope git_signs<cr>", { desc = 'Telescope: Find git_signs' })
         -- stylua: ignore end
         vim.keymap.set('n', '<leader>/', function()
             require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({
-                winblend = 10,
+                winblend = 0,
                 previewer = false,
             }))
         end, { desc = 'Telescope: Fuzzily search in current buffer' })
