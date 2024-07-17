@@ -12,6 +12,9 @@ return {
                         sidebars = 'transparent',
                         floats = 'transparent',
                     },
+                    on_colors = function(colors)
+                        colors.bg_statusline = colors.none
+                    end,
                 })
             end
             -- vim.cmd([[colorscheme tokyonight]])
@@ -55,13 +58,9 @@ return {
             'nvim-tree/nvim-web-devicons',
         },
         config = function()
-            -- lualine transparent
-            -- local theme = require('lualine.themes.tokyonight')
-            -- theme.normal.c.bg = nil
             require('lualine').setup({
                 options = {
                     theme = 'auto',
-                    -- theme = theme,
                 },
                 sections = {
                     lualine_a = { 'mode' },
