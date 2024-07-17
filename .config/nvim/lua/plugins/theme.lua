@@ -1,12 +1,6 @@
 return {
     {
         'folke/tokyonight.nvim',
-        dependencies = {
-            'nvim-lualine/lualine.nvim',
-            'nvim-tree/nvim-web-devicons',
-            'utilyre/barbecue.nvim',
-            'SmiteshP/nvim-navic',
-        },
         lazy = false,
         priority = 1000,
         config = function()
@@ -21,7 +15,14 @@ return {
                 })
             end
             vim.cmd([[colorscheme tokyonight]])
-
+        end,
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+        },
+        config = function()
             -- lualine transparent
             local theme = require('lualine.themes.tokyonight')
             theme.normal.c.bg = nil
@@ -40,7 +41,15 @@ return {
                     lualine_z = { 'location' },
                 },
             })
-            -- barbecue
+        end,
+    },
+    {
+        'utilyre/barbecue.nvim',
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+            'SmiteshP/nvim-navic',
+        },
+        config = function()
             require('barbecue').setup({
                 theme = 'tokyonight',
             })
