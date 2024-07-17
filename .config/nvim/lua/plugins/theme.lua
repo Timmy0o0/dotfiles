@@ -21,9 +21,15 @@ return {
                 })
             end
             vim.cmd([[colorscheme tokyonight]])
+
+            -- lualine transparent
+            local theme = require('lualine.themes.tokyonight')
+            theme.normal.c.bg = nil
             require('lualine').setup({
                 options = {
-                    theme = 'tokyonight',
+                    -- theme = 'tokyonight',
+                    -- theme = 'auto',
+                    theme = theme,
                 },
                 sections = {
                     lualine_a = { 'mode' },
@@ -34,6 +40,7 @@ return {
                     lualine_z = { 'location' },
                 },
             })
+            -- barbecue
             require('barbecue').setup({
                 theme = 'tokyonight',
             })
