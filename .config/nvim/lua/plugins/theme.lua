@@ -14,7 +14,20 @@ return {
                     },
                 })
             end
-            vim.cmd([[colorscheme tokyonight]])
+            -- vim.cmd([[colorscheme tokyonight]])
+        end,
+    },
+    {
+        'sainnhe/everforest',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            if not vim.g.neovide then
+                vim.g.everforest_transparent_background = 2
+            end
+            vim.g.everforest_diagnostic_line_highlight = 1
+            vim.g.everforest_enable_italic = true
+            vim.cmd.colorscheme('everforest')
         end,
     },
     {
@@ -24,13 +37,13 @@ return {
         },
         config = function()
             -- lualine transparent
-            local theme = require('lualine.themes.tokyonight')
-            theme.normal.c.bg = nil
+            -- local theme = require('lualine.themes.tokyonight')
+            -- theme.normal.c.bg = nil
             require('lualine').setup({
                 options = {
                     -- theme = 'tokyonight',
-                    -- theme = 'auto',
-                    theme = theme,
+                    theme = 'auto',
+                    -- theme = theme,
                 },
                 sections = {
                     lualine_a = { 'mode' },
@@ -43,16 +56,4 @@ return {
             })
         end,
     },
-    -- {
-    --     'utilyre/barbecue.nvim',
-    --     dependencies = {
-    --         'nvim-tree/nvim-web-devicons',
-    --         'SmiteshP/nvim-navic',
-    --     },
-    --     config = function()
-    --         require('barbecue').setup({
-    --             theme = 'tokyonight',
-    --         })
-    --     end,
-    -- },
 }
