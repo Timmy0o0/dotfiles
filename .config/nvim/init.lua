@@ -1,6 +1,6 @@
 vim.loader.enable()
 require('base')
 require('lazy_nvim')
-require('nvide')
-require('wsl')
+require('env.wsl')
+require('env.nvide')
 require('custom.autocmd')
