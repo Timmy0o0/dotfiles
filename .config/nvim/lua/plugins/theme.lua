@@ -43,16 +43,16 @@ return {
             })
         end,
     },
-    {
-        'utilyre/barbecue.nvim',
-        dependencies = {
-            'nvim-tree/nvim-web-devicons',
-            'SmiteshP/nvim-navic',
-        },
-        config = function()
-            require('barbecue').setup({
-                theme = 'tokyonight',
-            })
-        end,
-    },
+    -- {
+    --     'utilyre/barbecue.nvim',
+    --     dependencies = {
+    --         'nvim-tree/nvim-web-devicons',
+    --         'SmiteshP/nvim-navic',
+    --     },
+    --     config = function()
+    --         require('barbecue').setup({
+    --             theme = 'tokyonight',
+    --         })
+    --     end,
+    -- },
 }
