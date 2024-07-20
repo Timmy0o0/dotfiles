@@ -5,3 +5,5 @@ iterm2
 .DS_Store
 .config/create-next-app-nodejs
 .config/nextjs-nodejs
+.config/github-copilot
+.config/simple-update-notifier
