@@ -153,6 +153,7 @@ return {
         opts = {
             user_default_options = {
                 names = false,
+                mode = 'foreground',
             },
         },
     },
