@@ -18,7 +18,7 @@ return {
             vim.keymap.set({ 'n', 'v' }, '<leader>ccF', '<cmd>CopilotChatFixDiagnostic<cr>')
             vim.keymap.set({ 'n', 'v' }, '<leader>cco', '<cmd>CopilotChatOptimize<cr>')
             vim.keymap.set({ 'n', 'v' }, '<leader>ccd', '<cmd>CopilotChatDocs<cr>')
-            vim.keymap.set({ 'n', 'v' }, '<leader>cct', '<cmd>CopilotChatTests<cr>')
+            vim.keymap.set({ 'n', 'v' }, '<leader>ccT', '<cmd>CopilotChatTests<cr>')
             vim.keymap.set({ 'n', 'v' }, '<leader>ccq', function()
                 local input = vim.fn.input('Quick Chat: ')
                 if input ~= '' then
