@@ -27,7 +27,7 @@ return {
         config = function()
             vim.opt.background = 'dark'
             if not vim.g.neovide then
-                vim.g.everforest_transparent_background = 2
+                vim.g.everforest_transparent_background = 1
             end
             vim.g.everforest_background = 'soft' -- medium | hard | soft
             vim.g.everforest_foreground = 'material'
