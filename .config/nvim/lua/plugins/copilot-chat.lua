@@ -7,11 +7,11 @@ return {
             { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
         },
         config = function()
-            vim.keymap.set({ 'n' }, '<leader>cct', '<cmd>CopilotChatToggle<cr>')
             vim.keymap.set({ 'n' }, '<leader>ccr', '<cmd>CopilotChatReset<cr>')
             vim.keymap.set({ 'n' }, '<leader>ccs', '<cmd>CopilotChatStop<cr>')
             vim.keymap.set({ 'n' }, '<leader>ccc', '<cmd>CopilotChatCommit<cr>')
             vim.keymap.set({ 'n' }, '<leader>ccC', '<cmd>CopilotChatCommitStaged<cr>')
+            vim.keymap.set({ 'n', 'v' }, '<leader>cct', '<cmd>CopilotChatToggle<cr>')
             vim.keymap.set({ 'n', 'v' }, '<leader>cce', '<cmd>CopilotChatExplain<cr>')
             vim.keymap.set({ 'n', 'v' }, '<leader>ccR', '<cmd>CopilotChatReview<cr>')
             vim.keymap.set({ 'n', 'v' }, '<leader>ccf', '<cmd>CopilotChatFix<cr>')
