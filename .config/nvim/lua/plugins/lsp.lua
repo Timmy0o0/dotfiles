@@ -37,6 +37,7 @@ return {
             tailwindcss = {},
             html = {},
             -- eslint = {},
+            rust_analyzer = {},
         }
         local other_servers = {
             -- format
