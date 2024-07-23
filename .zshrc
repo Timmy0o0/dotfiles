@@ -162,3 +162,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# rush
+. "$HOME/.cargo/env"
