@@ -53,11 +53,11 @@ return {
         local builtin = require('telescope.builtin')
         -- stylua: ignore start
         vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope: Find files' })
-        vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope: Find live grep' })
+        vim.keymap.set('n', '<leader>fw', builtin.live_grep, { desc = 'Telescope: Find live grep' })
         vim.keymap.set('n', '<leader><space>', builtin.buffers, { desc = 'Telescope: Find opened buffers' })
         vim.keymap.set('n', '<leader>?', builtin.help_tags, { desc = 'Telescope: Find help files' })
         vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Telescope: Find lsp diagnostics' })
-        vim.keymap.set('n', '<leader>fH', builtin.git_status, { desc = 'Telescope: Find git status files' })
+        vim.keymap.set('n', '<leader>fg', builtin.git_status, { desc = 'Telescope: Find git status files' })
         vim.keymap.set('n', '<leader>fh', "<cmd>Telescope git_signs<cr>", { desc = 'Telescope: Find git_signs' })
         -- stylua: ignore end
         vim.keymap.set('n', '<leader>/', function()
