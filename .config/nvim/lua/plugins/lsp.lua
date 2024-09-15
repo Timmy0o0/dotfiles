@@ -38,6 +38,7 @@ return {
             html = {},
             -- eslint = {},
             rust_analyzer = {},
+            prismals = {},
         }
         local other_servers = {
             -- format
