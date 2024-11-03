@@ -1,4 +1,4 @@
-map gcc cd ~/.config
-map gcn cd ~/.config/nvim
+map gff cd ~/.config
+map gfn cd ~/.config/nvim
 map gw cd ~/workspace
 map gT cd ~/.local/share/Trash/files
