@@ -126,7 +126,9 @@ return {
     {
         'echasnovski/mini.indentscope',
         event = 'VeryLazy',
-        config = true,
+        opts = {
+            symbol = '╏',
+        },
     },
     {
         'akinsho/toggleterm.nvim',
