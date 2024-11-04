@@ -42,14 +42,13 @@ return {
             },
         },
         config = function()
-            -- require('copilot').setup({})
             require('avante').setup({
                 -- add any opts here
                 ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
                 provider = 'claude', -- Recommend using Claude
-                auto_suggestions_provider = 'claude', -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+                -- auto_suggestions_provider = 'claude', -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
                 -- provider = 'copilot',
-                -- auto_suggestions_provider = 'copilot', -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+                auto_suggestions_provider = 'copilot', -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
                 -- claude = {
                 --     endpoint = 'https://api.anthropic.com',
                 --     model = 'claude-3-5-sonnet-20241022',
@@ -242,35 +241,35 @@ return {
         event = 'InsertEnter',
         config = function()
             require('copilot').setup({
-                -- panel = {
-                --     enabled = true,
-                --     auto_refresh = false,
-                --     keymap = {
-                --         jump_prev = '[[',
-                --         jump_next = ']]',
-                --         accept = '<CR>',
-                --         refresh = 'gr',
-                --         open = '<M-CR>',
-                --     },
-                --     layout = {
-                --         position = 'right', -- | top | left | right
-                --         ratio = 0.4,
-                --     },
-                -- },
-                -- suggestion = {
-                --     enabled = true,
-                --     auto_trigger = true,
-                --     hide_during_completion = true,
-                --     debounce = 75,
-                --     keymap = {
-                --         accept = '<M-l>',
-                --         accept_word = false,
-                --         accept_line = false,
-                --         next = '<M-]>',
-                --         prev = '<M-[>',
-                --         dismiss = '<C-]>',
-                --     },
-                -- },
+                panel = {
+                    enabled = true,
+                    auto_refresh = false,
+                    keymap = {
+                        jump_prev = '[[',
+                        jump_next = ']]',
+                        accept = '<CR>',
+                        refresh = 'gr',
+                        open = '<M-CR>',
+                    },
+                    layout = {
+                        position = 'right', -- | top | left | right
+                        ratio = 0.4,
+                    },
+                },
+                suggestion = {
+                    enabled = true,
+                    auto_trigger = true,
+                    hide_during_completion = true,
+                    debounce = 75,
+                    keymap = {
+                        accept = '<M-l>',
+                        accept_word = false,
+                        accept_line = false,
+                        next = '<M-]>',
+                        prev = '<M-[>',
+                        dismiss = '<C-]>',
+                    },
+                },
             })
 
             local cmp = require('cmp')
