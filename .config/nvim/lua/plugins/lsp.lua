@@ -33,7 +33,7 @@ return {
             bashls = {},
             pyright = {},
             -- pylsp = {},
-            -- tsserver = {},
+            -- ts_ls = {},
             tailwindcss = {},
             html = {},
             -- eslint = {},
@@ -139,7 +139,9 @@ return {
         })
 
         -- lsp setup
-        require('typescript-tools').setup({})
+        require('typescript-tools').setup({
+            on_attach = on_attach,
+        })
         vim.api.nvim_create_autocmd('BufWritePre', {
             pattern = '*.ts,*.tsx,*.jsx,*.js',
             callback = function(args)
