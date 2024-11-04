@@ -164,4 +164,4 @@ esac
 # pnpm end
 
 # rush
-. "$HOME/.cargo/env"
+#. "$HOME/.cargo/env"
