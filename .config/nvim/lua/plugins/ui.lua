@@ -128,7 +128,7 @@ return {
         event = 'VeryLazy',
         config = function()
             require('mini.indentscope').setup({
-                symbol = '╏',
+                -- symbol = '╏',
             })
             vim.cmd('hi! MiniIndentscopeSymbol guifg=#E5C07B')
             -- vim.cmd('hi! MiniIndentscopeSymbol guifg=#C678DD')
