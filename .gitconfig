@@ -1,7 +1,0 @@
-[user]
-	email = yangtmeco@outlook.com
-	name = Timmy
-[http]
-	proxy = http://127.0.0.1:10809
-[https]
-	proxy = https://127.0.0.1:10809
