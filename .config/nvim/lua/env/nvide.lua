@@ -7,13 +7,13 @@ if vim.g.neovide then
         -- option.guifont = "FiraCode Nerd Font:h18"
         vim.opt.guifont = 'JetBrainsMono Nerd Font:h18'
     elseif is_win then
-        vim.opt.guifont = 'JetBrainsMono Nerd Font,Segoe UI Emoji:h14'
+        vim.opt.guifont = 'JetBrainsMono Nerd Font,Segoe UI Emoji:h13'
     else
-        vim.opt.guifont = 'JetBrainsMono Nerd Font,Noto Color Emoji:h14'
+        vim.opt.guifont = 'JetBrainsMono Nerd Font,Noto Color Emoji:h13'
     end
 
     vim.g.neovide_transparency = 0.95
-    vim.api.nvim_set_keymap('n', '<M-CR>', '<cmd>lua ToggleFullscreen()<cr>', { noremap = true })
+    vim.api.nvim_set_keymap('n', '<F11>', '<cmd>lua ToggleFullscreen()<cr>', { noremap = true })
     function ToggleFullscreen()
         if vim.g.neovide_fullscreen == true then
             vim.g.neovide_fullscreen = false

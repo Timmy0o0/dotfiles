@@ -78,12 +78,16 @@ source $ZSH/oh-my-zsh.sh
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 if grep -q "Arch" /etc/os-release; then
-  # Arch Linux
-  # export MY_VARIABLE="value_for_arch"
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-  alias nvide='neovide.exe --wsl'
-
+  # Check if running in WSL
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+  if grep -qi microsoft /proc/version; then
+    # Arch Linux on WSL
+    alias nvide='neovide.exe --wsl'
+  else
+    # Native Arch Linux
+    alias nvide='neovide'
+  fi
 fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
   # macOS
