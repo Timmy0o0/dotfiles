@@ -169,3 +169,11 @@ esac
 
 # rush
 #. "$HOME/.cargo/env"
+
+# other tools
+open_cursor() {
+    local dir="${1:-.}"
+    ~/software/cursor.AppImage "$dir"
+}
+alias cursor='open_cursor'
+
