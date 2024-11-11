@@ -29,3 +29,5 @@ iterm2
 .bashrc
 .gtkrc-2.0
 .config/zshrc
+.zshrc
+.config/nvim/spell
