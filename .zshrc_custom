@@ -1,0 +1,28 @@
+# python env
+if [ -d "~/.virtualenvs" ]; then
+  # Perform actions if directory exists
+  export WORKON_HOME=~/.virtualenvs
+  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+  export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+  source /usr/bin/virtualenvwrapper.sh
+  # workon base
+
+else
+  # Perform actions if directory does not exist
+fi
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+# other tools
+open_cursor() {
+    local dir="${1:-.}"
+    ~/software/cursor.AppImage "$dir"
+}
+alias cursor='open_cursor'
+
