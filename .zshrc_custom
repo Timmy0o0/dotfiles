@@ -1,3 +1,7 @@
+# alias
+alias lg='lazygit'
+alias nvide='neovide'
+
 # python env
 if [ -d "~/.virtualenvs" ]; then
   # Perform actions if directory exists
