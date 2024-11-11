@@ -11,4 +11,5 @@ alias pf='fastfetch'
 alias ff='fastfetch'
 alias v='$EDITOR'
 alias vim='$EDITOR'
-
+alias lg='lazygit'
+alias nvide='neovide'
