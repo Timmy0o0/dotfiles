@@ -25,9 +25,9 @@ for f in ~/.config/zshrc/*; do
 done
 
 # -----------------------------------------------------
-# Load single customization file (if exists)
+# Load single extend file (if exists) do not push to github
 # -----------------------------------------------------
 
 if [ -f ~/.zshrc_custom ] ;then
-    source ~/.zshrc_custom
+    source ~/.zshrc_extend
 fi
