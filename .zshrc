@@ -28,6 +28,6 @@ done
 # Load single extend file (if exists) do not push to github
 # -----------------------------------------------------
 
-if [ -f ~/.zshrc_custom ] ;then
+if [ -f ~/.zshrc_extend ] ;then
     source ~/.zshrc_extend
 fi
