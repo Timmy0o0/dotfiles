@@ -46,27 +46,27 @@ return {
             require('avante').setup({
                 -- add any opts here
                 ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-                provider = 'claude', -- Recommend using Claude
-                auto_suggestions_provider = 'claude', -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
-                claude = {
-                    endpoint = 'https://api.anthropic.com',
-                    model = 'claude-3-5-sonnet-20241022',
-                    temperature = 0,
-                    max_tokens = 4096,
-                },
-                -- provider = 'copilot',
-                -- auto_suggestions_provider = 'copilot',
-                -- copilot = {
-                --     endpoint = 'https://api.githubcopilot.com',
-                --     model = 'gpt-4o-2024-05-13',
-                --     -- model = 'claude-3.5-sonnet',
-                --     -- proxy = nil, -- [protocol://]host[:port] Use this proxy
-                --     -- proxy = 'http://127.0.0.1:10809', -- [protocol://]host[:port] Use this proxy
-                --     allow_inseclaudecure = false, -- Allow insecure server connections
-                --     timeout = 30000, -- Timeout in milliseconds
+                -- provider = 'claude', -- Recommend using Claude
+                -- auto_suggestions_provider = 'claude', -- Since auto-suggestions are a high-frequency operation and therefore expensive, it is recommended to specify an inexpensive provider or even a free provider: copilot
+                -- claude = {
+                --     endpoint = 'https://api.anthropic.com',
+                --     model = 'claude-3-5-sonnet-20241022',
                 --     temperature = 0,
                 --     max_tokens = 4096,
                 -- },
+                provider = 'copilot',
+                auto_suggestions_provider = 'copilot',
+                copilot = {
+                    endpoint = 'https://api.githubcopilot.com',
+                    model = 'gpt-4o-2024-05-13',
+                    -- model = 'claude-3.5-sonnet',
+                    -- proxy = nil, -- [protocol://]host[:port] Use this proxy
+                    -- proxy = 'http://127.0.0.1:10809', -- [protocol://]host[:port] Use this proxy
+                    allow_inseclaudecure = false, -- Allow insecure server connections
+                    timeout = 30000, -- Timeout in milliseconds
+                    temperature = 0,
+                    max_tokens = 4096,
+                },
                 behaviour = {
                     auto_suggestions = false, -- Experimental stage
                     auto_set_highlight_group = true,
