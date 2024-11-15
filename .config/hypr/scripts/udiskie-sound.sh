@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # device: pactl list short sinks
