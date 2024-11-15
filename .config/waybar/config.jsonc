@@ -7,15 +7,8 @@
     "tray",
     "hyprland/window"
   ],
-  "modules-center": [
-    "hyprland/workspaces"
-  ],
-  "modules-right": [
-    "custom/brightness",
-    "pulseaudio",
-    "network",
-    "clock"
-  ],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["custom/brightness", "pulseaudio", "network", "clock"],
   "custom/launcher": {
     "tooltip": false,
     "format": "",
@@ -39,8 +32,8 @@
     "spacing": 10
   },
   "hyprland/window": {
-    "format": "<b>{}</b>",
-    "max-length": 40
+    "format": "{}",
+    "max-length": 50
   },
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -61,14 +54,10 @@
     "tooltip": false,
     "scroll-step": 5,
     "format": "{icon}    {volume}%",
-    "format-muted": "{icon}    {volume}%",
+    "format-muted": "    {volume}%",
     "on-click": "pavucontrol",
     "format-icons": {
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     }
   },
   "network": {
@@ -79,8 +68,20 @@
     "on-click-right": "nm-connection-editor"
   },
   "clock": {
-    "format": "<b>{:%H:%M}</b>",
-    "tooltip-format": "<big>{:%Y-%m-%d %A %Z}</big>",
-    "on-double-click": "gnome-clocks"
+    "format": "{:%H:%M}",
+    "tooltip-format": "<big>{:%B %d, %Y (%A)}</big>\n<tt>{calendar}</tt>",
+    "on-double-click": "gnome-clocks",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#89b4fa'><b>{}</b></span>",
+        "days": "<span color='#cdd6f4'>{}</span>",
+        "weeks": "<span color='#7f849c'><b>W{}</b></span>",
+        "today": "<span color='#a6e3a1'><b>{}</b></span>"
+      }
+    }
   }
 }
