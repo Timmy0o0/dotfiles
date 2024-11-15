@@ -7,3 +7,9 @@ require("session"):setup({
 })
 
 require("full-border"):setup()
+
+require("copy-file-contents"):setup({
+	clipboard_cmd = "wl-copy",
+	append_char = "\n",
+	notification = true,
+})
