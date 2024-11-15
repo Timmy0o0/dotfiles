@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 WALLPAPER_DIR="$HOME/.config/hypr/wallpaper"
@@ -9,6 +8,8 @@ cat > ~/.config/hypr/hyprpaper.conf << EOF
 preload = $WALLPAPER
 wallpaper = ,$WALLPAPER
 EOF
+
+sed -i "s|path = .*|path = $WALLPAPER|" ~/.config/hypr/hyprlock.conf
 
 pkill hyprpaper
 hyprpaper &
