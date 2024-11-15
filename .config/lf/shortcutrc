@@ -1,4 +1,4 @@
-map gff cd ~/dotfiles/
+map gff cd ~/dotfiles/.config/
 map gfn cd ~/.config/nvim
 map gw cd ~/workspace
 map gs cd ~/software/
