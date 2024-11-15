@@ -5,12 +5,22 @@
 [manager]
 
 prepend_keymap = [
+    # Jump to file
     { on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
+	{ on = "F", run = "filter --smart", desc = "Filter files" },
+
+    # lazygit
     { on = "<C-g>" , run = "plugin lazygit", desc = "Run lazygit" },
+
+    # Compress
     { on = "C" , run = "plugin ouch --args=zip", desc = "Compress with ouch" },
+
+    # Chmod
     { on = [ "c", "m" ] , run = "plugin chmod", desc = "Chmod on selected files" },
+
+    # Custom Yank
     { on = "<C-y>", run = '''shell 'dragon-drop -x -i -T "$1"' --confirm''', desc="Open dragon-drop" },
-    # { on = "y", run = '''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' --confirm''', desc="yank" }
+    { on = "Y", run = '''shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list' --confirm''', desc="yank" },
 
     # sudo
     { on = ["R", "p", "p"] , run = "plugin sudo --args='paste'", desc = "sudo paste" },
@@ -21,6 +31,20 @@ prepend_keymap = [
     { on = ["R", "a"] , run = "plugin sudo --args='create'", desc = "sudo create" },
     { on = ["R", "d"] , run = "plugin sudo --args='remove'", desc = "sudo trash" },
     { on = ["R", "D"] , run = "plugin sudo --args='remove -P'", desc = "sudo delete" },
+
+	# Goto
+	{ on = [ "g", "f", 'f' ],       run = "cd ~/dotfiles/",     desc = "Go to the dotfiles directory" },
+	{ on = [ "g", "f", 'n' ],       run = "cd ~/dotfiles/.config/nvim/",     desc = "Go to the neovim directory" },
+	{ on = [ "g", "f", 'h' ],       run = "cd ~/dotfiles/.config/hypr/",     desc = "Go to the hyprland directory" },
+	{ on = [ "g", "f", 'w' ],       run = "cd ~/dotfiles/.config/waybar/",     desc = "Go to the waybar directory" },
+	{ on = [ "g", "f", 'y' ],       run = "cd ~/dotfiles/.config/yazi/",     desc = "Go to the yazi directory" },
+	{ on = [ "g", "w" ],            run = "cd ~/workspace",     desc = "Go to the workspace directory" },
+	{ on = [ "g", "s" ],            run = "cd ~/software",     desc = "Go to the software directory" },
+	{ on = [ "g", "p" ],            run = "cd ~/Pictures",     desc = "Go to the Pictures directory" },
+	{ on = [ "g", "h" ],            run = "cd ~",             desc = "Go to the home directory" },
+	{ on = [ "g", "c" ],            run = "cd ~/.config",     desc = "Go to the config directory" },
+	{ on = [ "g", "d" ],            run = "cd ~/Downloads",   desc = "Go to the downloads directory" },
+	{ on = [ "g", "<Space>" ],      run = "cd --interactive", desc = "Go to a directory interactively" },
 ]
 
 keymap = [
