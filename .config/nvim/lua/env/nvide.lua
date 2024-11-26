@@ -9,7 +9,7 @@ if vim.g.neovide then
     elseif is_win then
         vim.opt.guifont = 'JetBrainsMono Nerd Font,Segoe UI Emoji:h13'
     else
-        vim.opt.guifont = 'JetBrainsMono Nerd Font,Noto Color Emoji:h13'
+        vim.opt.guifont = 'JetBrainsMono Nerd Font,Noto Color Emoji:h12'
     end
 
     vim.g.neovide_transparency = 0.95
