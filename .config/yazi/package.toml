@@ -1,5 +1,5 @@
 [plugin]
-deps = [{ use = "yazi-rs/plugins:jump-to-char", rev = "235437c" }, { use = "Lil-Dank/lazygit", rev = "c82794f" }, { use = "yazi-rs/plugins:git", rev = "235437c" }, { use = "yazi-rs/plugins:chmod", rev = "235437c" }, { use = "yazi-rs/plugins:full-border", rev = "235437c" }, { use = "pirafrank/what-size", rev = "f08f7f2" }, { use = "AnirudhG07/plugins-yazi:copy-file-contents", rev = "f871a9c" }, { use = "Ape/mediainfo", rev = "c69314e" }, { use = "Rolv-Apneseth/starship", rev = "77a65f5" }]
+deps = [{ use = "yazi-rs/plugins:jump-to-char", rev = "235437c" }, { use = "Lil-Dank/lazygit", rev = "c82794f" }, { use = "yazi-rs/plugins:git", rev = "235437c" }, { use = "yazi-rs/plugins:chmod", rev = "235437c" }, { use = "yazi-rs/plugins:full-border", rev = "235437c" }, { use = "pirafrank/what-size", rev = "f08f7f2" }, { use = "AnirudhG07/plugins-yazi:copy-file-contents", rev = "f871a9c" }, { use = "Ape/mediainfo", rev = "c69314e" }, { use = "Rolv-Apneseth/starship", rev = "77a65f5" }, { use = "Rolv-Apneseth/bypass", rev = "db4c2a7" }, { use = "yazi-rs/plugins:smart-enter", rev = "38418dd" }]
 
 [flavor]
 deps = []
