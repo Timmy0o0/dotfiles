@@ -8,3 +8,4 @@ iterm2
 .config/simple-update-notifier
 .config/nvim/spell
 .zshrc_extend
+.config/fish/fish_variables
