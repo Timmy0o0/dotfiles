@@ -46,6 +46,9 @@ prepend_keymap = [
     { on = ["R", "d"] , run = "plugin sudo --args='remove'", desc = "sudo trash" },
     { on = ["R", "D"] , run = "plugin sudo --args='remove -P'", desc = "sudo delete" },
 
+    # Trash
+	{ on = [ "t", "c" ],       run = '''shell 'rm -rf ~/.local/share/Trash/* && rm -rf /home/sdk/.Trash-1000/*' --confirm''',     desc = "Clear trash" },
+
 	# Goto
 	{ on = [ "g", "f", 'f' ],       run = "cd ~/dotfiles/",     desc = "Go to the dotfiles directory" },
 	{ on = [ "g", "f", 'n' ],       run = "cd ~/dotfiles/.config/nvim/",     desc = "Go to the neovim directory" },
