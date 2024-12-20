@@ -81,14 +81,4 @@ return {
         'axelvc/template-string.nvim',
         config = true,
     },
-    {
-        'uga-rosa/translate.nvim',
-        event = 'VeryLazy',
-        config = function()
-            vim.keymap.set('n', '<leader>tw', 'viw:Translate ZH<CR>', { desc = 'translate the word' })
-            require('translate').setup({
-                output = 'floating',
-            })
-        end,
-    },
 }
