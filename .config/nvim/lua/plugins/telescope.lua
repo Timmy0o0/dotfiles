@@ -20,6 +20,10 @@ return {
             },
 
             defaults = {
+                sorting_strategy = "ascending",
+                layout_config = {
+                    prompt_position = "top",
+                },
                 mappings = {
                     i = {
                         ['<C-j>'] = require('telescope.actions').move_selection_next,
