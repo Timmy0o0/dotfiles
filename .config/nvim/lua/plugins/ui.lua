@@ -111,10 +111,27 @@ return {
         opts = {},
     },
     {
-        'echasnovski/mini.comment',
-        event = 'VeryLazy',
-        config = true,
+        'numToStr/Comment.nvim',
+        dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
+        config = function()
+            require('Comment').setup({
+                pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+            })
+        end,
     },
+    -- {
+    --     'echasnovski/mini.comment',
+    --     dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
+    --     event = 'VeryLazy',
+    --     -- config = false,
+    --     opts = {
+    --         options = {
+    --             custom_commentstring = function()
+    --                 return require('ts_context_commentstring.internal').calculate_commentstring() or vim.bo.commentstring
+    --             end,
+    --         },
+    --     },
+    -- },
     {
         'echasnovski/mini.files',
         event = 'VeryLazy',
