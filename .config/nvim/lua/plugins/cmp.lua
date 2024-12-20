@@ -40,10 +40,11 @@ return {
             -- icon conf lspkind
             formatting = {
                 format = lspkind.cmp_format({
-                    symbol_map = { Copilot = '' },
+                    symbol_map = { Copilot = '', FittenCode = '' },
                     before = require('tailwind-tools.cmp').lspkind_format,
                 }),
             },
+            -- vim.api.nvim_set_hl(0, 'CmpItemKindFittenCode', { fg = '#6CC644' }),
 
             snippet = {
                 expand = function(args)
@@ -55,6 +56,7 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },
                 { name = 'buffer' },
+                { name = 'fittencode', group_index = 1 },
             }),
             mapping = cmp.mapping.preset.insert({
                 ['<Tab>'] = cmp.mapping(function(fallback)
