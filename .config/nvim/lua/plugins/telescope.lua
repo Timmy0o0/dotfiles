@@ -20,9 +20,9 @@ return {
             },
 
             defaults = {
-                sorting_strategy = "ascending",
+                sorting_strategy = 'ascending',
                 layout_config = {
-                    prompt_position = "top",
+                    prompt_position = 'top',
                 },
                 mappings = {
                     i = {
@@ -62,6 +62,7 @@ return {
         vim.keymap.set('n', '<leader>?', builtin.help_tags, { desc = 'Telescope: Find help files' })
         vim.keymap.set('n', '<leader>fd', builtin.diagnostics, { desc = 'Telescope: Find lsp diagnostics' })
         vim.keymap.set('n', '<leader>fg', builtin.git_status, { desc = 'Telescope: Find git status files' })
+        vim.keymap.set('n', '<leader>fk', builtin.keymaps, { desc = 'Telescope: Find keymaps' })
         vim.keymap.set('n', '<leader>fh', "<cmd>Telescope git_signs<cr>", { desc = 'Telescope: Find git_signs' })
         -- stylua: ignore end
         vim.keymap.set('n', '<leader>/', function()

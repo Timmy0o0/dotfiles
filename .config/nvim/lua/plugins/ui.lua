@@ -110,27 +110,14 @@ return {
         end,
         opts = {},
     },
-    {
-        'numToStr/Comment.nvim',
-        dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
-        config = function()
-            require('Comment').setup({
-                pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
-            })
-        end,
-    },
     -- {
-    --     'echasnovski/mini.comment',
+    --     'numToStr/Comment.nvim',
     --     dependencies = 'JoosepAlviste/nvim-ts-context-commentstring',
-    --     event = 'VeryLazy',
-    --     -- config = false,
-    --     opts = {
-    --         options = {
-    --             custom_commentstring = function()
-    --                 return require('ts_context_commentstring.internal').calculate_commentstring() or vim.bo.commentstring
-    --             end,
-    --         },
-    --     },
+    --     config = function()
+    --         require('Comment').setup({
+    --             pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+    --         })
+    --     end,
     -- },
     {
         'echasnovski/mini.files',
@@ -140,52 +127,6 @@ return {
             vim.keymap.set({ 'n' }, '<C-e>', '<cmd>lua MiniFiles.open()<cr>')
         end,
     },
-    {
-        'echasnovski/mini.indentscope',
-        event = 'VeryLazy',
-        config = function()
-            require('mini.indentscope').setup({
-                -- symbol = '╏',
-            })
-            vim.cmd('hi! MiniIndentscopeSymbol guifg=#E5C07B')
-            -- vim.cmd('hi! MiniIndentscopeSymbol guifg=#C678DD')
-        end,
-    },
-    -- {
-    --     'lukas-reineke/indent-blankline.nvim',
-    --     main = 'ibl',
-    --     config = function()
-    --         local highlight = {
-    --             'RainbowYellow',
-    --             'RainbowRed',
-    --             'RainbowBlue',
-    --             'RainbowOrange',
-    --             'RainbowGreen',
-    --             'RainbowViolet',
-    --             'RainbowCyan',
-    --         }
-    --         local hooks = require('ibl.hooks')
-    --         -- create the highlight groups in the highlight setup hook, so they are reset
-    --         -- every time the colorscheme changes
-    --         hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-    --             vim.api.nvim_set_hl(0, 'RainbowYellow', { fg = '#E5C07B' })
-    --             vim.api.nvim_set_hl(0, 'RainbowRed', { fg = '#E06C75' })
-    --             vim.api.nvim_set_hl(0, 'RainbowBlue', { fg = '#61AFEF' })
-    --             vim.api.nvim_set_hl(0, 'RainbowOrange', { fg = '#D19A66' })
-    --             vim.api.nvim_set_hl(0, 'RainbowGreen', { fg = '#98C379' })
-    --             vim.api.nvim_set_hl(0, 'RainbowViolet', { fg = '#C678DD' })
-    --             vim.api.nvim_set_hl(0, 'RainbowCyan', { fg = '#56B6C2' })
-    --         end)
-    --
-    --         require('ibl').setup({
-    --             scope = {
-    --                 enabled = true,
-    --                 highlight = highlight,
-    --                 priority = 500,
-    --             },
-    --         })
-    --     end,
-    -- },
     {
         'akinsho/toggleterm.nvim',
         event = 'VeryLazy',

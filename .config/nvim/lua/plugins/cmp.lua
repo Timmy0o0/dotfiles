@@ -6,7 +6,6 @@ return {
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-cmdline',
-        'luckasRanarison/tailwind-tools.nvim',
         'onsails/lspkind.nvim',
         {
             'saadparwaiz1/cmp_luasnip',
@@ -27,7 +26,6 @@ return {
             return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
         end
 
-        require('tailwind-tools').setup({})
         local lspkind = require('lspkind')
         require('luasnip.loaders.from_vscode').lazy_load()
         local luasnip = require('luasnip')
