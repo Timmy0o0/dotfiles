@@ -4,7 +4,7 @@ local global = vim.g
 
 -- Global Settings --
 option.showmode = false
-option.backspace = { 'indent', 'eol', 'start' }
+option.backspace = "indent,eol,start"
 option.tabstop = 4
 option.shiftwidth = 2
 option.expandtab = true
@@ -17,7 +17,7 @@ option.wildmenu = true
 option.hlsearch = false
 option.ignorecase = true
 option.smartcase = true
-option.completeopt = { 'menu', 'menuone' }
+option.completeopt = "menu,menuone"
 option.cursorline = true
 option.termguicolors = true
 option.signcolumn = 'yes'
@@ -28,7 +28,7 @@ option.backup = false
 option.updatetime = 50
 option.mouse = 'a'
 option.undofile = true
-option.undodir = { vim.fn.expand('$HOME/.local/share/nvim/undo') }
+option.undodir = vim.fn.expand('$HOME/.local/share/nvim/undo')
 option.exrc = true
 option.wrap = false
 option.splitbelow = true
@@ -96,7 +96,7 @@ vim.keymap.set({ 'n' }, '<Up>', '<C-w>-')
 vim.keymap.set({ 'n' }, '<Down>', '<C-w>+')
 
 -- close other window and buffer numToStr/BufOnly.nvim
-vim.keymap.set('n', '<leader>nc', '<cmd>q<cr>', { desc = 'Close Current Window' })
-vim.keymap.set('n', '<leader>no', '<cmd>only<cr>', { desc = 'Close Other Windows' })
-vim.keymap.set('n', '<leader>nC', '<cmd>bd<cr>', { desc = 'Delete Current Buffer' })
-vim.keymap.set('n', '<leader>nO', '<cmd>lua require("custom.functions").BufOnly("", "")<cr>', { desc = 'Delete Other Buffers' })
+vim.keymap.set('n', '<leader>bc', '<cmd>q<cr>', { desc = 'Close Current Window' })
+vim.keymap.set('n', '<leader>bo', '<cmd>only<cr>', { desc = 'Close Other Windows' })
+vim.keymap.set('n', '<leader>bC', '<cmd>bd<cr>', { desc = 'Delete Current Buffer' })
+vim.keymap.set('n', '<leader>bO', '<cmd>lua require("custom.functions").BufOnly("", "")<cr>', { desc = 'Delete Other Buffers' })
