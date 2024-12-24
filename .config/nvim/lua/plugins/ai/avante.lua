@@ -1,3 +1,6 @@
+-- stylua: ignore
+if true then return {} end
+
 return {
   "yetone/avante.nvim",
   event = "VeryLazy",
@@ -129,6 +132,9 @@ return {
       --- Disable by setting to -1.
       override_timeoutlen = 500,
     },
+  },
+  keys = {
+    { "<leader>a", "", desc = "+ai", mode = { "n", "v" } },
   },
   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
   build = "make",

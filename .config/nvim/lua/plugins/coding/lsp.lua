@@ -2,9 +2,12 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      -- disable K keymap
-      keys[#keys + 1] = { "K", false }
+      -- local keys = require("lazyvim.plugins.lsp.keymaps").get()
+      -- disable
+      -- keys[#keys + 1] = { "K", false }
+      -- add new gk keymap with the same functionality
+      -- keys[#keys + 1] = { "gk", vim.lsp.buf.hover, desc = "Hover Documentation" }
+      -- keys[#keys + 1] = { "gk", LazyVim.lsp.hover, desc = "Hover Documentation" }
     end,
   },
   {
