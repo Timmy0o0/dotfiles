@@ -7,4 +7,7 @@ return {
       },
     },
   },
+  keys = {
+    { "<leader>gg", false },
+  },
 }
