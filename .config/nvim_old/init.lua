@@ -1,0 +1,7 @@
+vim.loader.enable()
+require('options')
+require('keymaps')
+require('lazy_nvim')
+require('env.wsl')
+require('env.neovide')
+require('custom.autocmd')

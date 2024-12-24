@@ -1,9 +1,7 @@
 return {
-    'luozhiya/fittencode.nvim',
-    event = 'InsertEnter',
-    config = function()
-        require('fittencode').setup({
-            completion_mode = 'source',
-        })
-    end,
+  "luozhiya/fittencode.nvim",
+  event = "InsertEnter",
+  opts = {
+    completion_mode = "source",
+  },
 }
