@@ -8,6 +8,6 @@ return {
     },
   },
   keys = {
-    { "<leader>gg", false },
+    -- { "<leader>gg", false },
   },
 }
