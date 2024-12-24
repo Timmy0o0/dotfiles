@@ -17,6 +17,7 @@ return {
     --     temperature = 0,
     --     max_tokens = 4096,
     -- },
+    --
     provider = "copilot",
     auto_suggestions_provider = "copilot",
     copilot = {

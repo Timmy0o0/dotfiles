@@ -14,11 +14,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.code_action({
       context = {
         only = { "source.organizeImports" },
-        diagnostics = {},  -- Add empty diagnostics array
+        diagnostics = {}, -- Add empty diagnostics array
       },
       apply = true,
     })
     -- Then sort tailwind classes
-    vim.cmd("TailwindSortSync")
+    -- vim.cmd("TailwindSortSync")
   end,
 })
