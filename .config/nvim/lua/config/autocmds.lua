@@ -8,8 +8,8 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.tsx", "*.jsx" },
-  callback = function()
+  pattern = "*.ts,*.tsx,*.jsx,*.js",
+  callback = function(args)
     -- First organize imports with proper context
     vim.lsp.buf.code_action({
       context = {
@@ -18,6 +18,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
       },
       apply = true,
     })
+    require("conform").format({ bufnr = args.buf })
     -- Then sort tailwind classes
     -- vim.cmd("TailwindSortSync")
   end,

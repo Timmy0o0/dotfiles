@@ -1,8 +1,8 @@
 return {
   "CopilotC-Nvim/CopilotChat.nvim",
   opts = {
-    -- model = "gpt-4o",
-    model = "claude-3.5-sonnet",
+    model = "gpt-4o",
+    -- model = "claude-3.5-sonnet",
     prompts = {
       Explain = {
         prompt = "> /COPILOT_EXPLAIN\n\nWrite an explanation for the selected code as paragraphs of text in Chinese.",
