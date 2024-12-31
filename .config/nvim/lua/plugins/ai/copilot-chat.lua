@@ -3,6 +3,8 @@ return {
   opts = {
     -- model = "gpt-4o",
     model = "claude-3.5-sonnet",
+    auto_insert_mode = false, -- Automatically enter insert mode when opening window and on new prompt
+    -- insert_at_end = false, -- Move cursor to end of buffer when inserting text
     prompts = {
       Explain = {
         prompt = "> /COPILOT_EXPLAIN\n\nWrite an explanation for the selected code as paragraphs of text in Chinese.",
