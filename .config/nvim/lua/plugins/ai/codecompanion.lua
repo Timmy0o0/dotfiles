@@ -4,6 +4,7 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
+  event = "VeryLazy",
   keys = {
     { "<leader>a", "", desc = "ai" },
     { "<leader>ac", "<cmd>CodeCompanionChat<cr>", desc = "Open CodeCompanion Chat", mode = { "n", "v" } },
