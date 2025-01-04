@@ -5,7 +5,7 @@ return {
     opts.sources.providers.codecompanion = {
       name = "CodeCompanion",
       module = "codecompanion.providers.completion.blink",
-      score_offset = 100,
+      score_offset = 200,
     }
   end,
 }

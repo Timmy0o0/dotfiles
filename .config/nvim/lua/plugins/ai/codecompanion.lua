@@ -3,11 +3,13 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
+    { "MeanderingProgrammer/render-markdown.nvim", ft = { "markdown", "codecompanion" } },
   },
   event = "VeryLazy",
   keys = {
     { "<leader>a", "", desc = "ai" },
     { "<leader>ac", "<cmd>CodeCompanionChat<cr>", desc = "Open CodeCompanion Chat", mode = { "n", "v" } },
+    { "ga", "<cmd>CodeCompanionChat Add<cr>", desc = "Add CodeCompanion Chat", mode = { "v" } },
     { "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "Open CodeCompanion Actions", mode = { "n", "v" } },
     { "<leader>ap", "<cmd>CodeCompanion<cr>", desc = "Open CodeCompanion" },
     { "<leader>ax", "<cmd>CodeCompanionCmd<cr>", desc = "Open CodeCompanion Command" },
