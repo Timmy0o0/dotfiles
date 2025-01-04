@@ -1,5 +1,6 @@
 return {
   "kevinhwang91/nvim-ufo",
+  event = "VeryLazy",
   dependencies = {
     "kevinhwang91/promise-async",
   },
@@ -25,6 +26,9 @@ return {
 
   opts = {
     provider_selector = function(bufnr, filetype, buftype)
+      if filetype == "snacks_dashboard" then
+        return ""
+      end
       return { "treesitter", "indent" }
     end,
 

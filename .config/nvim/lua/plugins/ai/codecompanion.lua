@@ -250,8 +250,8 @@ return {
         close_chat_at = 240, -- Close an open chat buffer if the total columns of your display are less than...
         -- layout = "vertical", -- vertical|horizontal split for default provider
         -- opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
-        provider = "default",
-        -- provider = "mini_diff",
+        -- provider = "default",
+        provider = "mini_diff",
       },
     },
     opts = {

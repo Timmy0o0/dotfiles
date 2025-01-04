@@ -1,5 +1,6 @@
 return {
   "keaising/im-select.nvim",
+  event = "VeryLazy",
   opts = {
 
     -- IM will be set to `default_im_select` in `normal` mode
