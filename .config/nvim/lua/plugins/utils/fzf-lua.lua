@@ -5,7 +5,6 @@ return {
     { "<leader>:", false },
     { "<leader>sb", false },
     { "<leader>sg", false },
-    { "<leader>sj", false },
     { "<leader>sG", false },
     { "<leader>sR", false },
     { "<leader>sM", false },
