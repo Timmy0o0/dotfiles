@@ -14,5 +14,5 @@ vim.keymap.set({ "n", "v" }, "dL", "d$")
 vim.keymap.set({ "n", "v" }, "yH", "y0")
 vim.keymap.set({ "n", "v" }, "yL", "y$")
 
--- vim.keymap.set({ "n", "v" }, "J", "5j")
--- vim.keymap.set({ "n", "v" }, "K", "5k")
+vim.keymap.set({ "n", "v" }, "J", "5j")
+vim.keymap.set({ "n", "v" }, "K", "5k")
