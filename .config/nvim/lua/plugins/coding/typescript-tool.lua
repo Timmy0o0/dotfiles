@@ -3,7 +3,7 @@ return {
   dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   opts = {
     settings = {
-      code_lens = "all",
+      code_lens = "off", -- all
       tsserver_file_preferences = {
         includeInlayParameterNameHints = "all",
         includeCompletionsForModuleExports = true,
