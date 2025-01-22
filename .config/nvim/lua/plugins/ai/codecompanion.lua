@@ -16,16 +16,16 @@ return {
   },
   opts = {
     adapters = {
-      ollama = function()
+      deepseek = function()
         return require("codecompanion.adapters").extend("openai_compatible", {
           env = {
-            url = "https://api.deepseek.com/", -- optional: default value is ollama url http://127.0.0.1:11434
+            url = "https://api.deepseek.com",
             api_key = "DEEPSEEK_API_KEY", -- optional: if your endpoint is authenticated
-            -- chat_url = "/v1/chat/completions", -- optional: default value, override if different
           },
           schema = {
             model = {
               default = "deepseek-chat",
+              -- default = "deepseek-reasoner",
             },
           },
         })
@@ -33,7 +33,7 @@ return {
     },
     strategies = {
       chat = {
-        adapter = "ollama",
+        adapter = "deepseek",
         slash_commands = {
           ["buffer"] = {
             callback = "strategies.chat.slash_commands.buffer",
@@ -241,10 +241,10 @@ return {
         },
       },
       inline = {
-        adapter = "ollama",
+        adapter = "deepseek",
       },
       cmd = {
-        adapter = "ollama",
+        adapter = "deepseek",
       },
     },
     display = {
