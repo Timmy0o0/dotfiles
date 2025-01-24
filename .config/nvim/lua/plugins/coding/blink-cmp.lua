@@ -7,5 +7,6 @@ return {
       module = "codecompanion.providers.completion.blink",
       score_offset = 200,
     }
+    -- vim.list_extend(opts.sources.compat, { "avante_commands", "avante_mentions", "avante_files" })
   end,
 }

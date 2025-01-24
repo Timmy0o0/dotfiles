@@ -17,10 +17,9 @@ return {
   opts = {
     adapters = {
       deepseek = function()
-        return require("codecompanion.adapters").extend("openai_compatible", {
+        return require("codecompanion.adapters").extend("deepseek", {
           env = {
-            url = "https://api.deepseek.com",
-            api_key = "DEEPSEEK_API_KEY", -- optional: if your endpoint is authenticated
+            api_key = "DEEPSEEK_API_KEY", -- See note above about using cmd for secure API key storage
           },
           schema = {
             model = {
@@ -127,8 +126,8 @@ return {
           },
           close = {
             modes = {
-              n = "<C-c>",
-              i = "<C-c>",
+              n = "q",
+              i = "<C-q>",
             },
             index = 4,
             callback = "keymaps.close",
@@ -136,7 +135,7 @@ return {
           },
           stop = {
             modes = {
-              n = "q",
+              n = "<C-c>",
             },
             index = 5,
             callback = "keymaps.stop",
@@ -246,6 +245,7 @@ return {
       cmd = {
         adapter = "deepseek",
       },
+      agent = { adapter = "deepseek" },
     },
     display = {
       diff = {
@@ -253,8 +253,8 @@ return {
         close_chat_at = 240, -- Close an open chat buffer if the total columns of your display are less than...
         -- layout = "vertical", -- vertical|horizontal split for default provider
         -- opts = { "internal", "filler", "closeoff", "algorithm:patience", "followwrap", "linematch:120" },
-        -- provider = "default",
-        provider = "mini_diff",
+        provider = "default",
+        -- provider = "mini_diff",
       },
     },
     opts = {
