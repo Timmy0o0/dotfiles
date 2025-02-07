@@ -16,6 +16,22 @@ return {
   },
   opts = {
     adapters = {
+      ollama = function()
+        return require("codecompanion.adapters").extend("ollama", {
+          name = "deepseek-r1:1.5b", -- Give this adapter a different name to differentiate it from the default ollama adapter
+          schema = {
+            model = {
+              default = "deepseek-r1:1.5b",
+            },
+            num_ctx = {
+              default = 16384,
+            },
+            num_predict = {
+              default = -1,
+            },
+          },
+        })
+      end,
       deepseek = function()
         return require("codecompanion.adapters").extend("deepseek", {
           env = {
@@ -33,6 +49,7 @@ return {
     strategies = {
       chat = {
         adapter = "deepseek",
+        -- adapter = "ollama",
         slash_commands = {
           ["buffer"] = {
             callback = "strategies.chat.slash_commands.buffer",
@@ -241,11 +258,16 @@ return {
       },
       inline = {
         adapter = "deepseek",
+        -- adapter = "ollama",
       },
       cmd = {
         adapter = "deepseek",
+        -- adapter = "ollama",
       },
-      agent = { adapter = "deepseek" },
+      agent = {
+        adapter = "deepseek",
+        -- adapter = "ollama",
+      },
     },
     display = {
       diff = {
