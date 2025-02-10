@@ -8,21 +8,23 @@ prepend_keymap = [
   # Jump to file
   { on = "f", run = "plugin jump-to-char", desc = "Jump to char" },
   { on = "F", run = "filter --smart", desc = "Filter files" },
-  { on = "l", run = "plugin bypass --args=smart_enter", desc = "Open a file, or recursively enter child directory, skipping children with only a single subdirectory" },
-  { on = "h", run = "plugin bypass --args=reverse", desc = "Recursively enter parent directory, skipping parents with only a single subdirectory" },
+  # { on = "l", run = "plugin bypass smart_enter", desc = "Open a file, or recursively enter child directory, skipping children with only a single subdirectory" },
+  { on = "l", run = "plugin smart-enter", desc = "Enter the child directory, or open the file" },
+  { on = "H", run = "plugin bypass reverse", desc = "Recursively enter parent directory, skipping parents with only a single subdirectory" },
+  { on = "L", run = "plugin bypass", desc = "Recursively enter child directory, skipping children with only a single subdirectory" },
 
   # Calc size
   # { on   = [ ".", "s" ], run  = "plugin what-size", desc = "Calc size of selection or cwd" },
   { on = [
     ".",
     "s",
-  ], run = "plugin what-size --args='--clipboard'", desc = "Calc size of selection or cwd" },
+  ], run = "plugin what-size --clipboard", desc = "Calc size of selection or cwd" },
 
   # lazygit
   { on = "<C-g>", run = "plugin lazygit", desc = "Run lazygit" },
 
   # Compress
-  { on = "C", run = "plugin ouch --args=zip", desc = "Compress with ouch" },
+  { on = "C", run = "plugin ouch zip", desc = "Compress with ouch" },
 
   # Chmod
   { on = [
@@ -77,43 +79,56 @@ prepend_keymap = [
     "R",
     "p",
     "p",
-  ], run = "plugin sudo --args='paste'", desc = "sudo paste" },
+  ], run = "plugin sudo -- paste", desc = "sudo paste" },
   { on = [
     "R",
     "P",
-  ], run = "plugin sudo --args='paste -f'", desc = "sudo paste force" },
+  ], run = "plugin sudo -- paste --force", desc = "sudo paste force" },
   { on = [
     "R",
     "r",
-  ], run = "plugin sudo --args='rename'", desc = "sudo rename" },
+  ], run = "plugin sudo -- rename", desc = "sudo rename" },
   { on = [
     "R",
     "p",
     "l",
-  ], run = "plugin sudo --args='link'", desc = "sudo link" },
+  ], run = "plugin sudo -- link", desc = "sudo link" },
+  { on = [
+    "R",
+    "p",
+    "r",
+  ], run = "plugin sudo -- link --relative", desc = "sudo link relative path" },
   { on = [
     "R",
     "p",
     "L",
-  ], run = "plugin sudo --args='link -r'", desc = "sudo link relative path" },
+  ], run = "plugin sudo -- hardlink", desc = "sudo link relative path" },
   { on = [
     "R",
     "a",
-  ], run = "plugin sudo --args='create'", desc = "sudo create" },
+  ], run = "plugin sudo -- create", desc = "sudo create" },
   { on = [
     "R",
     "d",
-  ], run = "plugin sudo --args='remove'", desc = "sudo trash" },
+  ], run = "plugin sudo -- remove", desc = "sudo trash" },
   { on = [
     "R",
     "D",
-  ], run = "plugin sudo --args='remove -P'", desc = "sudo delete" },
+  ], run = "plugin sudo -- remove --permanently", desc = "sudo delete" },
 
   # Trash
+  # { on = [
+  #   "t",
+  #   "c",
+  # ], run = '''shell 'rm -rf ~/.local/share/Trash/* && rm -rf /home/sdk/.Trash-1000/*' --confirm''', desc = "Clear trash" },
   { on = [
     "t",
     "c",
-  ], run = '''shell 'rm -rf ~/.local/share/Trash/* && rm -rf /home/sdk/.Trash-1000/*' --confirm''', desc = "Clear trash" },
+  ], run = '''shell 'trash-empty' --confirm''', desc = "Clear trash" },
+  { on = [
+    "t",
+    "u",
+  ], run = "plugin restore", desc = "Restore last deleted files/folders" },
 
   # Goto
   { on = [
@@ -196,8 +211,8 @@ keymap = [
   { on = "<PageUp>", run = "arrow -100%", desc = "Move cursor up one page" },
   { on = "<PageDown>", run = "arrow 100%", desc = "Move cursor down one page" },
 
-  { on = ["g", "g"], run = "arrow -99999999", desc = "Move cursor to the top" },
-  { on = "G", run = "arrow 99999999", desc = "Move cursor to the bottom" },
+  { on = ["g", "g"], run = "arrow bot", desc = "Move cursor to the top" },
+  { on = "G", run = "arrow top", desc = "Move cursor to the bottom" },
 
   # Navigation
   { on = "h", run = "leave", desc = "Go back to the parent directory" },

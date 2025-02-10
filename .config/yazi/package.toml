@@ -1,5 +1,67 @@
-[plugin]
-deps = [{ use = "yazi-rs/plugins:jump-to-char", rev = "c7feb90" }, { use = "Lil-Dank/lazygit", rev = "c82794f" }, { use = "yazi-rs/plugins:git", rev = "c7feb90" }, { use = "yazi-rs/plugins:chmod", rev = "c7feb90" }, { use = "yazi-rs/plugins:full-border", rev = "c7feb90" }, { use = "pirafrank/what-size", rev = "2780de5" }, { use = "AnirudhG07/plugins-yazi:copy-file-contents", rev = "11167e1" }, { use = "yazi-rs/plugins:smart-enter", rev = "c7feb90" }, { use = "Rolv-Apneseth/starship", rev = "9c37d37" }, { use = "Rolv-Apneseth/bypass", rev = "6c5414f" }, { use = "boydaihungst/mediainfo", rev = "ddfd5ec" }]
+[[plugin.deps]]
+use = "Rolv-Apneseth/bypass"
+rev = "6c5414f"
+hash = "905054b2df08ff79af223e0b6f249fa3"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:chmod"
+rev = "8945e54"
+hash = "f28138c2e11e87962b66d583fef724c3"
+
+[[plugin.deps]]
+use = "AnirudhG07/plugins-yazi:copy-file-contents"
+rev = "9c309b5"
+hash = "27c50e6bc15c09096505b805b238ade0"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:full-border"
+rev = "8945e54"
+hash = "ae9e1d0c6bfd68cdebc98cc684c22b45"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:jump-to-char"
+rev = "8945e54"
+hash = "af11685de39c366ec1137fcbccacdbff"
+
+[[plugin.deps]]
+use = "Lil-Dank/lazygit"
+rev = "9f924e3"
+hash = "2b0c33928986f126d5c5a4cac31a6b46"
+
+[[plugin.deps]]
+use = "boydaihungst/mediainfo"
+rev = "50a3785"
+hash = "5842243b6fc64b4d3bc3cf8bf15fb9d5"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:smart-enter"
+rev = "8945e54"
+hash = "aef2b1a805b80cce573bb766f1459d88"
+
+[[plugin.deps]]
+use = "Rolv-Apneseth/starship"
+rev = "d1cd0a3"
+hash = "d1fee6d0f74cb52d4e031dc6b9207f31"
+
+[[plugin.deps]]
+use = "TD-Sky/sudo"
+rev = "af70636"
+hash = "a94dcbe9266512806c677138e8591ddb"
+
+[[plugin.deps]]
+use = "pirafrank/what-size"
+rev = "b23e3a4"
+hash = "98e5f5af3efd3ba8bc2db0720187cc83"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:git"
+rev = "8945e54"
+hash = "771f18427fb75fb19990ce602bb322f4"
+
+[[plugin.deps]]
+use = "boydaihungst/restore"
+rev = "89fddfd"
+hash = "b442aa672e07ec0765b4b00e7bfdc9b5"
 
 [flavor]
 deps = []
