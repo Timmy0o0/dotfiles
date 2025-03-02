@@ -45,10 +45,23 @@ return {
           },
         })
       end,
+      gemini = function()
+        return require("codecompanion.adapters").extend("gemini", {
+          env = {
+            api_key = "GEMINI_API_KEY", -- See note above about using cmd for secure API key storage
+          },
+          schema = {
+            model = {
+              default = "gemini-2.0-flash",
+            },
+          },
+        })
+      end,
     },
     strategies = {
       chat = {
-        adapter = "deepseek",
+        adapter = "gemini",
+        -- adapter = "deepseek",
         -- adapter = "ollama",
         slash_commands = {
           ["buffer"] = {
@@ -257,15 +270,18 @@ return {
         },
       },
       inline = {
-        adapter = "deepseek",
+        adapter = "gemini",
+        -- adapter = "deepseek",
         -- adapter = "ollama",
       },
       cmd = {
-        adapter = "deepseek",
+        adapter = "gemini",
+        -- adapter = "deepseek",
         -- adapter = "ollama",
       },
       agent = {
-        adapter = "deepseek",
+        adapter = "gemini",
+        -- adapter = "deepseek",
         -- adapter = "ollama",
       },
     },
