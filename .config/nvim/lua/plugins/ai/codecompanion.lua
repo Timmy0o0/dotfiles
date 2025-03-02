@@ -72,20 +72,13 @@ return {
               provider = "fzf_lua", -- default|telescope|mini_pick|fzf_lua
             },
           },
-          ["fetch"] = {
-            callback = "strategies.chat.slash_commands.fetch",
-            description = "Insert URL contents",
-            opts = {
-              adapter = "jina",
-            },
-          },
           ["file"] = {
             callback = "strategies.chat.slash_commands.file",
             description = "Insert a file",
             opts = {
               contains_code = true,
               max_lines = 1000,
-              provider = "fzf_lua", -- default|telescope|mini_pick|fzf_lua
+              provider = "fzf_lua", -- default|telescope|fzf_lua
             },
           },
           ["help"] = {
@@ -97,38 +90,16 @@ return {
               provider = "fzf_lua", -- telescope|mini_pick|fzf_lua
             },
           },
-          ["now"] = {
-            callback = "strategies.chat.slash_commands.now",
-            description = "Insert the current date and time",
-            opts = {
-              contains_code = false,
-            },
-          },
           ["symbols"] = {
             callback = "strategies.chat.slash_commands.symbols",
             description = "Insert symbols for a selected file",
             opts = {
               contains_code = true,
-              provider = "fzf_lua", -- default|telescope|mini_pick|fzf_lua
-            },
-          },
-          ["terminal"] = {
-            callback = "strategies.chat.slash_commands.terminal",
-            description = "Insert terminal output",
-            opts = {
-              contains_code = false,
+              provider = "fzf_lua", -- telescope|mini_pick|fzf_lua
             },
           },
         },
         keymaps = {
-          options = {
-            modes = {
-              n = "?",
-            },
-            callback = "keymaps.options",
-            description = "Options",
-            hide = true,
-          },
           completion = {
             modes = {
               i = "<Tab>",
@@ -136,23 +107,6 @@ return {
             index = 1,
             callback = "keymaps.completion",
             description = "Completion Menu",
-          },
-          send = {
-            modes = {
-              n = { "<CR>", "<C-s>" },
-              i = "<C-s>",
-            },
-            index = 2,
-            callback = "keymaps.send",
-            description = "Send",
-          },
-          regenerate = {
-            modes = {
-              n = "gr",
-            },
-            index = 3,
-            callback = "keymaps.regenerate",
-            description = "Regenerate the last response",
           },
           close = {
             modes = {
@@ -171,14 +125,6 @@ return {
             callback = "keymaps.stop",
             description = "Stop Request",
           },
-          clear = {
-            modes = {
-              n = "gx",
-            },
-            index = 6,
-            callback = "keymaps.clear",
-            description = "Clear Chat",
-          },
           codeblock = {
             modes = {
               n = "gC",
@@ -186,86 +132,6 @@ return {
             index = 7,
             callback = "keymaps.codeblock",
             description = "Insert Codeblock",
-          },
-          yank_code = {
-            modes = {
-              n = "gy",
-            },
-            index = 8,
-            callback = "keymaps.yank_code",
-            description = "Yank Code",
-          },
-          pin = {
-            modes = {
-              n = "gp",
-            },
-            index = 9,
-            callback = "keymaps.pin_reference",
-            description = "Pin Reference",
-          },
-          next_chat = {
-            modes = {
-              n = "}",
-            },
-            index = 10,
-            callback = "keymaps.next_chat",
-            description = "Next Chat",
-          },
-          previous_chat = {
-            modes = {
-              n = "{",
-            },
-            index = 11,
-            callback = "keymaps.previous_chat",
-            description = "Previous Chat",
-          },
-          next_header = {
-            modes = {
-              n = "]]",
-            },
-            index = 12,
-            callback = "keymaps.next_header",
-            description = "Next Header",
-          },
-          previous_header = {
-            modes = {
-              n = "[[",
-            },
-            index = 13,
-            callback = "keymaps.previous_header",
-            description = "Previous Header",
-          },
-          change_adapter = {
-            modes = {
-              n = "ga",
-            },
-            index = 14,
-            callback = "keymaps.change_adapter",
-            description = "Change adapter",
-          },
-          fold_code = {
-            modes = {
-              n = "gf",
-            },
-            index = 14,
-            callback = "keymaps.fold_code",
-            description = "Fold code",
-          },
-          debug = {
-            modes = {
-              n = "gd",
-            },
-            index = 15,
-            callback = "keymaps.debug",
-            description = "View debug info",
-          },
-          system_prompt = {
-            modes = {
-              n = "gs",
-            },
-            index = 16,
-            callback = "keymaps.toggle_system_prompt",
-            description = "Toggle the system prompt",
           },
         },
       },
@@ -302,8 +168,7 @@ return {
       system_prompt = function(opts)
         local language = opts.language or "English"
         return string.format(
-          [[You are an AI programming assistant named "CodeCompanion".
-You are currently plugged in to the Neovim text editor on a user's machine.
+          [[You are an AI programming assistant named "CodeCompanion". You are currently plugged into the Neovim text editor on a user's machine.
 
 Your core tasks include:
 - Answering general programming questions.
@@ -319,23 +184,22 @@ Your core tasks include:
 
 You must:
 - Follow the user's requirements carefully and to the letter.
-- Keep your answers short and impersonal, especially if the user responds with context outside of your tasks.
-- Minimize other prose.
+- Keep your answers short and impersonal, especially if the user's context is outside your core tasks.
+- Minimize additional prose unless clarification is needed.
 - Use Markdown formatting in your answers.
-- Include the programming language name at the start of the Markdown code blocks.
+- Include the programming language name at the start of each Markdown code block.
 - Avoid including line numbers in code blocks.
 - Avoid wrapping the whole response in triple backticks.
-- Only return code that's relevant to the task at hand. You may not need to return all of the code that the user has shared.
-- Use actual line breaks instead of '\n' in your response to begin new lines.
-- Use '\n' only when you want a literal backslash followed by a character 'n'.
-- All non-code responses must be in %s.
+- Only return code that's directly relevant to the task at hand. You may omit code that isn’t necessary for the solution.
+- Use actual line breaks in your responses; only use "\n" when you want a literal backslash followed by 'n'.
+- All non-code text responses must be written in the %s language indicated.
 - All code responses must be in English.
 
 When given a task:
-1. Think step-by-step and describe your plan for what to build in pseudocode, written out in great detail, unless asked not to do so.
-2. Output the code in a single code block, being careful to only return relevant code.
-3. You should always generate short suggestions for the next user turns that are relevant to the conversation.
-4. You can only give one reply for each conversation turn.]],
+1. Think step-by-step and, unless the user requests otherwise or the task is very simple, describe your plan in detailed pseudocode.
+2. Output the final code in a single code block, ensuring that only relevant code is included.
+3. End your response with a short suggestion for the next user turn that directly supports continuing the conversation.
+4. Provide exactly one complete reply per conversation turn.]],
           language
         )
       end,
