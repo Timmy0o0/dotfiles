@@ -31,28 +31,29 @@
 }
 #workspaces button {
   padding: 0 5px;
-  min-width: 35px;
-  min-height: 35px;
+  min-width: 32px;
+  min-height: 20px;
   margin: 4px;
   background-color: transparent;
-  color: #ffffff;
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  color: #e5e9f0;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 #workspaces button label {
   padding: 0;
   margin: 0;
 }
 #workspaces button.active {
-  background-color: rgba(242, 164, 174, 0.8);
-  box-shadow: inset 0 -3px #b1d5e5;
+  background-color: rgba(177, 213, 229, 0.2);
+  box-shadow: inset 0 -2px #b1d5e5;
 }
 #workspaces button:hover {
-  background: rgba(177, 213, 229, 0.2);
-  box-shadow: inset 0 -3px #d8dee9;
+  background: rgba(177, 213, 229, 0.1);
+  box-shadow: inset 0 -2px #e5e9f0;
 }
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  background-color: rgba(191, 97, 106, 0.8);
+  color: #eceff4;
 }
 
 #clock {
@@ -127,25 +128,3 @@
   background: rgba(177, 213, 229, 0.2);
 }
 
-#custom-music {
-  margin: 6px;
-  padding: 0 10px;
-  border-radius: 8px;
-  background: rgba(59, 66, 82, 0.5);
-  transition: all 0.3s ease;
-}
-
-#custom-music.playing {
-  color: #89b4fa;
-  background: rgba(137, 180, 250, 0.1);
-  box-shadow: inset 0 -3px #89b4fa;
-}
-
-#custom-music.paused {
-  color: #6c7086;
-  opacity: 0.8;
-}
-
-#custom-music:hover {
-  background: rgba(137, 180, 250, 0.2);
-}
