@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./apps/fastfetch.nix ./apps/zsh.nix ./apps/yazi/default.nix ];
+  imports = [ ./apps/fastfetch.nix ./apps/zsh.nix ./apps/yazi ];
   home.username = "timmy";
   home.homeDirectory = "/home/timmy";
   home.stateVersion = "24.11";
