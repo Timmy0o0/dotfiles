@@ -1,14 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    zsh
-    starship
-    zoxide
-    lazygit
-    eza
-  ];
-
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
@@ -29,7 +21,7 @@
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "sudo" "docker" "zoxide" "starship"];
+      plugins = [ "git" "sudo" "docker" "zoxide" "starship" ];
       theme = "robbyrussell";
     };
     initExtra = ''
@@ -37,4 +29,4 @@
       export EDITOR=nvim
     '';
   };
-} 
+}
