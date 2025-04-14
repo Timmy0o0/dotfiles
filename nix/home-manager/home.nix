@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [ ./apps/fastfetch.nix ./apps/zsh.nix ./apps/yazi ];
+  imports = [ ./apps/fastfetch.nix ./apps/zsh.nix ./apps/yazi ./apps/git.nix ];
   home.username = "timmy";
   home.homeDirectory = "/home/timmy";
   home.stateVersion = "24.11";
@@ -28,10 +28,5 @@
     zoxide
     eza
   ];
-  programs.git = {
-    enable = true;
-    userName = "timmy";
-    userEmail = "yangtmeco@outlook.com";
-  };
   programs.home-manager.enable = true;
 }
