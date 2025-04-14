@@ -12,17 +12,17 @@
     nixfmt-classic
     # yazi
     mediainfo
+    trash-cli
+    nushell
+    ouch
     ffmpeg
     jq
     p7zip
-    ouch
     poppler
     fd
     ripgrep
     fzf
     imagemagick
-    trash-cli
-    nushell
     # zsh
     starship
     zoxide
