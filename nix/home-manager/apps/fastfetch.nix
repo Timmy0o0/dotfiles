@@ -1,4 +1,11 @@
-//  Thanks to Bina
+{config, lib, pkgs, ...}:
+
+{
+  home.packages = with pkgs; [
+    fastfetch
+  ];
+
+  xdg.configFile."fastfetch/config.jsonc".text = ''
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
@@ -20,7 +27,7 @@
     },
     {
       "type": "kernel",
-      "key": " ├  ",
+      "key": " ├ 󰒔 ",
       "keyColor": "red"
     },
     {
@@ -31,7 +38,7 @@
     },
     {
       "type": "shell",
-      "key": " └  ",
+      "key": " └ 󰞷 ",
       "keyColor": "red"
     },
     "break",
@@ -52,17 +59,17 @@
     },
     {
       "type": "cursor",
-      "key": " ├  ",
+      "key": " ├ 󰜈 ",
       "keyColor": "green"
     },
     {
       "type": "terminal",
-      "key": " ├  ",
+      "key": " ├ 󰆍 ",
       "keyColor": "green"
     },
     {
       "type": "terminalfont",
-      "key": " └  ",
+      "key": " └ 󰛖 ",
       "keyColor": "green"
     },
     "break",
@@ -75,7 +82,7 @@
     {
       "type": "cpu",
       "format": "{1} ({3}) @ {7} GHz",
-      "key": " ├  ",
+      "key": " ├ 󰻠 ",
       "keyColor": "yellow"
     },
     {
@@ -86,7 +93,7 @@
     },
     {
       "type": "memory",
-      "key": " ├  ",
+      "key": " ├ 󰍛 ",
       "keyColor": "yellow"
     },
     {
@@ -101,10 +108,11 @@
     },
     {
       "type": "monitor",
-      "key": " └  ",
+      "key": " └ 󰍹 ",
       "keyColor": "yellow"
     },
     "break"
-    // "break"
   ]
 }
+  '';
+} 
