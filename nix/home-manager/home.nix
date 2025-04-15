@@ -6,6 +6,9 @@
   home.homeDirectory = "/home/timmy";
   home.stateVersion = "24.11";
   home.packages = with pkgs; [
+    # dev
+    gcc
+    nodejs
     # general
     neovim
     lazygit
