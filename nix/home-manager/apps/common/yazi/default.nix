@@ -3,6 +3,7 @@
 let
   plugins = import ./plugins.nix { inherit pkgs; };
   themes = import ./themes.nix { inherit pkgs; };
+  initLua = import ./init.nix { inherit (pkgs) lib; };
   settings = import ./settings.nix;
   keymap = import ./keymap.nix;
 in {
@@ -16,6 +17,6 @@ in {
     settings = settings;
     keymap = keymap;
     plugins = plugins;
-    initLua = builtins.readFile ./init.lua;
+    initLua = initLua;
   };
 }
