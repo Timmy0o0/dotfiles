@@ -8,6 +8,7 @@
     syntaxHighlighting.enable = true;
     autosuggestion.enable = true;
     enableCompletion = true;
+    sessionVariables = { EDITOR = "nvim"; };
     shellAliases = {
       # pipline
       ls = "exa --icons --group-directories-first";
@@ -26,10 +27,8 @@
       plugins = [ "git" "sudo" "docker" "zoxide" "starship" ];
       theme = "robbyrussell";
     };
-    # TODO: add to sessionVariables nvim
     initExtra = ''
       setopt CORRECT
-      export EDITOR=nvim
     '';
   };
 }
