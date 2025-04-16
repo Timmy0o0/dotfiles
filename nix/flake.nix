@@ -25,13 +25,13 @@
         # Linux configuration
         "timmy@linux" = home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
-          modules = [ ./home-manager/home.nix ./home-manager/linux.nix ];
+          modules = [ ./home-manager/home.nix ./home-manager/apps/linux ];
         };
 
         # Darwin configuration
         "timmy@darwin" = home-manager.lib.homeManagerConfiguration {
           pkgs = darwinPkgs;
-          modules = [ ./home-manager/home.nix ./home-manager/darwin.nix ];
+          modules = [ ./home-manager/home.nix ./home-manager/apps/darwin ];
         };
       };
     };
