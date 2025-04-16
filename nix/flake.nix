@@ -15,8 +15,9 @@
   outputs = { nixpkgs, darwin, home-manager, ... }:
     let
       linuxSystem = "x86_64-linux";
-      darwinSystem =
-        "aarch64-darwin"; # Assuming Mac is an M-series chip, change to x86_64-darwin if it's an Intel chip
+      # Assuming Mac is an M-series chip, change to x86_64-darwin if it's an Intel chip
+      darwinSystem = "x86_64-darwin";
+      # darwinSystem = "aarch64-darwin";
       linuxPkgs = nixpkgs.legacyPackages.${linuxSystem};
       darwinPkgs = nixpkgs.legacyPackages.${darwinSystem};
     in {
