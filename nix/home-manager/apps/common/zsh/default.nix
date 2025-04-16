@@ -1,6 +1,8 @@
 { ... }:
 
 {
+  imports = [ ./secrets.nix ];
+
   programs.zsh = {
     enable = true;
     syntaxHighlighting.enable = true;
@@ -24,6 +26,7 @@
       plugins = [ "git" "sudo" "docker" "zoxide" "starship" ];
       theme = "robbyrussell";
     };
+    # TODO: add to sessionVariables nvim
     initExtra = ''
       setopt CORRECT
       export EDITOR=nvim

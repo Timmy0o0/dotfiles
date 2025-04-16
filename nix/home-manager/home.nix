@@ -4,8 +4,8 @@
   imports = [
     # Common application configurations
     ./apps/common/git.nix
-    ./apps/common/zsh.nix
     ./apps/common/fastfetch.nix
+    ./apps/common/zsh
     ./apps/common/yazi
   ];
 

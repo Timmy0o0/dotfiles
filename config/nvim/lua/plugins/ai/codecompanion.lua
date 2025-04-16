@@ -7,31 +7,15 @@ return {
   },
   event = "VeryLazy",
   keys = {
-    { "<leader>a", "", desc = "ai" },
-    { "<leader>ac", "<cmd>CodeCompanionChat<cr>", desc = "Open CodeCompanion Chat", mode = { "n", "v" } },
-    { "ga", "<cmd>CodeCompanionChat Add<cr>", desc = "Add CodeCompanion Chat", mode = { "v" } },
-    { "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "Open CodeCompanion Actions", mode = { "n", "v" } },
-    { "<leader>ap", "<cmd>CodeCompanion<cr>", desc = "Open CodeCompanion" },
-    { "<leader>ax", "<cmd>CodeCompanionCmd<cr>", desc = "Open CodeCompanion Command" },
+    { "<leader>a",  "",                               desc = "ai" },
+    { "<leader>ac", "<cmd>CodeCompanionChat<cr>",     desc = "Open CodeCompanion Chat",    mode = { "n", "v" } },
+    { "ga",         "<cmd>CodeCompanionChat Add<cr>", desc = "Add CodeCompanion Chat",     mode = { "v" } },
+    { "<leader>aa", "<cmd>CodeCompanionActions<cr>",  desc = "Open CodeCompanion Actions", mode = { "n", "v" } },
+    { "<leader>ap", "<cmd>CodeCompanion<cr>",         desc = "Open CodeCompanion" },
+    { "<leader>ax", "<cmd>CodeCompanionCmd<cr>",      desc = "Open CodeCompanion Command" },
   },
   opts = {
     adapters = {
-      ollama = function()
-        return require("codecompanion.adapters").extend("ollama", {
-          name = "deepseek-r1:1.5b", -- Give this adapter a different name to differentiate it from the default ollama adapter
-          schema = {
-            model = {
-              default = "deepseek-r1:1.5b",
-            },
-            num_ctx = {
-              default = 16384,
-            },
-            num_predict = {
-              default = -1,
-            },
-          },
-        })
-      end,
       deepseek = function()
         return require("codecompanion.adapters").extend("deepseek", {
           env = {
@@ -63,7 +47,6 @@ return {
       chat = {
         adapter = "gemini",
         -- adapter = "deepseek",
-        -- adapter = "ollama",
         slash_commands = {
           ["buffer"] = {
             callback = "strategies.chat.slash_commands.buffer",
@@ -87,7 +70,7 @@ return {
             description = "Insert content from help tags",
             opts = {
               contains_code = false,
-              max_lines = 128, -- Maximum amount of lines to of the help file to send (NOTE: Each vimdoc line is typically 10 tokens)
+              max_lines = 128,      -- Maximum amount of lines to of the help file to send (NOTE: Each vimdoc line is typically 10 tokens)
               provider = "fzf_lua", -- telescope|mini_pick|fzf_lua
             },
           },
@@ -139,17 +122,14 @@ return {
       inline = {
         adapter = "gemini",
         -- adapter = "deepseek",
-        -- adapter = "ollama",
       },
       cmd = {
         adapter = "gemini",
         -- adapter = "deepseek",
-        -- adapter = "ollama",
       },
       agent = {
         adapter = "gemini",
         -- adapter = "deepseek",
-        -- adapter = "ollama",
       },
     },
     display = {
