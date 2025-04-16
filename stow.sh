@@ -13,7 +13,6 @@ mkdir -p ~/.config
 echo "Creating symbolic links..."
 
 echo "Linking nvim and nix folders..."
-ln -snf ~/dotfiles/config/nvim ~/.config/
 ln -snf ~/dotfiles/config/nix ~/.config/
 
 echo "Symbolic links created successfully!"

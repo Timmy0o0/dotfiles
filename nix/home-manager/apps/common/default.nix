@@ -5,6 +5,7 @@
     # Common application configurations
     ./git.nix
     ./fastfetch.nix
+    ./nvim.nix
     ./zsh
     ./yazi
   ];
@@ -14,6 +15,8 @@
     # Development tools
     gcc
     nodejs
+    rustup
+    luarocks
     # General utilities
     neovim
     lazygit
@@ -26,6 +29,7 @@
     ffmpeg
     jq
     p7zip
+    unzip
     poppler
     fd
     ripgrep
