@@ -10,11 +10,12 @@ chmod +x stow.sh
 
 ## Install Nix
 
-## For Arch Linux
+## Build Nix Config
 
 ```bash
-nix run nixpkgs#home-manager -- switch --flake "nix/#timmy@linux"
-home-manager switch --flake "nix/#timmy@linux"
+# install just
+just hm-init
+just hm
 ```
 
 change to zsh
@@ -22,11 +23,4 @@ change to zsh
 ```bash
 sudo sh -c "echo '/home/timmy/.nix-profile/bin/zsh' >> /etc/shells"
 chsh -s $(which zsh)
-```
-
-## For macOS
-
-```bash
-nix run nixpkgs#home-manager -- switch --flake "nix/#timmy@darwin"
-home-manager switch --flake "nix/#timmy@darwin"
 ```
