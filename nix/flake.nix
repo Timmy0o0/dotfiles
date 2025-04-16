@@ -1,22 +1,36 @@
 {
-  description = "My Arch Nix";
+  description = "My Nix Configuration for Linux and Darwin";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    darwin = {
+      url = "github:lnl7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, darwin, home-manager, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      linuxSystem = "x86_64-linux";
+      darwinSystem =
+        "aarch64-darwin"; # Assuming Mac is an M-series chip, change to x86_64-darwin if it's an Intel chip
+      linuxPkgs = nixpkgs.legacyPackages.${linuxSystem};
+      darwinPkgs = nixpkgs.legacyPackages.${darwinSystem};
     in {
       homeConfigurations = {
-        timmy = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./home-manager/home.nix ];
+        # Linux configuration
+        "timmy@linux" = home-manager.lib.homeManagerConfiguration {
+          pkgs = linuxPkgs;
+          modules = [ ./home-manager/home.nix ./home-manager/linux.nix ];
+        };
+
+        # Darwin configuration
+        "timmy@darwin" = home-manager.lib.homeManagerConfiguration {
+          pkgs = darwinPkgs;
+          modules = [ ./home-manager/home.nix ./home-manager/darwin.nix ];
         };
       };
     };

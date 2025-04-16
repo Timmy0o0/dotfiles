@@ -1,19 +1,27 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./apps/fastfetch.nix ./apps/zsh.nix ./apps/yazi ./apps/git.nix ];
+  imports = [
+    # Common application configurations
+    ./apps/common/git.nix
+    ./apps/common/zsh.nix
+    ./apps/common/fastfetch.nix
+    ./apps/common/yazi
+  ];
+
   home.username = "timmy";
-  home.homeDirectory = "/home/timmy";
   home.stateVersion = "24.11";
+
+  # Packages common to both platforms
   home.packages = with pkgs; [
-    # dev
+    # Development tools
     gcc
     nodejs
-    # general
+    # General utilities
     neovim
     lazygit
     nixfmt-classic
-    # yazi
+    # Yazi dependencies
     mediainfo
     trash-cli
     nushell
@@ -26,10 +34,11 @@
     ripgrep
     fzf
     imagemagick
-    # zsh
+    # Zsh utilities
     starship
     zoxide
     eza
   ];
+
   programs.home-manager.enable = true;
 }
