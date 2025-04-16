@@ -12,15 +12,15 @@
 
   # Packages common to both platforms
   home.packages = with pkgs; [
-    # Development tools
+    # Base Development Environment
     gcc
     nodejs
     rustup
     luarocks
+    nixfmt-classic
     # General utilities
     neovim
     lazygit
-    nixfmt-classic
     # Yazi dependencies
     mediainfo
     trash-cli
