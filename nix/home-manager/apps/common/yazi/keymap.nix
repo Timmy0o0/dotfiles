@@ -154,33 +154,13 @@
     }
     {
       on = [ "g" "f" "n" ];
-      run = "cd ~/dotfiles/.config/nvim/";
+      run = "cd ~/dotfiles/config/nvim/";
       desc = "Go to the neovim directory";
-    }
-    {
-      on = [ "g" "f" "h" ];
-      run = "cd ~/dotfiles/.config/hypr/";
-      desc = "Go to the hyprland directory";
-    }
-    {
-      on = [ "g" "f" "w" ];
-      run = "cd ~/dotfiles/.config/waybar/";
-      desc = "Go to the waybar directory";
-    }
-    {
-      on = [ "g" "f" "y" ];
-      run = "cd ~/dotfiles/.config/yazi/";
-      desc = "Go to the yazi directory";
     }
     {
       on = [ "g" "w" ];
       run = "cd ~/workspace";
       desc = "Go to the workspace directory";
-    }
-    {
-      on = [ "g" "s" ];
-      run = "cd ~/software";
-      desc = "Go to the software directory";
     }
     {
       on = [ "g" "p" ];
