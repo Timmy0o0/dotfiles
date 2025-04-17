@@ -18,6 +18,7 @@
     rustup
     luarocks
     nixfmt-classic
+    just
     # General utilities
     neovim
     lazygit

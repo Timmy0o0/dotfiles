@@ -16,10 +16,10 @@ hm:
 
 # darwin
 darwin-init:
-    nix run nix-darwin/master#darwin-rebuild -- switch
+    nix run nix-darwin/master#darwin-rebuild --extra-experimental-features "nix-command flakes" -- switch --flake "nix/#Tianmings-MacBook-Pro"
 
 darwin:
-    darwin-rebuild switch
+    darwin-rebuild switch --flake "nix/#Tianmings-MacBook-Pro"
 
 # Update all flake inputs
 update:
