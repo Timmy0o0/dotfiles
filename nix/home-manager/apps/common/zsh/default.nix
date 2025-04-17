@@ -39,6 +39,26 @@
     };
     initExtra = ''
       setopt CORRECT
+
+      # fzf-tab preview settings
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color=always $realpath'
+      zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color=always $realpath'
+      zstyle ':fzf-tab:complete:kill:argument' fzf-preview 'ps --pid $word -o cmd --no-headers -w -w'
+      zstyle ':fzf-tab:complete:kill:description' fzf-preview 'ps --pid $word -o cmd --no-headers -w -w'
+      # Preview directories with tree/ls, text files with bat, others with ls
+      zstyle ':fzf-tab:complete:*:*' fzf-preview '
+        if [ -e "$realpath" ]; then
+          if [ -d "$realpath" ]; then
+            command -v tree >/dev/null && tree -C "$realpath" || ls -p --color=always "$realpath"
+          else
+            mimetype=$(file -b --mime-type "$realpath")
+            if [[ "$mimetype" == text/* ]]; then
+              command -v bat >/dev/null && bat --style=numbers --color=always "$realpath" || ls -p --color=always "$realpath"
+            else
+              ls -p --color=always "$realpath"
+            fi
+          fi
+        fi'
     '';
   };
 }

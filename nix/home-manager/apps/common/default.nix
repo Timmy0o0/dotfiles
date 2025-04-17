@@ -18,6 +18,7 @@
     rustup
     luarocks
     nixfmt-classic
+    bat
     just
     # General utilities
     neovim
