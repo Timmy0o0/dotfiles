@@ -11,7 +11,6 @@
     [
       # packages only used on macos
       nerd-fonts.jetbrains-mono
-      # iterm2
     ];
 
   fonts.fontconfig.enable = true;
