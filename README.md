@@ -1,24 +1,15 @@
 # How to install
 
-## Common Steps
-
-```bash
-cd dotfiles
-chmod +x stow.sh
-./stow.sh
-```
-
 ## Install Nix
 
 ## For Arch
 
 ```bash
-# install just
 just hm-init
 just hm
 ```
 
-change to zsh
+change shell to zsh
 
 ```bash
 sudo sh -c "echo '/home/timmy/.nix-profile/bin/zsh' >> /etc/shells"
@@ -29,7 +20,9 @@ chsh -s $(which zsh)
 
 ```bash
 # check hostname and username
-scutil --get LocalHostName
+# scutil --get LocalHostName
+# check hostPlatform
+# change hostPlatform in configuration.nix | M or intel
 just darwin-init
 just darwin
 ```

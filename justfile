@@ -8,7 +8,7 @@ stow:
 
 # Use nix run command (for initial installation)
 hm-init:
-    nix run nixpkgs#home-manager -- switch --flake "nix/#timmy@{{system}}"
+    nix run nixpkgs#home-manager --extra-experimental-features "nix-command flakes" -- switch --flake "nix/#timmy@{{system}}"
 
 # Automatically select configuration based on current system
 hm:
