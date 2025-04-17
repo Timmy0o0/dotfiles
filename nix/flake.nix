@@ -24,28 +24,27 @@
     in {
       # Darwin configuration
       # scutil --get LocalHostName
-      darwinConfigurations."Tianmings-MacBook-Pro" =
-        nix-darwin.lib.darwinSystem {
-          modules = [
-            ./hosts/darwin/configuration.nix
-            nix-homebrew.darwinModules.nix-homebrew
-            {
-              nix-homebrew = {
-                enable = true;
-                user = "timmy";
-              };
-            }
-            home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-                users.timmy = import ./home-manager/darwin-home.nix;
-              };
-            }
-          ];
-          specialArgs = { inherit inputs; };
-        };
+      darwinConfigurations."mini" = nix-darwin.lib.darwinSystem {
+        modules = [
+          ./hosts/darwin/configuration.nix
+          nix-homebrew.darwinModules.nix-homebrew
+          {
+            nix-homebrew = {
+              enable = true;
+              user = "timmy";
+            };
+          }
+          home-manager.darwinModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.timmy = import ./home-manager/darwin-home.nix;
+            };
+          }
+        ];
+        specialArgs = { inherit inputs; };
+      };
 
       homeConfigurations = {
         # Linux configuration
