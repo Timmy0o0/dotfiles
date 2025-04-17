@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports = [ ./secrets.nix ];
@@ -22,6 +22,10 @@
       ff = "fastfetch";
       lg = "lazygit";
     };
+    plugins = [{
+      name = "fzf-tab";
+      src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+    }];
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "sudo" "docker" "zoxide" "starship" ];
