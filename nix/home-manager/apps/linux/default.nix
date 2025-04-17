@@ -1,8 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }:
+
+{
   imports = [
     # Linux-specific applications
   ];
 
+  # nix config
   home.file = {
     ".config/nix".source = config.lib.file.mkOutOfStoreSymlink
       "${config.home.homeDirectory}/dotfiles/config/nix";
