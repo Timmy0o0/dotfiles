@@ -28,10 +28,8 @@ chsh -s $(which zsh)
 ## For Mac
 
 ```bash
+# check hostname and username
 scutil --get LocalHostName
-# To use Nixpkgs unstable:
-nix run nix-darwin/master#darwin-rebuild -- switch
-# To use Nixpkgs 24.11:
-nix run nix-darwin/nix-darwin-24.11#darwin-rebuild -- switch
-darwin-rebuild switch
+just darwin-init
+just darwin
 ```
