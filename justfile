@@ -6,14 +6,6 @@ stow:
     chmod +x stow.sh
     ./stow.sh
 
-# Switch home-manager configuration for linux
-hm-linux:
-    home-manager switch --flake "nix/#timmy@linux"
-
-# Switch home-manager configuration for macOS
-hm-darwin:
-    home-manager switch --flake "nix/#timmy@darwin"
-
 # Use nix run command (for initial installation)
 hm-init:
     nix run nixpkgs#home-manager -- switch --flake "nix/#timmy@{{system}}"

@@ -3,8 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    darwin = {
-      url = "github:lnl7/nix-darwin/master";
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -12,26 +12,35 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, darwin, home-manager, ... }:
+  outputs = { nixpkgs, nix-darwin, home-manager, ... }@inputs:
     let
       linuxSystem = "x86_64-linux";
-      # Assuming Mac is an M-series chip, change to x86_64-darwin if it's an Intel chip
-      darwinSystem = "x86_64-darwin";
-      # darwinSystem = "aarch64-darwin";
       linuxPkgs = nixpkgs.legacyPackages.${linuxSystem};
-      darwinPkgs = nixpkgs.legacyPackages.${darwinSystem};
     in {
+      # Darwin configuration
+      # scutil --get LocalHostName
+      darwinConfigurations."Tianmings-MacBook-Pro" =
+        nix-darwin.lib.darwinSystem {
+          modules = [
+            ./hosts/darwin/configuration.nix
+            home-manager.darwinModules.home-manager
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.timmy = import ./home-manager/darwin-home.nix;
+                specialArgs = { inherit inputs; };
+              };
+            }
+          ];
+        };
+
       homeConfigurations = {
         # Linux configuration
         "timmy@linux" = home-manager.lib.homeManagerConfiguration {
           pkgs = linuxPkgs;
-          modules = [ ./home-manager/home.nix ./home-manager/apps/linux ];
-        };
-
-        # Darwin configuration
-        "timmy@darwin" = home-manager.lib.homeManagerConfiguration {
-          pkgs = darwinPkgs;
-          modules = [ ./home-manager/home.nix ./home-manager/apps/darwin ];
+          modules = [ ./home-manager/linux-home.nix ];
+          extraSpecialArgs = { inherit inputs; };
         };
       };
     };

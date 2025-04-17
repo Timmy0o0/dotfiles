@@ -3,9 +3,6 @@
     # Linux-specific applications
   ];
 
-  # Linux-specific home configuration
-  home.homeDirectory = "/home/timmy";
-
   # Linux-specific packages
   home.packages = with pkgs;
     [
