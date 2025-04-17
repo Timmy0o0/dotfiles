@@ -3,7 +3,7 @@
 {
   imports = [
     # macos-specific applications
-    ./kitty.nix
+    ./kitty.nix # gui apps install in configuration.nix
   ];
 
   # macos-specific packages
