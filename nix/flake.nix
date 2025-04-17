@@ -7,12 +7,16 @@
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, nix-darwin, home-manager, ... }@inputs:
+  outputs = { nixpkgs, nix-darwin, nix-homebrew, home-manager, ... }@inputs:
     let
       linuxSystem = "x86_64-linux";
       linuxPkgs = nixpkgs.legacyPackages.${linuxSystem};
@@ -23,6 +27,13 @@
         nix-darwin.lib.darwinSystem {
           modules = [
             ./hosts/darwin/configuration.nix
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                enable = true;
+                user = "timmy";
+              };
+            }
             home-manager.darwinModules.home-manager
             {
               home-manager = {

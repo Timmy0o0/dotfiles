@@ -15,6 +15,11 @@
 
   # homebrew = {
   #   enable = true;
+  #   casks = [ "cursor" ];
+  # };
+
+  # homebrew = {
+  #   enable = true;
   #   brews = [
   #     "mas"
   #   ];
