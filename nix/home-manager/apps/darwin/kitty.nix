@@ -5,6 +5,7 @@
 
   programs.kitty = {
     enable = true;
+    darwinLaunchOptions = [ "--single-instance" "--directory=~" ];
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 15;

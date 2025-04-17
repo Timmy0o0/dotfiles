@@ -13,6 +13,7 @@
     home = "/Users/timmy";
   };
 
+  # GUI apps
   homebrew = {
     enable = true;
     casks = [ "cursor" ];
