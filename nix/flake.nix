@@ -16,7 +16,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, nix-darwin, nix-homebrew, home-manager, ... }@inputs:
+  outputs =
+    { self, nixpkgs, nix-darwin, nix-homebrew, home-manager, ... }@inputs:
     let
       linuxSystem = "x86_64-linux";
       linuxPkgs = nixpkgs.legacyPackages.${linuxSystem};
@@ -40,10 +41,10 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.timmy = import ./home-manager/darwin-home.nix;
-                # specialArgs = { inherit inputs; };
               };
             }
           ];
+          specialArgs = { inherit inputs; };
         };
 
       homeConfigurations = {
