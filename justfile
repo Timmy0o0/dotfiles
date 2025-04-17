@@ -14,6 +14,13 @@ hm-init:
 hm:
     home-manager switch --flake "nix/#timmy@{{system}}"
 
+# darwin
+darwin-init:
+    nix run nix-darwin/master#darwin-rebuild -- switch
+
+darwin:
+    darwin-rebuild switch
+
 # Update all flake inputs
 update:
     cd nix && nix flake update

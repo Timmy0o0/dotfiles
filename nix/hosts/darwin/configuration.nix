@@ -3,15 +3,15 @@
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
   environment.systemPackages = [
     # pkgs.alacritty
   ];
 
-  users.users.timmy = {
-    name = "timmy";
-    home = "/Users/timmy";
-  };
+  # users.users.timmy = {
+  #   name = "timmy";
+  #   home = "/Users/timmy";
+  # };
 
   # homebrew = {
   #   enable = true;
@@ -69,14 +69,14 @@
   nix.settings.experimental-features = "nix-command flakes";
 
   # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh.enable = true; # default shell on catalina
+  # programs.zsh.enable = true; # default shell on catalina
 
   # Set Git commit hash for darwin-version.
-  # system.configurationRevision = self.rev or self.dirtyRev or null;
+  system.configurationRevision = self.rev or self.dirtyRev or null;
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
-  # system.stateVersion = 4;
+  system.stateVersion = 6;
 
   # system.defaults = {
   #   NSGlobalDomain.AppleICUForce24HourTime = true;
