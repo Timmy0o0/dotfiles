@@ -15,13 +15,13 @@
   # GUI apps
   homebrew = {
     enable = true;
-    #   brews = [
-    #     # search tool
-    #     "mas"
-    #   ];
+    brews = [
+      # search tool
+      # "mas"
+      "macism"
+    ];
     casks = [ "cursor" ];
-    #   taps = [
-    #   ];
+    taps = [ "laishulu/homebrew" ];
     #   masApps = {
     #     Yoink = 457622435;
     #   };

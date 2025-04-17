@@ -10,6 +10,15 @@
     ./yazi
   ];
 
+  # Install Rust toolchain
+  home.activation = {
+    installRustToolchain = ''
+      if command -v rustup &>/dev/null; then
+        $DRY_RUN_CMD rustup default stable
+      fi
+    '';
+  };
+
   # Packages common to both platforms
   home.packages = with pkgs; [
     # Base Development Environment
