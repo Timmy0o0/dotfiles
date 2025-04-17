@@ -1,19 +1,12 @@
-{
-  pkgs,
-  lib,
-  config,
-  inputs,
-  ...
-}: 
+{ pkgs, lib, config, inputs, ... }:
 
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages =
-    [
-      # pkgs.alacritty
-    ];
+  environment.systemPackages = [
+    # pkgs.alacritty
+  ];
 
   users.users.timmy = {
     name = "timmy";
@@ -95,4 +88,4 @@
   # The platform the configuration will be used on.
   # darwinSystem = "aarch64-darwin";
   nixpkgs.hostPlatform = "x86_64-darwin";
-};
+}
