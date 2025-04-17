@@ -22,10 +22,16 @@
       ff = "fastfetch";
       lg = "lazygit";
     };
-    plugins = [{
-      name = "fzf-tab";
-      src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
-    }];
+    plugins = [
+      {
+        name = "fzf-tab";
+        src = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+      }
+      {
+        name = "zsh-vi-mode";
+        src = "${pkgs.zsh-vi-mode}/share/zsh-vi-mode";
+      }
+    ];
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "sudo" "docker" "zoxide" "starship" ];
