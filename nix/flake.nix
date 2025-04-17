@@ -40,7 +40,7 @@
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users.timmy = import ./home-manager/darwin-home.nix;
-                specialArgs = { inherit inputs; };
+                # specialArgs = { inherit inputs; };
               };
             }
           ];
