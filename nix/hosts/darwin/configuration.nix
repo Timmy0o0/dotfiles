@@ -4,7 +4,8 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = [ pkgs.mkalias pkgs.kitty pkgs.obsidian ];
+  environment.systemPackages =
+    [ pkgs.mkalias pkgs.kitty pkgs.obsidian pkgs.google-chrome ];
 
   users.users.timmy = {
     name = "timmy";
