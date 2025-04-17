@@ -1,16 +1,20 @@
 { pkgs, lib, config, inputs, ... }:
 
 {
+  # add user
+  users.users.timmy = {
+    name = "timmy";
+    home = "/Users/timmy";
+  };
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages =
     [ pkgs.mkalias pkgs.kitty pkgs.obsidian pkgs.google-chrome ];
 
-  users.users.timmy = {
-    name = "timmy";
-    home = "/Users/timmy";
-  };
+  # add font
+  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
 
   # GUI apps
   homebrew = {
