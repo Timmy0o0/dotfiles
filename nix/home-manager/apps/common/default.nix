@@ -20,6 +20,7 @@
     nixfmt-classic
     bat
     just
+    tree
     # General utilities
     neovim
     lazygit
