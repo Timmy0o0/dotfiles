@@ -77,6 +77,10 @@
     NSGlobalDomain.ApplePressAndHoldEnabled = false;
     NSGlobalDomain.AppleICUForce24HourTime = true;
     NSGlobalDomain.AppleShowAllExtensions = true;
+    finder.FXPreferredViewStyle = "clmv";
+    finder.ShowPathbar = true;
+    finder.ShowStatusBar = true;
+    # finder._FXShowPosixPathInTitle = false;
   };
 
   # The platform the configuration will be used on.
