@@ -2,6 +2,8 @@
 
 ## Install Nix
 
+- install single user
+
 ## For Arch
 
 ```bash
