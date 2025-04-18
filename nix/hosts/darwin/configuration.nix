@@ -80,7 +80,22 @@
     finder.FXPreferredViewStyle = "clmv";
     finder.ShowPathbar = true;
     finder.ShowStatusBar = true;
+    finder.NewWindowTarget = "Home";
+    finder.FXDefaultSearchScope = "SCcf";
+    # finder.AppleShowAllFiles = false;
     # finder._FXShowPosixPathInTitle = false;
+    trackpad.Clicking = true;
+    trackpad.TrackpadThreeFingerDrag = true;
+    # stage manager
+    WindowManager.GloballyEnabled = true;
+
+    # dock = {
+    #   show-recents = true;
+    #   static-only = true;
+    #   autohide = false;
+    #   orientation = "bottom";
+    #   tilesize = 48;
+    # };
   };
 
   # The platform the configuration will be used on.
