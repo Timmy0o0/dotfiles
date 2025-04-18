@@ -13,9 +13,25 @@
   # Install Rust toolchain
   home.activation = {
     installRustToolchain = ''
-      if command -v rustup &>/dev/null; then
-        $DRY_RUN_CMD rustup default stable
+      echo "==========================================="
+      echo "Running installRustToolchain activation script..."
+
+      # Print diagnostic information
+      echo "Checking for rustup installation:"
+      # echo "PATH = $PATH"
+
+      # Use the full path of rustup
+      RUSTUP_PATH="$HOME/.nix-profile/bin/rustup"
+
+      if [ -x "$RUSTUP_PATH" ]; then
+        echo "Rustup found at $RUSTUP_PATH, setting default toolchain to stable..."
+        $DRY_RUN_CMD "$RUSTUP_PATH" default stable
+        echo "Rustup toolchain set successfully."
+      else
+        echo "Rustup executable not found at $RUSTUP_PATH. Please install rustup first."
       fi
+      echo "installRustToolchain activation script completed."
+      echo "==========================================="
     '';
   };
 
