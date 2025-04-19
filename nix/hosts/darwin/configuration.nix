@@ -23,7 +23,15 @@
       # "mas"
       "macism"
     ];
-    casks = [ "cursor" "zen-browser" "arc" "kitty" "obsidian" "google-chrome" ];
+    casks = [
+      "cursor"
+      "zen-browser"
+      "arc"
+      "kitty"
+      "obsidian"
+      "google-chrome"
+      "logi-options+"
+    ];
     taps = [ "laishulu/homebrew" ];
     #   masApps = {
     #     Yoink = 457622435;
