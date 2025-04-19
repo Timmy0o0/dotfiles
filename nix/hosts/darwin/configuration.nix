@@ -13,7 +13,7 @@
   environment.systemPackages = [ pkgs.mkalias ];
 
   # add font
-  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
+  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono maple-mono.NF-CN ];
 
   # GUI apps
   homebrew = {
