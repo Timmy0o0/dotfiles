@@ -99,6 +99,6 @@
   };
 
   # The platform the configuration will be used on.
-  # darwinSystem = "aarch64-darwin";
-  nixpkgs.hostPlatform = "x86_64-darwin";
+  # nixpkgs.hostPlatform = "x86_64-darwin";
+  nixpkgs.hostPlatform = "aarch64-darwin";
 }
