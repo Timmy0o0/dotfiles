@@ -27,3 +27,13 @@ chsh -s $(which zsh)
 just darwin-init
 just darwin
 ```
+
+## Secret Keys
+
+```bash
+# add ai api key in secrets
+# ignore secrets git changes
+git update-index --skip-worktree nix/home-manager/apps/common/zsh/secrets.nix
+# create ssh key
+ssh-keygen -t ed25519 -C "yangtmeco@outlook.com"
+```
