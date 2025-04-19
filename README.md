@@ -2,8 +2,6 @@
 
 ## Install Nix
 
-- install single user
-
 ## For Arch
 
 ```bash
@@ -25,6 +23,7 @@ chsh -s $(which zsh)
 # scutil --get LocalHostName
 # check hostPlatform
 # change hostPlatform in configuration.nix | M or intel
+# need full disk access
 just darwin-init
 just darwin
 ```
