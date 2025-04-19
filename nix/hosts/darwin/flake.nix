@@ -1,5 +1,5 @@
 {
-  description = "My Nix Configuration for Linux and Darwin";
+  description = "Nix Configuration for Darwin";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -26,7 +26,7 @@
       # scutil --get LocalHostName
       darwinConfigurations."mini" = nix-darwin.lib.darwinSystem {
         modules = [
-          ./hosts/darwin/configuration.nix
+          ./configuration.nix
           nix-homebrew.darwinModules.nix-homebrew
           {
             nix-homebrew = {
@@ -39,20 +39,11 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.timmy = import ./home-manager/darwin-home.nix;
+              users.timmy = import ../../home-manager/darwin-home.nix;
             };
           }
         ];
         specialArgs = { inherit inputs; };
-      };
-
-      homeConfigurations = {
-        # Linux configuration
-        "timmy@linux" = home-manager.lib.homeManagerConfiguration {
-          pkgs = linuxPkgs;
-          modules = [ ./home-manager/linux-home.nix ];
-          extraSpecialArgs = { inherit inputs; };
-        };
       };
     };
 }

@@ -1,29 +1,25 @@
 # System selection (auto-detected)
 system := if `uname -s` =~ "Darwin" { "darwin" } else { "linux" }
 
-# Run stow.sh script to create symbolic links
-stow:
-    chmod +x stow.sh
-    ./stow.sh
-
 # Use nix run command (for initial installation)
-hm-init:
-    nix run nixpkgs#home-manager --extra-experimental-features "nix-command flakes" -- switch --flake "nix/#timmy@{{system}}"
+hm-linux-init:
+    nix run nixpkgs#home-manager --extra-experimental-features "nix-command flakes" -- switch --flake "./nix/hosts/linux#timmy"
 
-# Automatically select configuration based on current system
-hm:
-    home-manager switch --flake "nix/#timmy@{{system}}"
+hm-linux:
+    home-manager switch --flake "./nix/hosts/linux#timmy"
+
+hm-linux-update:
+    nix flake update --flake "./nix/hosts/linux"
 
 # darwin
 darwin-init:
-    nix run nix-darwin/master#darwin-rebuild --extra-experimental-features "nix-command flakes" -- switch --flake "nix/#mini"
+    nix run nix-darwin/master#darwin-rebuild --extra-experimental-features "nix-command flakes" -- switch --flake "./nix/hosts/darwin#mini"
 
 darwin:
-    darwin-rebuild switch --flake "nix/#mini"
+    darwin-rebuild switch --flake "./nix/hosts/darwin#mini"
 
-# Update all flake inputs
-update:
-    cd nix && nix flake update
+darwin-update:
+    nix flake update --flake "./nix/hosts/darwin"
 
 # Clean nix store
 gc:
