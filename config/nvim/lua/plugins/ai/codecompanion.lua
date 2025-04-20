@@ -7,12 +7,12 @@ return {
   },
   event = "VeryLazy",
   keys = {
-    { "<leader>a",  "",                               desc = "ai" },
-    { "<leader>ac", "<cmd>CodeCompanionChat<cr>",     desc = "Open CodeCompanion Chat",    mode = { "n", "v" } },
-    { "ga",         "<cmd>CodeCompanionChat Add<cr>", desc = "Add CodeCompanion Chat",     mode = { "v" } },
-    { "<leader>aa", "<cmd>CodeCompanionActions<cr>",  desc = "Open CodeCompanion Actions", mode = { "n", "v" } },
-    { "<leader>ap", "<cmd>CodeCompanion<cr>",         desc = "Open CodeCompanion" },
-    { "<leader>ax", "<cmd>CodeCompanionCmd<cr>",      desc = "Open CodeCompanion Command" },
+    { "<leader>a", "", desc = "ai" },
+    { "<leader>ac", "<cmd>CodeCompanionChat<cr>", desc = "Open CodeCompanion Chat", mode = { "n", "v" } },
+    { "ga", "<cmd>CodeCompanionChat Add<cr>", desc = "Add CodeCompanion Chat", mode = { "v" } },
+    { "<leader>aa", "<cmd>CodeCompanionActions<cr>", desc = "Open CodeCompanion Actions", mode = { "n", "v" } },
+    { "<leader>ap", "<cmd>CodeCompanion<cr>", desc = "Open CodeCompanion" },
+    { "<leader>ax", "<cmd>CodeCompanionCmd<cr>", desc = "Open CodeCompanion Command" },
   },
   opts = {
     adapters = {
@@ -36,8 +36,8 @@ return {
           },
           schema = {
             model = {
-              -- default = "gemini-2.0-flash",
-              default = "gemini-2.5-pro-exp-03-25",
+              -- default = "gemini-2.5-pro-exp-03-25",
+              default = "gemini-2.5-flash-preview-04-17",
             },
           },
         })
@@ -70,7 +70,7 @@ return {
             description = "Insert content from help tags",
             opts = {
               contains_code = false,
-              max_lines = 128,      -- Maximum amount of lines to of the help file to send (NOTE: Each vimdoc line is typically 10 tokens)
+              max_lines = 128, -- Maximum amount of lines to of the help file to send (NOTE: Each vimdoc line is typically 10 tokens)
               provider = "fzf_lua", -- telescope|mini_pick|fzf_lua
             },
           },
