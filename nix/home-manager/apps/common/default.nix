@@ -8,6 +8,7 @@
     ./nvim.nix
     ./zsh
     ./yazi
+    # ./tmux
   ];
 
   # Install Rust toolchain
