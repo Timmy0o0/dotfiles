@@ -31,6 +31,7 @@
       "obsidian"
       "google-chrome"
       "logi-options+"
+      "steam"
     ];
     taps = [ "laishulu/homebrew" ];
     #   masApps = {
