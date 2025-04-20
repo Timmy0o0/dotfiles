@@ -1,256 +1,254 @@
 {
-    "workbench.colorTheme": "Default Light Modern",
-    "workbench.settings.editor": "json",
-    "editor.fontFamily": "JetBrainsMono Nerd Font ,SauceCodePro Nerd Font ,Consolas, 'Courier New', monospace",
-    "editor.fontSize": 14,
-    "editor.fontLigatures": false,
-    "editor.minimap.enabled": false,
-    "editor.lineNumbers": "relative",
-    "editor.renderWhitespace": "all",
-    "editor.cursorSurroundingLines": 8,
-    "editor.cursorSurroundingLinesStyle": "all",
-    "projectManager.git.baseFolders": ["$home/workspace"],
-    "projectManager.sortList": "Recent",
-    "remote.extensionKind": {
-      "alefragnani.project-manager": ["workspace"]
+  "workbench.colorTheme": "Default Light Modern",
+  "workbench.settings.editor": "json",
+  "workbench.iconTheme": "file-icons",
+  "workbench.statusBar.visible": false,
+  "workbench.editor.showTabs": "single",
+  "workbench.activityBar.location": "default",
+  "workbench.activityBar.orientation": "vertical",
+  "window.menuBarVisibility": "compact",
+  "window.zoomLevel": 1.4,
+  "editor.fontFamily": "JetBrainsMono Nerd Font ,SauceCodePro Nerd Font ,Consolas, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+  "editor.minimap.enabled": false,
+  "editor.lineNumbers": "relative",
+  "editor.renderWhitespace": "all",
+  "editor.cursorSurroundingLines": 8,
+  "editor.cursorSurroundingLinesStyle": "all",
+  "editor.formatOnSave": true,
+  "editor.guides.bracketPairs": "active",
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports.ts": "always",
+    "source.organizeImports": "always"
+  },
+  "projectManager.git.baseFolders": ["$home/workspace"],
+  "projectManager.sortList": "Recent",
+  "remote.extensionKind": {
+    "alefragnani.project-manager": ["workspace"]
+  },
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.surround": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.highlightedyank.enable": true,
+  "vim.foldfix": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-j>"],
+      "commands": ["editor.action.moveLinesDownAction"]
     },
-    "vim.leader": "<space>",
-    "vim.easymotion": true,
-    "vim.surround": true,
-    "vim.incsearch": true,
-    "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.highlightedyank.enable": true,
-    "vim.foldfix": true,
-    "vim.visualModeKeyBindingsNonRecursive": [
-      {
-        "before": ["<C-j>"],
-        "commands": ["editor.action.moveLinesDownAction"]
-      },
-      {
-        "before": ["<C-k>"],
-        "commands": ["editor.action.moveLinesUpAction"]
-      }
-    ],
-    "vim.visualModeKeyBindings": [
-      {
-        "before": ["enter"],
-        "commands": ["expand_region"]
-      },
-      {
-        "before": ["H"],
-        "after": ["0"]
-      },
-      {
-        "before": ["L"],
-        "after": ["$"]
-      },
-      {
-        "before": ["J"],
-        "after": ["5", "j"]
-      },
-      {
-        "before": ["K"],
-        "after": ["5", "k"]
-      }
-    ],
-    "vim.normalModeKeyBindings": [
-      {
-        "before": ["enter"],
-        "commands": ["expand_region"]
-      },
-      {
-        "before": [":"],
-        "commands": ["workbench.action.showCommands"],
-        "silent": true
-      },
-      {
-        "before": ["W"],
-        "commands": ["workbench.action.files.save"]
-      },
-      {
-        "before": [">"],
-        "commands": ["editor.action.indentLines"]
-      },
-      {
-        "before": ["<"],
-        "commands": ["editor.action.outdentLines"]
-      },
-      {
-        "before": ["<leader>", "|"],
-        "commands": ["workbench.action.splitEditorRight"]
-      },
-      {
-        "before": ["<leader>", "-"],
-        "commands": ["workbench.action.splitEditorDown"]
-      },
-      {
-        "before": ["<leader>", "e"],
-        "commands": ["workbench.action.toggleSidebarVisibility"]
-      },
-      {
-        "before": ["<leader>", "b", "c"],
-        "commands": ["workbench.action.closeActiveEditor"]
-      },
-      {
-        "before": ["<leader>", "b", "o"],
-        "commands": ["workbench.action.closeOtherEditors"]
-      },
-      {
-        "before": ["<leader>", "b", "O"],
-        "commands": ["workbench.action.closeEditorsInOtherGroups"]
-      },
-      {
-        "before": ["<leader>", "f", "w"],
-        "commands": ["better-search.findInProject"]
-      },
-      {
-        "before": ["<leader>", "f", "f"],
-        "commands": ["extension.fuzzySearch"]
-      },
-      {
-        "before": ["<leader>", "/"],
-        "commands": ["fuzzySearch.activeTextEditor"]
-      },
-      {
-        "before": ["<leader>", "c", "a"],
-        "commands": ["editor.action.quickFix"]
-      },
-      {
-        "before": ["<leader>", "r", "n"],
-        "commands": ["editor.action.rename"]
-      },
-      {
-        "before": ["<leader>", "p"],
-        "commands": ["projectManager.listProjects"]
-      },
-      {
-        "before": ["g", "k"],
-        "commands": ["editor.action.showHover"]
-      },
-      {
-        "before": ["<C-n>"],
-        "commands": [":nohl"]
-      },
-      {
-        "before": ["H"],
-        "after": ["0"]
-      },
-      {
-        "before": ["L"],
-        "after": ["$"]
-      },
-      {
-        "before": ["J"],
-        "after": ["5", "j"]
-      },
-      {
-        "before": ["K"],
-        "after": ["5", "k"]
-      }
-    ],
-    "vim.operatorPendingModeKeyBindings": [
-      {
-        "before": ["L"],
-        "after": ["$"]
-      },
-      {
-        "before": ["H"],
-        "after": ["0"]
-      },
-      {
-        "before": ["J"],
-        "after": ["5", "j"]
-      },
-      {
-        "before": ["K"],
-        "after": ["5", "k"]
-      }
-    ],
-    "editor.formatOnSave": true,
-    "[jsonc]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["<C-k>"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["enter"],
+      "commands": ["expand_region"]
     },
-    "[typescriptreact]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["H"],
+      "after": ["0"]
     },
-    "[typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["L"],
+      "after": ["$"]
     },
-    "[javascript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
     },
-    "editor.codeActionsOnSave": {
-      "source.addMissingImports.ts": "always",
-      "source.organizeImports": "always"
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["enter"],
+      "commands": ["expand_region"]
     },
-    "glassit.alpha": 250,
-    "git.confirmSync": false,
-    "workbench.statusBar.visible": false,
-    "workbench.editor.showTabs": "single",
-    "workbench.activityBar.location": "default",
-    "window.menuBarVisibility": "compact",
-    "workbench.activityBar.orientation": "vertical",
-    "editor.guides.bracketPairs": "active",
-    "better-comments.tags": [
-      {
-        "tag": "!",
-        "color": "#FF2D00",
-        "strikethrough": false,
-        "underline": false,
-        "backgroundColor": "transparent",
-        "bold": false,
-        "italic": false
-      },
-      {
-        "tag": "?",
-        "color": "#FF8C00",
-        "strikethrough": false,
-        "underline": false,
-        "backgroundColor": "transparent",
-        "bold": false,
-        "italic": false
-      },
-      {
-        "tag": "//",
-        "color": "#474747",
-        "strikethrough": true,
-        "underline": false,
-        "backgroundColor": "transparent",
-        "bold": false,
-        "italic": false
-      },
-      {
-        "tag": "note",
-        "color": "#2ECC71",
-        "strikethrough": false,
-        "underline": false,
-        "backgroundColor": "transparent",
-        "bold": false,
-        "italic": false
-      },
-      {
-        "tag": "todo",
-        "color": "#3498DB",
-        "strikethrough": false,
-        "underline": false,
-        "backgroundColor": "transparent",
-        "bold": false,
-        "italic": false
-      },
-      {
-        "tag": "*",
-        "color": "#98C379",
-        "strikethrough": false,
-        "underline": false,
-        "backgroundColor": "transparent",
-        "bold": false,
-        "italic": false
-      }
-    ],
-    "workbench.iconTheme": "file-icons",
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "git.autofetch": true
+    {
+      "before": [":"],
+      "commands": ["workbench.action.showCommands"],
+      "silent": true
+    },
+    {
+      "before": ["W"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    },
+    {
+      "before": ["<leader>", "|"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    {
+      "before": ["<leader>", "-"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "b", "c"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "b", "o"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["<leader>", "b", "O"],
+      "commands": ["workbench.action.closeEditorsInOtherGroups"]
+    },
+    {
+      "before": ["<leader>", "f", "w"],
+      "commands": ["better-search.findInProject"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["extension.fuzzySearch"]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["fuzzySearch.activeTextEditor"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "r", "n"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["projectManager.listProjects"]
+    },
+    {
+      "before": ["g", "k"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["H"],
+      "after": ["0"]
+    },
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    }
+  ],
+  "vim.operatorPendingModeKeyBindings": [
+    {
+      "before": ["L"],
+      "after": ["$"]
+    },
+    {
+      "before": ["H"],
+      "after": ["0"]
+    },
+    {
+      "before": ["J"],
+      "after": ["5", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["5", "k"]
+    }
+  ],
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "note",
+      "color": "#2ECC71",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ]
 }
-  
