@@ -34,9 +34,7 @@
       "steam"
     ];
     taps = [ "laishulu/homebrew" ];
-    #   masApps = {
-    #     Yoink = 457622435;
-    #   };
+    masApps = { iShot = 1485844094; };
     onActivation = {
       cleanup = "zap";
       autoUpdate = true;

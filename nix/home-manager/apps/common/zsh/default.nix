@@ -15,6 +15,7 @@
       ll = "exa -l --icons --group-directories-first";
       la = "exa -la --icons --group-directories-first";
       lt = "exa -lT --icons --group-directories-first";
+      lt3 = "exa -lT -L 3 --icons --group-directories-first";
 
       # general
       c = "clear";
