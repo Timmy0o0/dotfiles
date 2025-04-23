@@ -32,6 +32,8 @@
       "google-chrome"
       "logi-options+"
       "steam"
+      "notion"
+      "wechat"
     ];
     taps = [ "laishulu/homebrew" ];
     masApps = { iShot = 1485844094; };
