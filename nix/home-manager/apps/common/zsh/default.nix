@@ -38,7 +38,7 @@
       plugins = [ "git" "sudo" "docker" "zoxide" "starship" ];
       theme = "robbyrussell";
     };
-    initExtra = ''
+    initContent = ''
       setopt CORRECT
 
       # fzf-tab preview settings
