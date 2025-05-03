@@ -28,6 +28,10 @@ just darwin-init
 just darwin
 ```
 
+input method
+
+config rime squirrel: `F4` to choose simple chinese
+
 ## Secret Keys
 
 ```bash

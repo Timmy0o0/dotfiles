@@ -34,6 +34,7 @@
       "steam"
       "notion"
       "wechat"
+      "squirrel"
     ];
     taps = [ "laishulu/homebrew" ];
     masApps = { iShot = 1485844094; };
