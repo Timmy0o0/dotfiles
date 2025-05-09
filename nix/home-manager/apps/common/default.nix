@@ -53,6 +53,7 @@
     nodejs
     rustup
     luarocks
+    lua5_1
     nixfmt-classic
     bat
     just

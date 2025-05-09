@@ -17,11 +17,7 @@
     };
   };
   outputs =
-    { self, nixpkgs, nix-darwin, nix-homebrew, home-manager, ... }@inputs:
-    let
-      linuxSystem = "x86_64-linux";
-      linuxPkgs = nixpkgs.legacyPackages.${linuxSystem};
-    in {
+    { self, nixpkgs, nix-darwin, nix-homebrew, home-manager, ... }@inputs: {
       # Darwin configuration
       # scutil --get LocalHostName
       darwinConfigurations."mini" = nix-darwin.lib.darwinSystem {

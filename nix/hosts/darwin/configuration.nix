@@ -25,7 +25,7 @@
     ];
     casks = [
       "cursor"
-      "zen-browser"
+      "zen"
       "arc"
       "kitty"
       "obsidian"
@@ -35,6 +35,7 @@
       "notion"
       "wechat"
       "squirrel"
+      "wpsoffice"
     ];
     taps = [ "laishulu/homebrew" ];
     masApps = { iShot = 1485844094; };
