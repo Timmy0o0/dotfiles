@@ -74,6 +74,8 @@
     ripgrep
     fzf
     imagemagick
+    # env manager
+    direnv
     # Zsh utilities
     starship
     zoxide

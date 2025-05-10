@@ -35,7 +35,7 @@
     ];
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "sudo" "docker" "zoxide" "starship" ];
+      plugins = [ "git" "sudo" "docker" "zoxide" "starship" "direnv" ];
       theme = "robbyrussell";
     };
     initContent = ''
