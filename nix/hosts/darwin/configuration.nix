@@ -34,6 +34,8 @@
       "steam"
       "notion"
       "wechat"
+      "qq"
+      "qqmusic"
       "squirrel"
       "wpsoffice"
     ];
