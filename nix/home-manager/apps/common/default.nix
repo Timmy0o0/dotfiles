@@ -76,6 +76,7 @@
     imagemagick
     # env manager
     direnv
+    uv
     # Zsh utilities
     starship
     zoxide
