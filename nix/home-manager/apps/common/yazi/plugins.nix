@@ -1,11 +1,14 @@
 { pkgs, ... }:
 
+# nix-shell -p nix-prefetch-github
+
+# nix-prefetch-github yazi-rs plugins
 let
   yazi-plugins = pkgs.fetchFromGitHub {
     owner = "yazi-rs";
     repo = "plugins";
-    rev = "b12a9ab085a8c2fe2b921e1547ee667b714185f9";
-    hash = "sha256-LWN0riaUazQl3llTNNUMktG+7GLAHaG/IxNj1gFhDRE=";
+    rev = "2ad42fa7065b4885ff058280b4ab4309c11a5755";
+    hash = "sha256-+FDiOaEYkA0A8w+Cg2Y/pFZY56lOsWLeKCNwLI0ZKVk=";
   };
 in {
   chmod = "${yazi-plugins}/chmod.yazi";
@@ -20,11 +23,12 @@ in {
     rev = "2ab6d84e8165985dd4d63ef0098e3a30feb3a41a";
     hash = "sha256-6LiBUvHmN8q/ao1+QhCg75ypuf1i6MyRQiU16Lb8pEs=";
   };
+  # nix-prefetch-github boydaihungst mediainfo.yazi
   mediainfo = pkgs.fetchFromGitHub {
     owner = "boydaihungst";
     repo = "mediainfo.yazi";
-    rev = "436cb5f04d6e5e86ddc0386527254d87b7751ec8";
-    hash = "sha256-oFp8mJ62FsJX46mKQ7/o6qXPC9qx3+oSfqS0cKUZETI=";
+    rev = "b74b7b82aa468d8715547628511e4495df455790";
+    hash = "sha256-RKSHos4Jnr6MYTtvzRvM2+c//9kyKD/pm1GGgrKcPc4=";
   };
   ouch = pkgs.fetchFromGitHub {
     owner = "ndtoan96";

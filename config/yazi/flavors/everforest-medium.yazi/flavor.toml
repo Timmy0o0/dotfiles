@@ -2,7 +2,7 @@
 
 # : Manager {{{
 
-[manager]
+[mgr]
 cwd = { fg = "#7fbbb3" }
 
 # Hovered
@@ -14,9 +14,9 @@ find_keyword  = { fg = "#dbbc7f", bold = true, italic = true, underline = true }
 find_position = { fg = "#d699b6", bg = "reset", bold = true, italic = true }
 
 # Marker
-marker_copied   = { fg = "#a7c080",  bg = "#a7c080" }
-marker_cut      = { fg = "#e67e80",    bg = "#e67e80" }
-marker_marked   = { fg = "#7fbbb3",   bg = "#7fbbb3" }
+marker_copied   = { fg = "#a7c080", bg = "#a7c080" }
+marker_cut      = { fg = "#e67e80", bg = "#e67e80" }
+marker_marked   = { fg = "#7fbbb3", bg = "#7fbbb3" }
 marker_selected = { fg = "#dbbc7f", bg = "#dbbc7f" }
 
 # Tab
@@ -158,22 +158,22 @@ icon_error = ""
 [filetype]
 
 rules = [
-	# Images
-	{ mime = "image/*", fg = "#7fbbb3" },
+  # Images
+  { mime = "image/*", fg = "#7fbbb3" },
 
-	# Media
-	{ mime = "{audio,video}/*", fg = "#d699b6" },
+  # Media
+  { mime = "{audio,video}/*", fg = "#d699b6" },
 
-	# Archives
-	{ mime = "application/*zip", fg = "#e67e80" },
-	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#e67e80" },
+  # Archives
+  { mime = "application/*zip", fg = "#e67e80" },
+  { mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#e67e80" },
 
-	# Documents
-	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#7fbbb3" },
+  # Documents
+  { mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#7fbbb3" },
 
-	# Fallback
-	{ name = "*", fg = "#83c092" },
-	{ name = "*/", fg = "#a7c080" }
+  # Fallback
+  { name = "*", fg = "#83c092" },
+  { name = "*/", fg = "#a7c080" },
 ]
 
 # : }}}

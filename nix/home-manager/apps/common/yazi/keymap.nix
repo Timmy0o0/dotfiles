@@ -1,5 +1,5 @@
 {
-  manager.prepend_keymap = [
+  mgr.prepend_keymap = [
     # bypass
     {
       on = "l";

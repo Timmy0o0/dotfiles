@@ -7,6 +7,9 @@
     home = "/Users/timmy";
   };
 
+  # set primary user for nix-darwin
+  system.primaryUser = "timmy";
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   nixpkgs.config.allowUnfree = true;
