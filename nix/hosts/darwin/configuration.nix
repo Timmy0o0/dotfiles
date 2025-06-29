@@ -38,7 +38,7 @@
       "qq"
       "qqmusic"
       "squirrel"
-      "wpsoffice"
+      "baidunetdisk"
     ];
     taps = [ "laishulu/homebrew" ];
     masApps = { iShot = 1485844094; };
