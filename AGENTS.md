@@ -60,5 +60,3 @@ This repo also uses [vim-tmux-navigator](https://github.com/christoomey/vim-tmux
 | `chore` | Maintenance (deps, build config, etc.) |
 
 Example: `feat: add user login functionality`
-
-## Tmux config
