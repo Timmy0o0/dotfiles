@@ -13,12 +13,6 @@
 ## 🎨 Installation
 
 ```bash
-ya pkg add Chromium-3-Oxide/everforest-medium
-```
-
-Or:
-
-```bash
 ya pack -a Chromium-3-Oxide/everforest-medium
 ```
 
