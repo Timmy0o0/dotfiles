@@ -1,0 +1,7 @@
+{
+  "Markdown TOC marker": {
+    "prefix": "toc",
+    "body": "<!-- toc -->",
+    "description": "Insert <!-- toc --> for markdown-toc / conform"
+  }
+}
