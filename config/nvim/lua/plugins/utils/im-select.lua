@@ -23,7 +23,8 @@ return {
 
       -- Restore the default input method state when the following events are triggered
       -- "VimEnter" and "FocusGained" were removed for causing problems, add it by your needs
-      set_default_events = { "VimEnter", "FocusGained", "InsertLeave", "CmdlineLeave" },
+      -- set_default_events = { "VimEnter", "FocusGained", "InsertLeave", "CmdlineLeave" },
+      set_default_events = { "InsertLeave", "CmdlineLeave" },
 
       -- Restore the previous used input method state when the following events
       -- are triggered, if you don't want to restore previous used im in Insert mode,
