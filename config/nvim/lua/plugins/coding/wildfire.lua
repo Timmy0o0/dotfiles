@@ -1,3 +1,6 @@
+-- stylua: ignore
+if true then return {} end
+
 return {
   "sustech-data/wildfire.nvim",
   event = "VeryLazy",
