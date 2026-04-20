@@ -1,14 +1,18 @@
-# Dotfile Create Agent
+# Dotfiles
 
 <!-- toc -->
 
-- [Git Commit Convention (Conventional Commits)](#git-commit-convention-conventional-commits)
+- [Git commits](#git-commits)
+- [Repo layout](#repo-layout)
+- [Deploy](#deploy)
+- [Stow quirks](#stow-quirks)
+- [Neovim](#neovim)
 
 <!-- tocstop -->
 
-This is a dotfiles repository managed with GNU Stow.
+## Git commits
 
-## Git Commit Convention (Conventional Commits)
+Use Conventional Commits:
 
 | Type       | Description                            |
 | ---------- | -------------------------------------- |
@@ -20,4 +24,26 @@ This is a dotfiles repository managed with GNU Stow.
 | `test`     | Testing                                |
 | `chore`    | Maintenance (deps, build config, etc.) |
 
-Example: `feat: add user login functionality`
+## Repo layout
+
+- `config/` — each subdirectory maps to `~/.config/<name>` via GNU Stow
+- Key apps: fish, nvim (LazyVim), tmux, kitty, ghostty, yazi, opencode
+- `config/yazi_old/` — archived, excluded from stow via `.stow-local-ignore`
+
+## Deploy
+
+```bash
+just init
+```
+
+Runs `stow -t ~/.config config`. Re-run after adding new top-level dirs under `config/`.
+
+## Stow quirks
+
+- `.stow-local-ignore` excludes `.DS_Store` and `yazi_old` from symlinking
+- `.gitignore` also excludes `config/fish/completions`, `config/tmux/plugins`, `config/fish/fish_variables`, and `config/fish/conf.d/fish_frozen_*` — these are generated at runtime
+
+## Neovim
+
+- LazyVim distribution; plugin spec dirs: `lua/plugins/`, `lua/plugins/{ai,coding,ui,utils}/`
+- Lua formatting: StyLua with spaces (2), column width 120 — defined in `config/nvim/stylua.toml`
