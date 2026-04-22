@@ -62,7 +62,7 @@ This symlinks files from `config/` to `~/.config`.
 ## Common library
 
 ```bash
- brew install kitty starship eza opencode
+ brew install kitty starship eza opencode fastfetch
 ```
 
 Refer to the official website
